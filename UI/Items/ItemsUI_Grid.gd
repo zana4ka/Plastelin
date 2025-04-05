@@ -2,6 +2,8 @@
 extends ItemsUIBase
 class_name ItemsUI_Grid
 
+@export var MinGridSize: Vector2i = Vector2i(12, 4)
+
 @onready var SelfGrid: GridContainer = self as Control as GridContainer
 
 var ItemDictionary: Dictionary[Vector2i, ItemsUI_Item] = {}
@@ -12,7 +14,7 @@ func GetMaxPosition() -> Vector2i:
 	var OutMax := Vector2i.ZERO
 	for SamplePosition: Vector2i in ItemDictionary.keys():
 		OutMax = OutMax.max(SamplePosition)
-	return OutMax.max(Vector2i(12, 4))
+	return OutMax.max(MinGridSize)
 
 func ReBuild():
 	
@@ -63,8 +65,8 @@ func RegisterItem(InItem: ItemsUI_Item):
 		var MaxPosition := GetMaxPosition()
 		
 		var HasFound := false
-		for SampleX: int in MaxPosition.x + 1:
-			for SampleY: int in MaxPosition.y + 1:
+		for SampleX: int in MaxPosition.x:
+			for SampleY: int in MaxPosition.y:
 				
 				var SamplePosition := Vector2i(SampleX, SampleY)
 				if ItemDictionary.has(SamplePosition):

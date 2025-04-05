@@ -24,6 +24,7 @@ texture = ExtResource("2_62lbm")
 expand_mode = 2
 
 [node name="ItemsUI" parent="." instance=ExtResource("3_g4fav")]
+anchors_preset = 0
 
 [node name="MyComputer" parent="ItemsUI" instance=ExtResource("3_ilt6e")]
 layout_mode = 2

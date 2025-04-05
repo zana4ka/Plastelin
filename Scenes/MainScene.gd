@@ -7,7 +7,7 @@ class_name MainScene
 var WindowsDictionary: Dictionary[ItemsUI_Item, WindowUI] = {}
 
 func _ready():
-	pass
+	Input.set_custom_mouse_cursor(null, Input.CURSOR_POINTING_HAND, Vector2(4.0, 4.0))
 
 func _enter_tree() -> void:
 	GameGlobals._MainScene = self

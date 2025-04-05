@@ -9,11 +9,11 @@ class_name WindowUI_Header
 		if is_node_ready():
 			UpdateFromOwner()
 
-@onready var _Icon: TextureRect = $TitleBarVB/Icon
-@onready var _Label: Label = $TitleBarVB/Label
-@onready var _Minimize: TextureButton = $TitleBarVB/Minimize
-@onready var _Expand: TextureButton = $TitleBarVB/Expand
-@onready var _Close: TextureButton = $TitleBarVB/Close
+@onready var _Icon: TextureRect = $TitleBarPanel/MC/VB/Icon
+@onready var _Label: Label = $TitleBarPanel/MC/VB/Label
+@onready var _Minimize: TextureButton = $TitleBarPanel/MC/VB/Minimize
+@onready var _Expand: TextureButton = $TitleBarPanel/MC/VB/Expand
+@onready var _Close: TextureButton = $TitleBarPanel/MC/VB/Close
 
 func _ready() -> void:
 	

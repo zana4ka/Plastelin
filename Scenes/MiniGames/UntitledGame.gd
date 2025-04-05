@@ -1,2 +1,0 @@
-extends SubViewport
-class_name UntitledGame

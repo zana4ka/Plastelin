@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://4hb4uivoypvg"]
+
+[ext_resource type="Script" uid="uid://tj5ohhjgsg4p" path="res://UI/Windows/MiniGameUI.gd" id="1_h514d"]
+[ext_resource type="PackedScene" uid="uid://cw66orq8ug75g" path="res://UI/Windows/WindowUI_Header.tscn" id="2_u7t4d"]
+[ext_resource type="PackedScene" uid="uid://et8ew73vo8qp" path="res://Scenes/MiniGames/ShovelGameLevel.tscn" id="3_dkl62"]
+
+[node name="MiniGameUI" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h514d")
+
+[node name="VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Header" parent="VB" node_paths=PackedStringArray("OwnerWindowUI") instance=ExtResource("2_u7t4d")]
+layout_mode = 2
+OwnerWindowUI = NodePath("../..")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="ShovelGameLevel" parent="VB/SubViewportContainer" instance=ExtResource("3_dkl62")]
+handle_input_locally = false
+render_target_update_mode = 4

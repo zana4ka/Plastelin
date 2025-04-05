@@ -1,5 +1,5 @@
 extends WindowUI
-class_name ExplorerUI
+class_name DocumentUI
 
 @onready var _Text: TextEdit = $VB/Control/Text
 

@@ -1,5 +1,5 @@
 extends WindowUI
-class_name DocumentUI
+class_name ExplorerUI
 
 @onready var _ItemsUI: ItemsUI_Grid = $VB/Control/ItemsUI
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw66orq8ug75g"]
+[gd_scene load_steps=8 format=3 uid="uid://cw66orq8ug75g"]
 
 [ext_resource type="Texture2D" uid="uid://cx2oqtnys177k" path="res://UI/Items/Content/Folder.png" id="1_682r6"]
 [ext_resource type="Script" uid="uid://dfp1woh7yiqx4" path="res://UI/Windows/WindowUI_Header.gd" id="1_q44cs"]
@@ -7,27 +7,45 @@
 [ext_resource type="Texture2D" uid="uid://7avnfcwnd7yf" path="res://addons/windows_95_theme/close.png" id="4_crdwa"]
 [ext_resource type="Texture2D" uid="uid://d3ltxplgcdrom" path="res://addons/windows_95_theme/close_pressed.png" id="5_h3k5v"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q44cs"]
+bg_color = Color(0.0196078, 0.00392157, 0.466667, 1)
+
 [node name="WindowUI_Header" type="VBoxContainer"]
 offset_right = 252.0
 offset_bottom = 171.0
 mouse_filter = 2
 script = ExtResource("1_q44cs")
 
-[node name="TitleBarVB" type="HBoxContainer" parent="."]
+[node name="TitleBarPanel" type="PanelContainer" parent="."]
 layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q44cs")
 
-[node name="Icon" type="TextureRect" parent="TitleBarVB"]
+[node name="MC" type="MarginContainer" parent="TitleBarPanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VB" type="HBoxContainer" parent="TitleBarPanel/MC"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="TitleBarPanel/MC/VB"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("1_682r6")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="TitleBarVB"]
+[node name="Label" type="Label" parent="TitleBarPanel/MC/VB"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Folder name"
 
-[node name="Minimize" type="TextureButton" parent="TitleBarVB"]
+[node name="Minimize" type="TextureButton" parent="TitleBarPanel/MC/VB"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -35,7 +53,7 @@ size_flags_vertical = 4
 texture_normal = ExtResource("2_q44cs")
 stretch_mode = 0
 
-[node name="Expand" type="TextureButton" parent="TitleBarVB"]
+[node name="Expand" type="TextureButton" parent="TitleBarPanel/MC/VB"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -43,7 +61,7 @@ size_flags_vertical = 4
 texture_normal = ExtResource("3_5rrod")
 stretch_mode = 0
 
-[node name="Close" type="TextureButton" parent="TitleBarVB"]
+[node name="Close" type="TextureButton" parent="TitleBarPanel/MC/VB"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4

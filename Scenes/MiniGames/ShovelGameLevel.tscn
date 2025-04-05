@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://et8ew73vo8qp"]
+
+[ext_resource type="Script" uid="uid://fl48c8y4nfii" path="res://Scenes/MiniGames/ShovelGameLevel.gd" id="1_copjl"]
+[ext_resource type="Texture2D" uid="uid://ctlywdmaaui0w" path="res://UI/Items/Content/Recycle.png" id="3_7w2vf"]
+[ext_resource type="Script" uid="uid://cbfs1fdmok57v" path="res://Scenes/Shake.gd" id="3_daxit"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daxit"]
+atlas = ExtResource("3_7w2vf")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pyw5u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daxit")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_mywho"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.498285), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="ShovelGameLevel" type="SubViewport"]
+disable_3d = true
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+script = ExtResource("1_copjl")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 256.0
+offset_top = 256.0
+offset_right = 256.0
+offset_bottom = 256.0
+
+[node name="Shake" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_daxit")
+
+[node name="GroundFrames" type="AnimatedSprite2D" parent="Control/Shake"]
+sprite_frames = SubResource("SpriteFrames_pyw5u")
+
+[node name="Interact" type="Button" parent="Control/Shake/GroundFrames"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = -128.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="ShovelFrames" type="AnimatedSprite2D" parent="Control/Shake"]
+
+[node name="DigParticles" type="CPUParticles2D" parent="Control/Shake"]
+position = Vector2(0, -256)
+emitting = false
+amount = 64
+lifetime = 3.0
+one_shot = true
+speed_scale = 6.0
+explosiveness = 0.2
+randomness = 0.5
+fixed_fps = 30
+emission_shape = 3
+emission_rect_extents = Vector2(256, 4)
+direction = Vector2(0, 1)
+spread = 90.0
+gravity = Vector2(0, 98)
+initial_velocity_max = 48.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_mywho")
+color = Color(0.624406, 0.311306, 0.181542, 1)

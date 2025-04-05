@@ -25,3 +25,5 @@ follow_focus = true
 
 [node name="ItemsUI" parent="VB/Control" instance=ExtResource("3_svpkb")]
 layout_mode = 2
+columns = 7
+MinGridSize = Vector2i(6, 2)
