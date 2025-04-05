@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2opfrtym1js6"]
+
+[ext_resource type="Script" uid="uid://cvdyu6l0ew56u" path="res://UI/Windows/ExplorerUI_DragPreview.gd" id="1_rl5pu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onyx4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+
+[node name="ExplorerUI_DragPreview" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 464.0
+offset_bottom = 464.0
+script = ExtResource("1_rl5pu")
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_onyx4")

@@ -7,7 +7,7 @@ class_name ItemsUI_Item
 		_Data = InData
 		UpdateFromItemData()
 
-@onready var ParentGrid: ItemsUI = get_parent() as ItemsUI
+@onready var ParentContainer: ItemsUIBase = get_parent() as ItemsUIBase
 
 @onready var _Button: TextureButton = $Button
 @onready var _Label: Label = $Label
@@ -18,8 +18,8 @@ func _ready():
 	
 	UpdateFromItemData()
 	
-	if ParentGrid:
-		ParentGrid.RegisterItem(self)
+	if ParentContainer:
+		ParentContainer.RegisterItem(self)
 
 func _get_drag_data(AtPosition: Vector2) -> Variant:
 	var DragPreview := TextureRect.new()
@@ -48,14 +48,14 @@ func HandleGridPositionChanged(InPrevPosition: Vector2i):
 	if GridPosition != InPrevPosition:
 		
 		if is_node_ready() and not SkipReplace:
-			ParentGrid.ReplaceIconsOnPositions(GridPosition, InPrevPosition)
+			ParentContainer.ReplaceItemsOnPositions(GridPosition, InPrevPosition)
 
-func SwapGridPositionWith(InIcon: ItemsUI_GridCell):
+func SwapGridPositionWith(InItem: ItemsUI_GridCell):
 	
 	var PrevPosition := GridPosition
-	GridPosition = InIcon.GridPosition
+	GridPosition = InItem.GridPosition
 	
-	InIcon.GridPosition = PrevPosition
+	InItem.GridPosition = PrevPosition
 
 func OnPressed():
 	_Data.TryOpen(self)

@@ -1,7 +1,7 @@
-extends Window
+extends WindowUI
 class_name ExplorerUI
 
-@onready var _ItemsUI: ItemsUI = $Panel/VB/Control/ItemsUI
+@onready var _ItemsUI: ItemsUI_Grid = $VB/Control/ItemsUI
 
 var _FolderItem: ItemsUI_Item:
 	set(InItem):
@@ -10,6 +10,9 @@ var _FolderItem: ItemsUI_Item:
 			UpdateFromFolderItem()
 
 func _ready() -> void:
+	
+	super()
+	
 	UpdateFromFolderItem()
 
 func UpdateFromFolderItem():

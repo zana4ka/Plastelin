@@ -1,8 +1,9 @@
 keys,en,ru
-COMPUTER,My Computer,Мой компьютер
+MY_COMPUTER,My Computer,Мой компьютер
 RECYCLE,Recycle Bin,Корзина
 START,Start,Пуск
-FOLDER_1,Shallow,Мелководье
-FOLDER_2,Deeper...,Глубже...
-FOLDER_3,Even deeper...,Ещё глубже...
-FOLDER_4,Depths,Depths
+SECRET_FOLDER_1,Shallow,Мелководье
+SECRET_FOLDER_2,Deeper...,Глубже...
+SECRET_FOLDER_3,Even deeper...,Ещё глубже...
+SECRET_FOLDER_4,Depths,Чертоги
+SECRET_DOC_1,NOT the payments,НЕ платежи

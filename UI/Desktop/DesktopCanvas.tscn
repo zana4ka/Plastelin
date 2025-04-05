@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://21cu4wvygtnc"]
+[gd_scene load_steps=9 format=3 uid="uid://21cu4wvygtnc"]
 
 [ext_resource type="Script" uid="uid://fytyx5agjtia" path="res://UI/Desktop/DesktopCanvas.gd" id="1_6gcnv"]
 [ext_resource type="PackedScene" uid="uid://bq1pastnn4u4f" path="res://UI/Taskbar/TaskbarUI.tscn" id="2_4twul"]
-[ext_resource type="PackedScene" uid="uid://dirr3cyfcr80n" path="res://UI/Items/ItemsUI.tscn" id="3_g4fav"]
+[ext_resource type="PackedScene" uid="uid://dirr3cyfcr80n" path="res://UI/Items/ItemsUI_Grid.tscn" id="3_g4fav"]
 [ext_resource type="PackedScene" uid="uid://dh2v8xnyv0ja6" path="res://UI/Items/ItemsUI_Item.tscn" id="3_ilt6e"]
 [ext_resource type="Resource" uid="uid://yg10shlscodd" path="res://UI/Items/Content/MyComputer.tres" id="4_owxmn"]
 [ext_resource type="Resource" uid="uid://cj6x0q8sqlcwn" path="res://UI/Items/Content/SecretFolder1.tres" id="5_61lpv"]
 [ext_resource type="Resource" uid="uid://cxk2njaru51wh" path="res://UI/Items/Content/Recycle.tres" id="6_61lpv"]
+[ext_resource type="Script" uid="uid://2yt6aumlf4b6" path="res://UI/Windows/WindowDropArea.gd" id="7_olvdc"]
 
 [node name="DesktopCanvas" type="CanvasLayer"]
 script = ExtResource("1_6gcnv")
@@ -26,5 +27,15 @@ GridPosition = Vector2i(0, 1)
 layout_mode = 2
 _Data = ExtResource("6_61lpv")
 GridPosition = Vector2i(0, 2)
+
+[node name="WindowDropArea" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_olvdc")
 
 [node name="TaskbarUI" parent="." instance=ExtResource("2_4twul")]

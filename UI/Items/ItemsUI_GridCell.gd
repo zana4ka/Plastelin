@@ -9,14 +9,14 @@ class_name ItemsUI_GridCell
 		HandleGridPositionChanged(PrevPosition)
 
 func _can_drop_data(AtPosition: Vector2, InData: Variant) -> bool:
-	return true
+	return InData is ItemsUI_GridCell
 
 func _drop_data(AtPosition: Vector2, InData: Variant):
-	var DropIcon := InData as ItemsUI_GridCell
-	SwapGridPositionWith(DropIcon)
+	var DropItem := InData as ItemsUI_GridCell
+	SwapGridPositionWith(DropItem)
 
 func HandleGridPositionChanged(InPrevPosition: Vector2i):
 	pass
 
-func SwapGridPositionWith(InIcon: ItemsUI_GridCell):
-	InIcon.GridPosition = GridPosition
+func SwapGridPositionWith(InItem: ItemsUI_GridCell):
+	InItem.GridPosition = GridPosition

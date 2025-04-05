@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d028oiq7bd6qr"]
+
+[ext_resource type="Script" uid="uid://dos2fspn73hwp" path="res://UI/Items/ItemsUI_Free.gd" id="1_vdxxw"]
+
+[node name="ItemsUI_Free" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2388.0
+offset_bottom = 916.0
+script = ExtResource("1_vdxxw")

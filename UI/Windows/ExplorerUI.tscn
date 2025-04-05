@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0dax1hejqs0y"]
+
+[ext_resource type="Script" uid="uid://c3ra7tae7qbru" path="res://UI/Windows/ExplorerUI.gd" id="1_onk7n"]
+[ext_resource type="Texture2D" uid="uid://cx2oqtnys177k" path="res://UI/Items/Content/Folder.png" id="2_8d3qj"]
+[ext_resource type="Texture2D" uid="uid://bor14ncoefmbi" path="res://addons/windows_95_theme/minus.png" id="3_d0p2e"]
+[ext_resource type="PackedScene" uid="uid://dirr3cyfcr80n" path="res://UI/Items/ItemsUI_Grid.tscn" id="3_svpkb"]
+[ext_resource type="Texture2D" uid="uid://cqoqid4x5nmkw" path="res://addons/windows_95_theme/plus.png" id="4_2v2ao"]
+[ext_resource type="Texture2D" uid="uid://7avnfcwnd7yf" path="res://addons/windows_95_theme/close.png" id="5_tokci"]
+[ext_resource type="Texture2D" uid="uid://d3ltxplgcdrom" path="res://addons/windows_95_theme/close_pressed.png" id="6_wtlf0"]
+
+[node name="ExplorerUI" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_onk7n")
+
+[node name="VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Header" type="HBoxContainer" parent="VB"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="VB/Header"]
+layout_mode = 2
+texture = ExtResource("2_8d3qj")
+
+[node name="Label" type="Label" parent="VB/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Folder name"
+
+[node name="Minimize" type="TextureButton" parent="VB/Header"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_d0p2e")
+stretch_mode = 0
+
+[node name="Expand" type="TextureButton" parent="VB/Header"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_2v2ao")
+stretch_mode = 0
+
+[node name="Close" type="TextureButton" parent="VB/Header"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_tokci")
+texture_pressed = ExtResource("6_wtlf0")
+stretch_mode = 0
+
+[node name="Tabs" type="HBoxContainer" parent="VB"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VB"]
+layout_mode = 2
+
+[node name="ItemsUI" parent="VB/Control" instance=ExtResource("3_svpkb")]
+layout_mode = 1
+offset_right = 2388.0
+offset_bottom = 916.0

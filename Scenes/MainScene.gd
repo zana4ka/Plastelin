@@ -2,7 +2,9 @@ extends Node2D
 class_name MainScene
 
 @onready var _PlayerCamera: PlayerCamera = $PlayerCamera
-@onready var _DesktopCanvas: CanvasLayer = $DesktopCanvas
+@onready var _DesktopCanvas: DesktopCanvas = $DesktopCanvas
+
+var WindowsArray: Array[WindowUI] = []
 
 func _ready():
 	pass
@@ -17,5 +19,5 @@ func TryOpenFolder(InFolderItem: ItemsUI_Item) -> ExplorerUI:
 	
 	var NewExplorer := GameGlobals.ExplorerUIScene.instantiate() as ExplorerUI
 	NewExplorer._FolderItem = InFolderItem
-	add_child(NewExplorer)
+	_DesktopCanvas.add_child(NewExplorer)
 	return NewExplorer

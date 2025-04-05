@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dirr3cyfcr80n"]
-
-[ext_resource type="Script" uid="uid://1tlkpf00j01s" path="res://UI/Items/ItemsUI.gd" id="1_itq31"]
-
-[node name="ItemsUI" type="GridContainer"]
-offset_right = 1836.0
-offset_bottom = 548.0
-columns = 13
-script = ExtResource("1_itq31")
