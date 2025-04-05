@@ -33,8 +33,10 @@ texture = ExtResource("2_8d3qj")
 [node name="Tabs" type="HBoxContainer" parent="Panel/VB"]
 layout_mode = 2
 
-[node name="ItemsUI" parent="Panel/VB" instance=ExtResource("2_sacoy")]
+[node name="Control" type="Control" parent="Panel/VB"]
 layout_mode = 2
-size_flags_vertical = 3
-ItemScene = null
-EmptyGridCellScene = null
+
+[node name="ItemsUI" parent="Panel/VB/Control" instance=ExtResource("2_sacoy")]
+layout_mode = 1
+offset_right = 2388.0
+offset_bottom = 916.0

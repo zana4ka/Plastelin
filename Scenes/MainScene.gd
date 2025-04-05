@@ -1,8 +1,6 @@
 extends Node2D
 class_name MainScene
 
-@export var ExplorerUIScene: PackedScene = preload("res://UI/Explorer/ExplorerUI.tscn")
-
 @onready var _PlayerCamera: PlayerCamera = $PlayerCamera
 @onready var _DesktopCanvas: CanvasLayer = $DesktopCanvas
 
@@ -15,8 +13,9 @@ func _enter_tree() -> void:
 func _exit_tree() -> void:
 	GameGlobals._MainScene = null
 
-func TryOpenFolder(InData: FolderData):
+func TryOpenFolder(InFolderItem: ItemsUI_Item) -> ExplorerUI:
 	
-	var NewExplorer := ExplorerUIScene.instantiate() as ExplorerUI
-	NewExplorer._FolderData = InData
+	var NewExplorer := GameGlobals.ExplorerUIScene.instantiate() as ExplorerUI
+	NewExplorer._FolderItem = InFolderItem
 	add_child(NewExplorer)
+	return NewExplorer

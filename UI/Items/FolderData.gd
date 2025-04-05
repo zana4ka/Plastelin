@@ -4,4 +4,4 @@ class_name FolderData
 @export var InnerItemDataArray: Array[ItemData] = []
 
 func TryOpen(InItemUI: ItemsUI_Item) -> bool:
-	return GameGlobals._MainScene.TryOpenFolder(self)
+	return GameGlobals._MainScene.TryOpenFolder(InItemUI) != null

@@ -2,9 +2,6 @@
 extends GridContainer
 class_name ItemsUI
 
-@export var ItemScene: PackedScene = preload("res://UI/Items/ItemsUI_Item.tscn")
-@export var EmptyGridCellScene: PackedScene = preload("res://UI/Items/ItemsUI_EmptyGridCell.tscn")
-
 var IconDictionary: Dictionary[Vector2i, ItemsUI_Item] = {}
 var EmptyGridCellDictionary: Dictionary[Vector2i, Control] = {}
 
@@ -48,7 +45,7 @@ func ReBuild():
 				SampleIcon.GridPosition = SamplePosition
 				SampleIcon.SkipReplace = false
 			else:
-				var NewEmptyGridCell := EmptyGridCellScene.instantiate() as ItemsUI_GridCell
+				var NewEmptyGridCell := GameGlobals.EmptyGridCellScene.instantiate() as ItemsUI_GridCell
 				NewEmptyGridCell.GridPosition = SamplePosition
 				
 				add_child(NewEmptyGridCell)
@@ -105,7 +102,13 @@ func ReplaceIconsOnPositions(InA: Vector2i, InB: Vector2i):
 ## Runtime item adding
 func AddNewItem(InData: ItemData) -> ItemsUI_Item:
 	
-	var OutItem := ItemScene.instantiate() as ItemsUI_Item
+	var OutItem := GameGlobals.ItemScene.instantiate() as ItemsUI_Item
 	OutItem._Data = InData
 	add_child(OutItem)
 	return OutItem
+
+func RemoveAllItems():
+	
+	for SamplePosition: Vector2i in IconDictionary.keys():
+		IconDictionary[SamplePosition].queue_free()
+	IconDictionary.clear()
