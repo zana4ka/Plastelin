@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="FolderData" load_steps=4 format=3 uid="uid://yg10shlscodd"]
 
-[ext_resource type="Texture2D" uid="uid://daqf6sayec7sv" path="res://addons/windows_95_theme/icon.png" id="1_e3iac"]
+[ext_resource type="Texture2D" uid="uid://bpn26pmgjaemf" path="res://UI/Items/Content/MyComputer.png" id="1_e3iac"]
 [ext_resource type="Script" uid="uid://dm7a2qbe1p8sy" path="res://UI/Items/ItemData.gd" id="1_gcji4"]
 [ext_resource type="Script" uid="uid://0u1v5jvcen3b" path="res://UI/Items/FolderData.gd" id="1_ylywo"]
 

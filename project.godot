@@ -30,6 +30,8 @@ window/size/viewport_width=1366
 window/size/viewport_height=768
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://c2fk14h7wi8jr"
+mouse_cursor/custom_image_hotspot=Vector2(4, 4)
 
 [gui]
 

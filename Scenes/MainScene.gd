@@ -28,5 +28,5 @@ func TryOpenItem(InItem: ItemsUI_Item) -> WindowUI:
 	var NewWindow := GameGlobals.CreateWindowForItem(InItem) as WindowUI
 	NewWindow.OwnerItem = InItem
 	_DesktopCanvas.add_child(NewWindow)
-	NewWindow.global_position = get_global_mouse_position() + InItem.size * Vector2(0.8, -0.2)
+	NewWindow.global_position = get_global_mouse_position() + InItem.size * Vector2(0.2, -0.4)
 	return NewWindow

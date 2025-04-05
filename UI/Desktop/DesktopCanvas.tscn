@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://21cu4wvygtnc"]
+[gd_scene load_steps=10 format=3 uid="uid://21cu4wvygtnc"]
 
 [ext_resource type="Script" uid="uid://fytyx5agjtia" path="res://UI/Desktop/DesktopCanvas.gd" id="1_6gcnv"]
 [ext_resource type="PackedScene" uid="uid://bq1pastnn4u4f" path="res://UI/Taskbar/TaskbarUI.tscn" id="2_4twul"]
+[ext_resource type="Texture2D" uid="uid://cbxrbtso1rldy" path="res://UI/Desktop/Content/Background001.png" id="2_62lbm"]
 [ext_resource type="PackedScene" uid="uid://dirr3cyfcr80n" path="res://UI/Items/ItemsUI_Grid.tscn" id="3_g4fav"]
 [ext_resource type="PackedScene" uid="uid://dh2v8xnyv0ja6" path="res://UI/Items/ItemsUI_Item.tscn" id="3_ilt6e"]
 [ext_resource type="Resource" uid="uid://yg10shlscodd" path="res://UI/Items/Content/MyComputer.tres" id="4_owxmn"]
@@ -12,6 +13,15 @@
 [node name="DesktopCanvas" type="CanvasLayer"]
 follow_viewport_enabled = true
 script = ExtResource("1_6gcnv")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_62lbm")
+expand_mode = 2
 
 [node name="ItemsUI" parent="." instance=ExtResource("3_g4fav")]
 

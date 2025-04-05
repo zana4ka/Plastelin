@@ -2,6 +2,7 @@ extends Node
 
 @export var ExplorerUIScene: PackedScene = preload("res://UI/Windows/ExplorerUI.tscn")
 @export var DocumentUIScene: PackedScene = preload("res://UI/Windows/DocumentUI.tscn")
+@export var PhotoUIScene: PackedScene = preload("res://UI/Windows/PhotoUI.tscn")
 
 @export var ItemScene: PackedScene = preload("res://UI/Items/ItemsUI_Item.tscn")
 @export var EmptyGridCellScene: PackedScene = preload("res://UI/Items/ItemsUI_EmptyGridCell.tscn")
@@ -18,4 +19,6 @@ func CreateWindowForItem(InItem: ItemsUI_Item) -> WindowUI:
 		OutWindow = ExplorerUIScene.instantiate()
 	elif InItem._Data is DocumentData:
 		OutWindow = DocumentUIScene.instantiate()
+	elif InItem._Data is PhotoData:
+		OutWindow = PhotoUIScene.instantiate()
 	return OutWindow
