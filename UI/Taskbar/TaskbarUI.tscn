@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq1pastnn4u4f"]
+[gd_scene load_steps=4 format=3 uid="uid://bq1pastnn4u4f"]
 
 [ext_resource type="Script" uid="uid://c57mnlsnm3epv" path="res://UI/Taskbar/TaskbarUI.gd" id="1_hrq5f"]
+[ext_resource type="PackedScene" uid="uid://sst0u8l3408b" path="res://UI/Taskbar/StartUI.tscn" id="2_2j4wv"]
+[ext_resource type="PackedScene" uid="uid://c1xa0j1gcn6nv" path="res://UI/Taskbar/LocaleUI.tscn" id="2_jvt87"]
 
 [node name="TaskbarUI" type="HBoxContainer"]
 anchors_preset = 12
@@ -9,5 +11,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 8
 alignment = 1
 script = ExtResource("1_hrq5f")
+
+[node name="StartUI" parent="." instance=ExtResource("2_2j4wv")]
+layout_mode = 2
+
+[node name="TabsVB" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LocaleUI" parent="." instance=ExtResource("2_jvt87")]
+layout_mode = 2
+toggle_mode = true

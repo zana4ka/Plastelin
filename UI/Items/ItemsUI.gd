@@ -1,11 +1,12 @@
 @tool
 extends GridContainer
-class_name DesktopUI_Icons
+class_name ItemsUI
 
-@export var EmptyIconScene: PackedScene = preload("res://UI/Desktop/DesktopUI_EmptyIcon.tscn")
+@export var ItemScene: PackedScene = preload("res://UI/Items/ItemsUI_Item.tscn")
+@export var EmptyGridCellScene: PackedScene = preload("res://UI/Items/ItemsUI_EmptyGridCell.tscn")
 
-var IconDictionary: Dictionary[Vector2i, DesktopUI_Icon] = {}
-var EmptyIconDictionary: Dictionary[Vector2i, Control] = {}
+var IconDictionary: Dictionary[Vector2i, ItemsUI_Item] = {}
+var EmptyGridCellDictionary: Dictionary[Vector2i, Control] = {}
 
 func _ready():
 	ReBuild()
@@ -15,7 +16,7 @@ func GetMaxPosition() -> Vector2i:
 	var OutMax := Vector2i.ZERO
 	for SamplePosition: Vector2i in IconDictionary.keys():
 		OutMax = OutMax.max(SamplePosition)
-	return OutMax.max(Vector2i(15, 5))
+	return OutMax.max(Vector2i(12, 4))
 
 func ReBuild():
 	
@@ -28,9 +29,9 @@ func ReBuild():
 		if IconDictionary[SamplePosition] == null:
 			IconDictionary.erase(SamplePosition)
 	
-	for SamplePosition: Vector2i in EmptyIconDictionary.keys():
-		EmptyIconDictionary[SamplePosition].queue_free()
-	EmptyIconDictionary.clear()
+	for SamplePosition: Vector2i in EmptyGridCellDictionary.keys():
+		EmptyGridCellDictionary[SamplePosition].queue_free()
+	EmptyGridCellDictionary.clear()
 	
 	var MaxPosition := GetMaxPosition()
 	columns = MaxPosition.x + 1
@@ -43,18 +44,20 @@ func ReBuild():
 			if IconDictionary.has(SamplePosition):
 				var SampleIcon := IconDictionary[SamplePosition]
 				move_child(SampleIcon, ChildIndex)
+				SampleIcon.SkipReplace = true
 				SampleIcon.GridPosition = SamplePosition
+				SampleIcon.SkipReplace = false
 			else:
-				var NewEmptyIcon := EmptyIconScene.instantiate() as DesktopUI_IconBase
-				NewEmptyIcon.GridPosition = SamplePosition
+				var NewEmptyGridCell := EmptyGridCellScene.instantiate() as ItemsUI_GridCell
+				NewEmptyGridCell.GridPosition = SamplePosition
 				
-				add_child(NewEmptyIcon)
-				move_child(NewEmptyIcon, ChildIndex)
-				EmptyIconDictionary[SamplePosition] = NewEmptyIcon
+				add_child(NewEmptyGridCell)
+				move_child(NewEmptyGridCell, ChildIndex)
+				EmptyGridCellDictionary[SamplePosition] = NewEmptyGridCell
 			
 			ChildIndex += 1
 
-func AddIcon(InIcon: DesktopUI_Icon):
+func RegisterItem(InIcon: ItemsUI_Item):
 	
 	var TargetPosition := InIcon.GridPosition
 	
@@ -79,9 +82,9 @@ func AddIcon(InIcon: DesktopUI_Icon):
 	if IconDictionary.has(TargetPosition):
 		push_error("TargetPosition is still invalid! Can't add Icon.")
 	
-	if EmptyIconDictionary.has(TargetPosition):
-		EmptyIconDictionary[TargetPosition].queue_free()
-		EmptyIconDictionary.erase(TargetPosition)
+	if EmptyGridCellDictionary.has(TargetPosition):
+		EmptyGridCellDictionary[TargetPosition].queue_free()
+		EmptyGridCellDictionary.erase(TargetPosition)
 	
 	IconDictionary[TargetPosition] = InIcon
 	ReBuild()
@@ -91,10 +94,18 @@ func ReplaceIconsOnPositions(InA: Vector2i, InB: Vector2i):
 	if InA == InB:
 		return
 	
-	var IconA: DesktopUI_Icon = IconDictionary[InA] if IconDictionary.has(InA) else null
-	var IconB: DesktopUI_Icon = IconDictionary[InB] if IconDictionary.has(InB) else null
+	var IconA: ItemsUI_Item = IconDictionary[InA] if IconDictionary.has(InA) else null
+	var IconB: ItemsUI_Item = IconDictionary[InB] if IconDictionary.has(InB) else null
 	
 	IconDictionary[InA] = IconB
 	IconDictionary[InB] = IconA
 	
 	ReBuild()
+
+## Runtime item adding
+func AddNewItem(InData: ItemData) -> ItemsUI_Item:
+	
+	var OutItem := ItemScene.instantiate() as ItemsUI_Item
+	OutItem._Data = InData
+	add_child(OutItem)
+	return OutItem

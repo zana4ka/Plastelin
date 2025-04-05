@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://sst0u8l3408b"]
+
+[ext_resource type="Script" uid="uid://d4ec0afh8uk4m" path="res://UI/Taskbar/StartUI.gd" id="1_rxpup"]
+
+[node name="StartUI" type="Button"]
+custom_minimum_size = Vector2(64, 48)
+text = "START"
+script = ExtResource("1_rxpup")

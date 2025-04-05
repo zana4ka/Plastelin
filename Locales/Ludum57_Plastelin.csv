@@ -1,2 +1,8 @@
 keys,en,ru
-TEST,testing,тестирование
+COMPUTER,My Computer,Мой компьютер
+RECYCLE,Recycle Bin,Корзина
+START,Start,Пуск
+FOLDER_1,Shallow,Мелководье
+FOLDER_2,Deeper...,Глубже...
+FOLDER_3,Even deeper...,Ещё глубже...
+FOLDER_4,Depths,Depths
