@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://tpntmolyyxhd"]
+
+[ext_resource type="Script" uid="uid://8k1hgropirqb" path="res://UI/Windows/DocumentUI.gd" id="1_rsxfn"]
+[ext_resource type="PackedScene" uid="uid://cw66orq8ug75g" path="res://UI/Windows/WindowUI_Header.tscn" id="2_7djx5"]
+
+[node name="DocumentUI" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rsxfn")
+
+[node name="VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Header" parent="VB" node_paths=PackedStringArray("OwnerWindowUI") instance=ExtResource("2_7djx5")]
+layout_mode = 2
+OwnerWindowUI = NodePath("../..")
+
+[node name="Control" type="Control" parent="VB"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Text" type="TextEdit" parent="VB/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Some
+scary text."
+placeholder_text = "Don't look behind you..."

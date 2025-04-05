@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2opfrtym1js6"]
 
-[ext_resource type="Script" uid="uid://cvdyu6l0ew56u" path="res://UI/Windows/ExplorerUI_DragPreview.gd" id="1_rl5pu"]
+[ext_resource type="Script" uid="uid://cvdyu6l0ew56u" path="res://UI/Windows/WindowUI_DragPreview.gd" id="1_rl5pu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onyx4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -9,7 +9,7 @@ border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
 
-[node name="ExplorerUI_DragPreview" type="Control"]
+[node name="WindowUI_DragPreview" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 464.0

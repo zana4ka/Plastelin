@@ -1,5 +1,5 @@
 extends Control
-class_name ExplorerUI_DragPreview
+class_name WindowUI_DragPreview
 
 var Offset: Vector2:
 	set(InOffset):

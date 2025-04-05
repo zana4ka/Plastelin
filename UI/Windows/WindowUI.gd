@@ -3,22 +3,25 @@ class_name WindowUI
 
 @export var DragPreviewScene: PackedScene = preload("res://UI/Windows/WindowUI_DragPreview.tscn")
 
-@onready var _Icon: TextureRect = $VB/Header/Icon
-@onready var _Label: Label = $VB/Header/Label
-@onready var _Minimize: TextureButton = $VB/Header/Minimize
-@onready var _Expand: TextureButton = $VB/Header/Expand
-@onready var _Close: TextureButton = $VB/Header/Close
+var OwnerItem: ItemsUI_Item:
+	set(InItem):
+		OwnerItem = InItem
+		if is_node_ready():
+			UpdateFromOwnerItem()
 
 func _ready() -> void:
-	_Minimize.pressed.connect(Minimize)
-	_Expand.pressed.connect(Expand)
-	_Close.pressed.connect(Close)
+	
+	focus_mode = Control.FOCUS_ALL
+	focus_entered.connect(OnFocusEntered)
+	
+	UpdateFromOwnerItem()
+	TryUnfold()
 
 func _enter_tree() -> void:
-	GameGlobals._MainScene.WindowsArray.append(self)
+	GameGlobals._MainScene.WindowsDictionary[OwnerItem] = self
 
 func _exit_tree() -> void:
-	GameGlobals._MainScene.WindowsArray.erase(self)
+	GameGlobals._MainScene.WindowsDictionary.erase(OwnerItem)
 
 func _get_drag_data(AtPosition: Vector2) -> Variant:
 	
@@ -32,11 +35,24 @@ func _get_drag_data(AtPosition: Vector2) -> Variant:
 	
 	return self
 
-func Minimize():
+func OnFocusEntered():
+	move_to_front()
+
+func UpdateFromOwnerItem():
 	pass
 
-func Expand():
-	pass
+func TryCollapse() -> bool:
+	return false
 
-func Close():
-	pass
+func TryExpand() -> bool:
+	return false
+
+func TryClose() -> bool:
+	queue_free()
+	return true
+
+var IsUnfolded: bool = false
+
+func TryUnfold() -> bool:
+	IsUnfolded = true
+	return IsUnfolded
