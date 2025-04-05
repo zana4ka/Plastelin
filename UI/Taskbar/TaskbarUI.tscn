@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq1pastnn4u4f"]
+
+[ext_resource type="Script" uid="uid://c57mnlsnm3epv" path="res://UI/Taskbar/TaskbarUI.gd" id="1_hrq5f"]
+
+[node name="TaskbarUI" type="HBoxContainer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("1_hrq5f")

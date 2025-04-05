@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds6yrp34k62l3"]
+
+[ext_resource type="Script" uid="uid://0cy11iodq2mn" path="res://UI/Desktop/DesktopUI_IconBase.gd" id="1_kacfw"]
+
+[node name="DesktopUI_EmptyIcon" type="Control"]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_kacfw")

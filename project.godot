@@ -11,5 +11,29 @@ config_version=5
 [application]
 
 config/name="Plastelin"
+run/main_scene="uid://m7eflwquo8tu"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Icon.svg"
+
+[debug]
+
+gdscript/warnings/unused_parameter=0
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=768
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom="uid://cnjtetudthuan"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Locales/Ludum57_Plastelin.en.translation", "res://Locales/Ludum57_Plastelin.ru.translation")
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0.490196, 0.490196, 1)

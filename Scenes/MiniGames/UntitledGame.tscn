@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://et8ew73vo8qp"]
+
+[ext_resource type="Script" uid="uid://fl48c8y4nfii" path="res://Scenes/MiniGames/UntitledGame.gd" id="1_copjl"]
+
+[node name="UntitledGame" type="SubViewport"]
+script = ExtResource("1_copjl")

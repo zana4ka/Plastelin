@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh2v8xnyv0ja6"]
+
+[ext_resource type="Script" uid="uid://daw10lsm55b86" path="res://UI/Desktop/DesktopUI_Icon.gd" id="1_ok6d5"]
+[ext_resource type="Texture2D" uid="uid://daqf6sayec7sv" path="res://addons/windows_95_theme/icon.png" id="2_0251u"]
+
+[node name="DesktopUI_Icon" type="VBoxContainer"]
+custom_minimum_size = Vector2(180, 180)
+alignment = 1
+script = ExtResource("1_ok6d5")
+
+[node name="Button" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_0251u")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "COMPUTER"
+horizontal_alignment = 1
+autowrap_mode = 3

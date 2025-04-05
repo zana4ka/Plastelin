@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dirr3cyfcr80n"]
+
+[ext_resource type="Script" uid="uid://1tlkpf00j01s" path="res://UI/Desktop/DesktopUI_Icons.gd" id="1_naxc1"]
+[ext_resource type="PackedScene" uid="uid://dh2v8xnyv0ja6" path="res://UI/Desktop/DesktopUI_Icon.tscn" id="2_5ujho"]
+[ext_resource type="Texture2D" uid="uid://ctlywdmaaui0w" path="res://UI/Desktop/Icons/Recycle.png" id="2_hw1ro"]
+
+[node name="DesktopUI_Icons" type="GridContainer"]
+offset_right = 1836.0
+offset_bottom = 548.0
+columns = 16
+script = ExtResource("1_naxc1")
+
+[node name="Computer" parent="." instance=ExtResource("2_5ujho")]
+layout_mode = 2
+
+[node name="Recycle" parent="." instance=ExtResource("2_5ujho")]
+layout_mode = 2
+IconTexture = ExtResource("2_hw1ro")
+IconText = "RECYCLE"
+GridPosition = Vector2i(0, 2)

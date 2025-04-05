@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgo31giwy0x4o"]
+
+[ext_resource type="Script" uid="uid://cmvuyfi1q5mgc" path="res://UI/Taskbar/TaskbarUI_Tab.gd" id="1_mw3bo"]
+
+[node name="TaskbarUI_Tab" type="Button"]
+custom_minimum_size = Vector2(240, 48)
+offset_right = 240.0
+offset_bottom = 48.0
+text = "Some tab"
+alignment = 0
+script = ExtResource("1_mw3bo")
