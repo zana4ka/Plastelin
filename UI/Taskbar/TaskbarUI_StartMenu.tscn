@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx5eh1gd6bq6g"]
+
+[ext_resource type="StyleBox" uid="uid://bt0poquh0krrk" path="res://UI/Taskbar/Content/StartMenu001a.tres" id="1_gl2mv"]
+[ext_resource type="Script" uid="uid://dsljdrh8pne5l" path="res://UI/Taskbar/TaskbarUI_StartMenu.gd" id="1_no6xm"]
+[ext_resource type="Texture2D" uid="uid://cm4kypyqba6hs" path="res://UI/Taskbar/Content/Help.tres" id="2_gl2mv"]
+[ext_resource type="StyleBox" uid="uid://b6o8vavu8ydr4" path="res://UI/Common/Panels/Panel003a.tres" id="3_yoi6p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gl2mv"]
+
+[node name="TaskbarUI_StartMenu" type="PanelContainer"]
+custom_minimum_size = Vector2(256, 540)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -384.0
+offset_right = 256.0
+grow_vertical = 0
+focus_neighbor_top = NodePath("VB/ShutDown")
+focus_neighbor_bottom = NodePath("VB/Help")
+focus_mode = 2
+theme_override_styles/panel = ExtResource("1_gl2mv")
+script = ExtResource("1_no6xm")
+
+[node name="VB" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(196, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="Help" type="Button" parent="VB"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+focus_neighbor_top = NodePath("../ShutDown")
+focus_neighbor_bottom = NodePath("../Settings")
+mouse_filter = 1
+theme_override_styles/hover = ExtResource("3_yoi6p")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gl2mv")
+text = "HELP"
+icon = ExtResource("2_gl2mv")
+alignment = 0
+text_overrun_behavior = 3
+autowrap_mode = 3
+expand_icon = true
+
+[node name="Settings" type="Button" parent="VB"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Help")
+focus_neighbor_bottom = NodePath("../ShutDown")
+mouse_filter = 1
+theme_override_styles/hover = ExtResource("3_yoi6p")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gl2mv")
+text = "SETTINGS"
+icon = ExtResource("2_gl2mv")
+alignment = 0
+text_overrun_behavior = 3
+autowrap_mode = 3
+expand_icon = true
+
+[node name="ShutDown" type="Button" parent="VB"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Help")
+mouse_filter = 1
+theme_override_styles/hover = ExtResource("3_yoi6p")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gl2mv")
+text = "SHUT_DOWN"
+icon = ExtResource("2_gl2mv")
+alignment = 0
+text_overrun_behavior = 3
+autowrap_mode = 3
+expand_icon = true

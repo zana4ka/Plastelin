@@ -12,9 +12,13 @@ class_name ItemsUI_Item
 @onready var _Button: TextureButton = $Button
 @onready var _Label: Label = $Label
 
+var IsLocked: bool = false
+
 func _ready():
 	
-	_Button.pressed.connect(OnPressed)
+	_Button.pressed.connect(OnButtonPressed)
+	_Button.focus_entered.connect(OnButtonFocusEntered)
+	_Button.focus_exited.connect(OnButtonFocusExited)
 	
 	UpdateFromItemData()
 	
@@ -31,7 +35,7 @@ func _get_drag_data(AtPosition: Vector2) -> Variant:
 	return self
 
 func _can_drop_data(AtPosition: Vector2, InData: Variant) -> bool:
-	return InData != self
+	return super(AtPosition, InData) and (InData != self)
 
 func UpdateFromItemData():
 	
@@ -40,6 +44,9 @@ func UpdateFromItemData():
 	
 	_Button.texture_normal = _Data.IconTexture
 	_Label.text = _Data.Name
+	
+	if _Data.IsInitiallyLocked:
+		IsLocked = true
 
 var SkipReplace: bool = false
 
@@ -57,5 +64,31 @@ func SwapGridPositionWith(InItem: ItemsUI_GridCell):
 	
 	InItem.GridPosition = PrevPosition
 
-func OnPressed():
-	_Data.TryOpen(self)
+var LastPressedTimeTicksMs: int = 0
+
+func OnButtonPressed():
+	
+	var PrevPressedTimeTicksMs := LastPressedTimeTicksMs
+	LastPressedTimeTicksMs = Time.get_ticks_msec()
+	
+	if PrevPressedTimeTicksMs + 500 < LastPressedTimeTicksMs:
+		return
+	
+	if IsLocked:
+		OS.alert("Can't open!")
+	else:
+		GameGlobals._MainScene.TryOpenItem(self)
+
+func OnButtonFocusEntered():
+	
+	modulate = Color.SKY_BLUE
+	
+	_Label.add_theme_color_override(&"font_color", Color.WHITE)
+	_Label.add_theme_color_override(&"font_shadow_color", Color.BLUE)
+
+func OnButtonFocusExited():
+	
+	modulate = Color.WHITE
+	
+	_Label.remove_theme_color_override(&"font_color")
+	_Label.add_theme_color_override(&"font_shadow_color", Color.TRANSPARENT)

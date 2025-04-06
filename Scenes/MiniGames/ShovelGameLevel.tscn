@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://et8ew73vo8qp"]
 
 [ext_resource type="Script" uid="uid://fl48c8y4nfii" path="res://Scenes/MiniGames/ShovelGameLevel.gd" id="1_copjl"]
-[ext_resource type="Texture2D" uid="uid://ctlywdmaaui0w" path="res://UI/Items/Content/Recycle.png" id="3_7w2vf"]
+[ext_resource type="Texture2D" uid="uid://ctlywdmaaui0w" path="res://UI/Items/Content/Recycle001a.png" id="3_7w2vf"]
 [ext_resource type="Script" uid="uid://cbfs1fdmok57v" path="res://Scenes/Shake.gd" id="3_daxit"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_daxit"]

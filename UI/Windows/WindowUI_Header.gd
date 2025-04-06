@@ -11,15 +11,15 @@ class_name WindowUI_Header
 
 @onready var _Icon: TextureRect = $TitleBarPanel/MC/VB/Icon
 @onready var _Label: Label = $TitleBarPanel/MC/VB/Label
-@onready var _Minimize: TextureButton = $TitleBarPanel/MC/VB/Minimize
-@onready var _Expand: TextureButton = $TitleBarPanel/MC/VB/Expand
-@onready var _Close: TextureButton = $TitleBarPanel/MC/VB/Close
+@onready var _Collapse: TextureButton = $TitleBarPanel/MC/VB/ButtonsVB/Collapse
+@onready var _Expand: TextureButton = $TitleBarPanel/MC/VB/ButtonsVB/Expand
+@onready var _Close: TextureButton = $TitleBarPanel/MC/VB/ButtonsVB/Close
 
 func _ready() -> void:
 	
 	assert(OwnerWindowUI)
 	
-	_Minimize.pressed.connect(Minimize)
+	_Collapse.pressed.connect(Collapse)
 	_Expand.pressed.connect(Expand)
 	_Close.pressed.connect(Close)
 	
@@ -32,8 +32,8 @@ func UpdateFromOwner():
 		_Icon.texture = _OwnerItemData.IconTexture
 		_Label.text = _OwnerItemData.Name
 
-func Minimize():
-	OwnerWindowUI.TryMinimize()
+func Collapse():
+	OwnerWindowUI.TryCollapse()
 
 func Expand():
 	OwnerWindowUI.TryExpand()

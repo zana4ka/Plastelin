@@ -9,19 +9,17 @@ var OwnerItem: ItemsUI_Item:
 		if is_node_ready():
 			UpdateFromOwnerItem()
 
+var TaskbarTab: TaskbarUI_Tab
+
 func _ready() -> void:
+	
+	clip_contents = true
 	
 	focus_mode = Control.FOCUS_ALL
 	focus_entered.connect(OnFocusEntered)
 	
 	UpdateFromOwnerItem()
 	TryUnfold()
-
-func _enter_tree() -> void:
-	GameGlobals._MainScene.WindowsDictionary[OwnerItem] = self
-
-func _exit_tree() -> void:
-	GameGlobals._MainScene.WindowsDictionary.erase(OwnerItem)
 
 func _get_drag_data(AtPosition: Vector2) -> Variant:
 	
@@ -42,7 +40,15 @@ func UpdateFromOwnerItem():
 	pass
 
 func TryCollapse() -> bool:
-	return false
+	
+	if not IsUnfolded():
+		return false
+	
+	visible = false
+	set_meta(&"IsUnfolded", false)
+	UnfoldedChanged.emit()
+	
+	return not IsUnfolded()
 
 func TryExpand() -> bool:
 	return false
@@ -51,8 +57,26 @@ func TryClose() -> bool:
 	queue_free()
 	return true
 
-var IsUnfolded: bool = false
+signal UnfoldedChanged()
+
+func IsUnfolded() -> bool:
+	return get_meta(&"IsUnfolded", false)
 
 func TryUnfold() -> bool:
-	IsUnfolded = true
-	return IsUnfolded
+	
+	if IsUnfolded():
+		return false
+	
+	visible = true
+	set_meta(&"IsUnfolded", true)
+	UnfoldedChanged.emit()
+	
+	grab_focus.call_deferred()
+	
+	return IsUnfolded()
+
+func CreateTaskbarTab() -> TaskbarUI_Tab:
+	
+	TaskbarTab = GameGlobals.TaskbarTabScene.instantiate() as TaskbarUI_Tab
+	TaskbarTab.OwnerWindowUI = self
+	return TaskbarTab

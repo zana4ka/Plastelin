@@ -30,16 +30,16 @@ window/size/viewport_width=1366
 window/size/viewport_height=768
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-mouse_cursor/custom_image="uid://c2fk14h7wi8jr"
-mouse_cursor/custom_image_hotspot=Vector2(4, 4)
+mouse_cursor/custom_image="uid://yu70wgextxn6"
+mouse_cursor/custom_image_hotspot=Vector2(2, 2)
 
 [gui]
 
-theme/custom="uid://cnjtetudthuan"
+theme/custom="uid://dqxisbq1p4utd"
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Locales/Ludum57_Plastelin.en.translation", "res://Locales/Ludum57_Plastelin.ru.translation")
+locale/translations=PackedStringArray("res://UI/Common/Fonts/Ludum57_Plastelin.en.translation", "res://UI/Common/Fonts/Ludum57_Plastelin.ru.translation")
 
 [rendering]
 

@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bt0poquh0krrk"]
+
+[ext_resource type="Texture2D" uid="uid://b6lweep48en7g" path="res://UI/Taskbar/Content/StartMenu001a.png" id="1_6luya"]
+
+[resource]
+texture = ExtResource("1_6luya")
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 8.0

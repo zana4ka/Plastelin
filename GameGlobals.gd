@@ -8,6 +8,8 @@ extends Node
 @export var ItemScene: PackedScene = preload("res://UI/Items/ItemsUI_Item.tscn")
 @export var EmptyGridCellScene: PackedScene = preload("res://UI/Items/ItemsUI_EmptyGridCell.tscn")
 
+@export var TaskbarTabScene: PackedScene = preload("res://UI/Taskbar/TaskbarUI_Tab.tscn")
+
 var _MainScene: MainScene
 
 var IsDraggingWindow: bool = false
