@@ -17,8 +17,6 @@ func _ready() -> void:
 func TryOpenWindowForItem(InItem: ItemsUI_Item) -> WindowUI:
 	
 	if WindowsDictionary.has(InItem):
-		if WindowsDictionary[InItem].IsUnfolded():
-			return WindowsDictionary[InItem]
 		if WindowsDictionary[InItem].TryUnfold():
 			return WindowsDictionary[InItem]
 		else:

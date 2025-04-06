@@ -7,7 +7,7 @@ class_name TaskbarUI
 @onready var StartButton: Button = $MC/HB/Start
 @onready var StartMenu: TaskbarUI_StartMenu = $MC/HB/Start/Menu
 
-@onready var TabsVB: HBoxContainer = $MC/HB/TabsVB
+@onready var TabsHB: HBoxContainer = $MC/HB/TabsSC/HB
 
 @onready var LanguageButton: Button = $MC/HB/ToolsPanel/VB/Language
 @onready var AudioButton: TextureButton = $MC/HB/ToolsPanel/VB/Audio
@@ -39,7 +39,7 @@ func OnStartMenuVisibilityChanged():
 ## Tabs
 func AddTabFor(InWindow: WindowUI):
 	var NewTab := InWindow.CreateTaskbarTab()
-	TabsVB.add_child(NewTab)
+	TabsHB.add_child(NewTab)
 
 ## Tools
 func OnLanguageToggled(InToggledOn: bool):
@@ -59,4 +59,5 @@ func OnAudioToggled(InToggledOn: bool):
 		AudioServer.set_bus_mute(0, false)
 
 func OnTimeButtonTimerTimeout():
-	TimeLabel.text = "{hour}:{minute}".format(Time.get_time_dict_from_system())
+	var TimeData := Time.get_time_dict_from_system()
+	TimeLabel.text = "%02d:%02d" % [ TimeData.hour, TimeData.minute ]

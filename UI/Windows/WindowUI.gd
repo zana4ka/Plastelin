@@ -13,7 +13,7 @@ var TaskbarTab: TaskbarUI_Tab
 
 func _ready() -> void:
 	
-	clip_contents = true
+	#clip_contents = true
 	
 	focus_mode = Control.FOCUS_ALL
 	focus_entered.connect(OnFocusEntered)
@@ -65,6 +65,7 @@ func IsUnfolded() -> bool:
 func TryUnfold() -> bool:
 	
 	if IsUnfolded():
+		grab_focus.call_deferred()
 		return false
 	
 	visible = true

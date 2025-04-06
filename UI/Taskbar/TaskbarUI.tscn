@@ -1,16 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq1pastnn4u4f"]
+[gd_scene load_steps=9 format=3 uid="uid://bq1pastnn4u4f"]
 
-[ext_resource type="StyleBox" uid="uid://cy78re8myk4o" path="res://UI/Common/Panels/Panel001c.tres" id="1_gj4u7"]
+[ext_resource type="StyleBox" uid="uid://cy78re8myk4o" path="res://UI/Common/Panels/Panel002c.tres" id="1_gj4u7"]
 [ext_resource type="Script" uid="uid://c57mnlsnm3epv" path="res://UI/Taskbar/TaskbarUI.gd" id="1_hrq5f"]
-[ext_resource type="Texture2D" uid="uid://dcdp2ij368uef" path="res://UI/Taskbar/Content/Start.png" id="2_6mt40"]
+[ext_resource type="Texture2D" uid="uid://dcdp2ij368uef" path="res://UI/Taskbar/Content/Start001a.png" id="2_6mt40"]
 [ext_resource type="PackedScene" uid="uid://dx5eh1gd6bq6g" path="res://UI/Taskbar/TaskbarUI_StartMenu.tscn" id="3_6i67l"]
 [ext_resource type="StyleBox" uid="uid://clorb7lwx2bxv" path="res://UI/Common/Panels/Panel002a.tres" id="3_6mt40"]
 [ext_resource type="Shortcut" uid="uid://dqvqte18efm5a" path="res://UI/Taskbar/Content/StartShortcut.tres" id="3_60coj"]
-[ext_resource type="Texture2D" uid="uid://wr2nd8nvdrdg" path="res://UI/Taskbar/Content/AudioOn.tres" id="4_6i67l"]
-[ext_resource type="Texture2D" uid="uid://dms0btmja2b8g" path="res://UI/Taskbar/Content/AudioOff.tres" id="5_gj4u7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvt87"]
-bg_color = Color(0, 0, 0.494118, 1)
+[ext_resource type="Texture2D" uid="uid://wr2nd8nvdrdg" path="res://UI/Taskbar/Content/AudioOn001a.tres" id="4_6i67l"]
+[ext_resource type="Texture2D" uid="uid://dms0btmja2b8g" path="res://UI/Taskbar/Content/AudioOff001a.tres" id="5_gj4u7"]
 
 [node name="TaskbarUI" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 64)
@@ -41,8 +38,10 @@ custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 toggle_mode = true
 shortcut = ExtResource("3_60coj")
+shortcut_in_tooltip = false
 text = "START"
 icon = ExtResource("2_6mt40")
+alignment = 0
 expand_icon = true
 
 [node name="Menu" parent="MC/HB/Start" instance=ExtResource("3_6i67l")]
@@ -53,10 +52,17 @@ anchor_top = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 2
 
-[node name="TabsVB" type="HBoxContainer" parent="MC/HB"]
+[node name="TabsSC" type="ScrollContainer" parent="MC/HB"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 16
+mouse_filter = 2
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="HB" type="HBoxContainer" parent="MC/HB/TabsSC"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="ToolsPanel" type="PanelContainer" parent="MC/HB"]
 layout_mode = 2
@@ -67,14 +73,11 @@ layout_mode = 2
 
 [node name="Language" type="Button" parent="MC/HB/ToolsPanel/VB"]
 layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_styles/focus = SubResource("StyleBoxFlat_jvt87")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jvt87")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jvt87")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jvt87")
-theme_override_styles/normal = SubResource("StyleBoxFlat_jvt87")
 toggle_mode = true
 text = " En "
 
@@ -90,10 +93,12 @@ stretch_mode = 5
 [node name="Time" type="Label" parent="MC/HB/ToolsPanel/VB"]
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 32
 text = "22:06"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="MC/HB/ToolsPanel/VB/Time"]
+process_mode = 3
 autostart = true
+ignore_time_scale = true

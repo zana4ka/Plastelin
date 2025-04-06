@@ -21,15 +21,24 @@ texture_normal = ExtResource("3_sbneb")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="."]
-custom_minimum_size = Vector2(180, 0)
+[node name="Control" type="Control" parent="."]
 layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_right = 90.0
+offset_bottom = 57.0
+grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_constants/shadow_outline_size = 32
+theme_override_constants/shadow_outline_size = 48
 text = "MY_COMPUTER"
 horizontal_alignment = 1
 autowrap_mode = 3
-clip_text = true
-text_overrun_behavior = 3

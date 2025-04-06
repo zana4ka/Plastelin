@@ -10,7 +10,7 @@ class_name ItemsUI_Item
 @onready var ParentContainer: ItemsUIBase = get_parent() as ItemsUIBase
 
 @onready var _Button: TextureButton = $Button
-@onready var _Label: Label = $Label
+@onready var _Label: Label = $Control/Label
 
 var IsLocked: bool = false
 

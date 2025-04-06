@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0dax1hejqs0y"]
+[gd_scene load_steps=7 format=3 uid="uid://b0dax1hejqs0y"]
 
 [ext_resource type="Script" uid="uid://c3ra7tae7qbru" path="res://UI/Windows/ExplorerUI.gd" id="1_onk7n"]
 [ext_resource type="PackedScene" uid="uid://cw66orq8ug75g" path="res://UI/Windows/WindowUI_Header.tscn" id="2_jr4oo"]
+[ext_resource type="StyleBox" uid="uid://clorb7lwx2bxv" path="res://UI/Common/Panels/Panel002a.tres" id="3_0jqlm"]
 [ext_resource type="PackedScene" uid="uid://dirr3cyfcr80n" path="res://UI/Items/ItemsUI_Grid.tscn" id="3_svpkb"]
+[ext_resource type="StyleBox" uid="uid://ct6rlb2nwg6od" path="res://UI/Common/Panels/Panel002b.tres" id="4_wvipb"]
+[ext_resource type="Texture2D" uid="uid://b572vcoxr00am" path="res://UI/Windows/Content/Expand002a.png" id="5_wre5g"]
 
 [node name="ExplorerUI" type="PanelContainer"]
 offset_right = 640.0
@@ -17,13 +20,55 @@ mouse_filter = 2
 layout_mode = 2
 OwnerWindowUI = NodePath("../..")
 
-[node name="Control" type="ScrollContainer" parent="VB"]
+[node name="AddressHB" type="HBoxContainer" parent="VB"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AddressPanel" type="PanelContainer" parent="VB/AddressHB"]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_0jqlm")
+
+[node name="Label" type="Label" parent="VB/AddressHB/AddressPanel"]
+layout_mode = 2
+text = "Address"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PathPanel" type="PanelContainer" parent="VB/AddressHB"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("4_wvipb")
+
+[node name="Path" type="Label" parent="VB/AddressHB/PathPanel"]
+layout_mode = 2
+text = "D:\\ScientificWays\\Projects\\Plastelin"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextureButton" type="TextureButton" parent="VB/AddressHB"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("5_wre5g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Spacer" type="Control" parent="VB"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="SC" type="ScrollContainer" parent="VB"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+scroll_deadzone = 8
 
-[node name="ItemsUI" parent="VB/Control" instance=ExtResource("3_svpkb")]
+[node name="ItemsUI" parent="VB/SC" instance=ExtResource("3_svpkb")]
 layout_mode = 2
-columns = 7
-MinGridSize = Vector2i(6, 2)
+columns = 5
+MinGridSize = Vector2i(4, 2)

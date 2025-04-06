@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw66orq8ug75g"]
+[gd_scene load_steps=10 format=3 uid="uid://cw66orq8ug75g"]
 
 [ext_resource type="Texture2D" uid="uid://cx2oqtnys177k" path="res://UI/Items/Content/Folder001a.png" id="1_682r6"]
 [ext_resource type="Script" uid="uid://dfp1woh7yiqx4" path="res://UI/Windows/WindowUI_Header.gd" id="1_q44cs"]
-[ext_resource type="StyleBox" uid="uid://b6o8vavu8ydr4" path="res://UI/Common/Panels/Panel003a.tres" id="2_5rrod"]
-[ext_resource type="Texture2D" uid="uid://dhesgk2yqqmyp" path="res://UI/Common/Buttons/Collapse001a.png" id="4_q44cs"]
-[ext_resource type="Texture2D" uid="uid://dlpovpuye3dtt" path="res://UI/Common/Buttons/Expand001a.png" id="5_5rrod"]
-[ext_resource type="Texture2D" uid="uid://ca07df2c1py6j" path="res://UI/Common/Buttons/Close001a.png" id="6_crdwa"]
+[ext_resource type="StyleBox" uid="uid://b6o8vavu8ydr4" path="res://UI/Common/Panels/Panel004a.tres" id="2_5rrod"]
+[ext_resource type="Texture2D" uid="uid://dhesgk2yqqmyp" path="res://UI/Windows/Content/Collapse001a.png" id="4_q44cs"]
+[ext_resource type="Texture2D" uid="uid://dlpovpuye3dtt" path="res://UI/Windows/Content/Expand001a.png" id="5_5rrod"]
+[ext_resource type="Texture2D" uid="uid://6yltjlvukyju" path="res://UI/Windows/Content/Collapse001b.png" id="5_h3k5v"]
+[ext_resource type="Texture2D" uid="uid://ca07df2c1py6j" path="res://UI/Windows/Content/Close001a.png" id="6_crdwa"]
+[ext_resource type="Texture2D" uid="uid://i3enx8u7xp8d" path="res://UI/Windows/Content/Expand001b.png" id="7_iue83"]
+[ext_resource type="Texture2D" uid="uid://boy1rxa64hbuq" path="res://UI/Windows/Content/Close001b.png" id="9_0k4yj"]
 
 [node name="WindowUI_Header" type="VBoxContainer"]
 offset_right = 288.0
@@ -55,6 +58,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("4_q44cs")
+texture_pressed = ExtResource("5_h3k5v")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -64,6 +68,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("5_5rrod")
+texture_pressed = ExtResource("7_iue83")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -73,8 +78,30 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("6_crdwa")
+texture_pressed = ExtResource("9_0k4yj")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ToolBarVB" type="HBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="File" type="Button" parent="ToolBarVB"]
+layout_mode = 2
+text = "File"
+flat = true
+
+[node name="Edit" type="Button" parent="ToolBarVB"]
+layout_mode = 2
+text = "Edit"
+flat = true
+
+[node name="View" type="Button" parent="ToolBarVB"]
+layout_mode = 2
+text = "View"
+flat = true
+
+[node name="Help" type="Button" parent="ToolBarVB"]
+layout_mode = 2
+text = "Help"
+flat = true
