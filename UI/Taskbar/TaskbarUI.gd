@@ -45,10 +45,10 @@ func AddTabFor(InWindow: WindowUI):
 func OnLanguageToggled(InToggledOn: bool):
 	
 	if InToggledOn:
-		LanguageButton.text = " Ру "
+		LanguageButton.text = "Ру"
 		TranslationServer.set_locale("ru")
 	else:
-		LanguageButton.text = " En "
+		LanguageButton.text = "En"
 		TranslationServer.set_locale("en")
 
 func OnAudioToggled(InToggledOn: bool):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgo31giwy0x4o"]
 
 [ext_resource type="Script" uid="uid://cmvuyfi1q5mgc" path="res://UI/Taskbar/TaskbarUI_Tab.gd" id="1_mw3bo"]
-[ext_resource type="Texture2D" uid="uid://cx2oqtnys177k" path="res://UI/Items/Content/Folder001a.png" id="2_1weeq"]
+[ext_resource type="Texture2D" uid="uid://cx2oqtnys177k" path="res://UI/Items/Content/Folders/Folder001a.png" id="2_1weeq"]
 
 [node name="TaskbarUI_Tab" type="MarginContainer"]
 offset_right = 40.0

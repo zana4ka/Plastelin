@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvjrsqwt1t5bb"]
+
+[ext_resource type="Script" uid="uid://vwtpd8on5yp7" path="res://Scenes/LampGame/LampGameLevel.gd" id="1_bk8g6"]
+[ext_resource type="Texture2D" uid="uid://clygc6c7kwrf3" path="res://UI/Common/Panels/Panel002a.png" id="2_irij1"]
+[ext_resource type="Texture2D" uid="uid://cimos7rat0q2g" path="res://Scenes/LampGame/Content/Document001a.png" id="2_kf6ie"]
+[ext_resource type="Texture2D" uid="uid://cd1iafqesmlfq" path="res://Scenes/LampGame/Content/Light001a.png" id="2_rmr2u"]
+[ext_resource type="PackedScene" uid="uid://cgrceqp5fcc6d" path="res://Scenes/LampGame/LampGameLevel_Document.tscn" id="4_xcqy1"]
+
+[node name="LampGameLevel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bk8g6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 400.0
+offset_top = 300.0
+offset_right = 400.0
+offset_bottom = 300.0
+
+[node name="Background" type="Sprite2D" parent="Control"]
+texture = ExtResource("2_irij1")
+
+[node name="Lamp" type="AnimatedSprite2D" parent="Control"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Control/Lamp"]
+color = Color(1, 0, 1, 1)
+texture = ExtResource("2_rmr2u")
+
+[node name="Document1" parent="." instance=ExtResource("4_xcqy1")]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 31.0
+offset_top = 347.0
+offset_right = 287.0
+offset_bottom = 603.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("2_kf6ie")
+
+[node name="Document2" parent="." instance=ExtResource("4_xcqy1")]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 493.0
+offset_top = 47.0
+offset_right = 749.0
+offset_bottom = 303.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Document3" parent="." instance=ExtResource("4_xcqy1")]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 494.0
+offset_top = 347.0
+offset_right = 750.0
+offset_bottom = 603.0
+grow_horizontal = 1
+grow_vertical = 1

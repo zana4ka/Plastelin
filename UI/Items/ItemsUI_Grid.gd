@@ -3,6 +3,7 @@ extends ItemsUIBase
 class_name ItemsUI_Grid
 
 @export var MinGridSize: Vector2i = Vector2i(12, 4)
+@export var OwnerWindowUI: WindowUI
 
 @onready var SelfGrid: GridContainer = self as Control as GridContainer
 
@@ -50,6 +51,9 @@ func ReBuild():
 				var NewEmptyGridCell := GameGlobals.EmptyGridCellScene.instantiate() as ItemsUI_GridCell
 				NewEmptyGridCell.GridPosition = SamplePosition
 				
+				if OwnerWindowUI:
+					NewEmptyGridCell.focus_entered.connect(OwnerWindowUI.OnFocusEntered)
+				
 				add_child(NewEmptyGridCell)
 				move_child(NewEmptyGridCell, ChildIndex)
 				EmptyGridCellDictionary[SamplePosition] = NewEmptyGridCell
@@ -84,6 +88,9 @@ func RegisterItem(InItem: ItemsUI_Item):
 	if EmptyGridCellDictionary.has(TargetPosition):
 		EmptyGridCellDictionary[TargetPosition].queue_free()
 		EmptyGridCellDictionary.erase(TargetPosition)
+	
+	if OwnerWindowUI:
+		InItem._Button.focus_entered.connect(OwnerWindowUI.OnFocusEntered)
 	
 	ItemDictionary[TargetPosition] = InItem
 	ReBuild()

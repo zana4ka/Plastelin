@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://et8ew73vo8qp"]
 
-[ext_resource type="Script" uid="uid://fl48c8y4nfii" path="res://Scenes/MiniGames/ShovelGameLevel.gd" id="1_copjl"]
+[ext_resource type="Script" uid="uid://fl48c8y4nfii" path="res://Scenes/ShovelGame/ShovelGameLevel.gd" id="1_copjl"]
 [ext_resource type="Texture2D" uid="uid://ctlywdmaaui0w" path="res://UI/Items/Content/Recycle001a.png" id="3_7w2vf"]
 [ext_resource type="Script" uid="uid://cbfs1fdmok57v" path="res://Scenes/Shake.gd" id="3_daxit"]
 
@@ -23,19 +23,18 @@ animations = [{
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.498285), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="ShovelGameLevel" type="SubViewport"]
-disable_3d = true
-snap_2d_transforms_to_pixel = true
-snap_2d_vertices_to_pixel = true
+[node name="ShovelGameLevel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_copjl")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 256.0
-offset_top = 256.0
-offset_right = 256.0
-offset_bottom = 256.0
+offset_left = 400.0
+offset_top = 300.0
+offset_right = 400.0
+offset_bottom = 300.0
 
 [node name="Shake" type="Control" parent="Control"]
 layout_mode = 1

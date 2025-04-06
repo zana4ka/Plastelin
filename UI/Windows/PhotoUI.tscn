@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3qui74wa2pkt" path="res://UI/Windows/PhotoUI.gd" id="1_yp373"]
 [ext_resource type="PackedScene" uid="uid://cw66orq8ug75g" path="res://UI/Windows/WindowUI_Header.tscn" id="2_tbags"]
-[ext_resource type="Texture2D" uid="uid://bqbwo2eea4ty3" path="res://UI/Items/Content/SecretPhoto1_Texture.png" id="3_4sf15"]
+[ext_resource type="Texture2D" uid="uid://4h1pkeju57yt" path="res://UI/Items/Content/Photos/Corpse001a.jpg" id="3_yp373"]
 
 [node name="PhotoUI" type="PanelContainer"]
 anchors_preset = 8
@@ -12,8 +12,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -320.0
 offset_top = -240.0
-offset_right = 320.0
-offset_bottom = 240.0
+offset_right = 80.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yp373")
@@ -38,6 +38,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_4sf15")
+texture = ExtResource("3_yp373")
 expand_mode = 1
 stretch_mode = 5

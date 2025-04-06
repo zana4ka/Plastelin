@@ -1,2 +1,2 @@
-extends SubViewport
+extends Control
 class_name MiniGameLevel

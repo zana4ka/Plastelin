@@ -14,5 +14,8 @@ func _can_drop_data(AtPosition: Vector2, InData: Variant) -> bool:
 	return InData is WindowUI
 
 func _drop_data(AtPosition: Vector2, InData: Variant):
+	
 	if InData is WindowUI:
-		InData.global_position = InData.get_meta(&"DragOffset") + AtPosition
+		
+		var DragPreview := InData.get_meta(&"DragPreview") as WindowUI_DragPreview
+		InData.global_position = DragPreview.Offset + AtPosition

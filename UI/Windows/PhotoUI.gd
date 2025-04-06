@@ -1,5 +1,5 @@
 extends WindowUI
-class_name ImageUI
+class_name PhotoUI
 
 @onready var _Photo: TextureRect = $VB/Control/Photo
 

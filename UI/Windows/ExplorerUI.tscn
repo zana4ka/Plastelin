@@ -1,15 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0dax1hejqs0y"]
+[gd_scene load_steps=8 format=3 uid="uid://b0dax1hejqs0y"]
 
 [ext_resource type="Script" uid="uid://c3ra7tae7qbru" path="res://UI/Windows/ExplorerUI.gd" id="1_onk7n"]
 [ext_resource type="PackedScene" uid="uid://cw66orq8ug75g" path="res://UI/Windows/WindowUI_Header.tscn" id="2_jr4oo"]
 [ext_resource type="StyleBox" uid="uid://clorb7lwx2bxv" path="res://UI/Common/Panels/Panel002a.tres" id="3_0jqlm"]
 [ext_resource type="PackedScene" uid="uid://dirr3cyfcr80n" path="res://UI/Items/ItemsUI_Grid.tscn" id="3_svpkb"]
+[ext_resource type="StyleBox" uid="uid://d2mtbmth1ijsx" path="res://UI/Common/Panels/Panel002a_Smaller.tres" id="4_wre5g"]
 [ext_resource type="StyleBox" uid="uid://ct6rlb2nwg6od" path="res://UI/Common/Panels/Panel002b.tres" id="4_wvipb"]
 [ext_resource type="Texture2D" uid="uid://b572vcoxr00am" path="res://UI/Windows/Content/Expand002a.png" id="5_wre5g"]
 
 [node name="ExplorerUI" type="PanelContainer"]
+custom_minimum_size = Vector2(700, 500)
 offset_right = 640.0
 offset_bottom = 480.0
+theme_override_styles/panel = ExtResource("3_0jqlm")
 script = ExtResource("1_onk7n")
 
 [node name="VB" type="VBoxContainer" parent="."]
@@ -27,7 +30,7 @@ theme_override_constants/separation = 0
 [node name="AddressPanel" type="PanelContainer" parent="VB/AddressHB"]
 custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("3_0jqlm")
+theme_override_styles/panel = ExtResource("4_wre5g")
 
 [node name="Label" type="Label" parent="VB/AddressHB/AddressPanel"]
 layout_mode = 2
@@ -59,7 +62,19 @@ stretch_mode = 0
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="SC" type="ScrollContainer" parent="VB"]
+[node name="ItemsMC" type="MarginContainer" parent="VB"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="PanelContainer" parent="VB/ItemsMC"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SC" type="ScrollContainer" parent="VB/ItemsMC/Panel"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
@@ -68,7 +83,7 @@ horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 scroll_deadzone = 8
 
-[node name="ItemsUI" parent="VB/SC" instance=ExtResource("3_svpkb")]
+[node name="ItemsUI" parent="VB/ItemsMC/Panel/SC" instance=ExtResource("3_svpkb")]
 layout_mode = 2
 columns = 5
 MinGridSize = Vector2i(4, 2)

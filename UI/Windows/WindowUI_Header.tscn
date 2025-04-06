@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cw66orq8ug75g"]
 
-[ext_resource type="Texture2D" uid="uid://cx2oqtnys177k" path="res://UI/Items/Content/Folder001a.png" id="1_682r6"]
+[ext_resource type="Texture2D" uid="uid://cx2oqtnys177k" path="res://UI/Items/Content/Folders/Folder001a.png" id="1_682r6"]
 [ext_resource type="Script" uid="uid://dfp1woh7yiqx4" path="res://UI/Windows/WindowUI_Header.gd" id="1_q44cs"]
 [ext_resource type="StyleBox" uid="uid://b6o8vavu8ydr4" path="res://UI/Common/Panels/Panel004a.tres" id="2_5rrod"]
 [ext_resource type="Texture2D" uid="uid://dhesgk2yqqmyp" path="res://UI/Windows/Content/Collapse001a.png" id="4_q44cs"]
@@ -46,7 +46,7 @@ expand_mode = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Folder name"
+text = "Item name"
 
 [node name="ButtonsVB" type="HBoxContainer" parent="TitleBarPanel/MC/VB"]
 layout_mode = 2

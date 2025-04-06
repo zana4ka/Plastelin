@@ -1,9 +1,7 @@
 extends CanvasLayer
 class_name DesktopCanvas
 
-@onready var _MyComputer: ItemsUI_Item = $ItemsUI/MyComputer
-@onready var _SecretFolder1: ItemsUI_Item = $ItemsUI/SecretFolder1
-@onready var _Recycle: ItemsUI_Item = $ItemsUI/Recycle
+@onready var _ItemsUI: ItemsUI_Grid = $ItemsUI
 
 @onready var _Windows: Control = $Windows
 @onready var _WindowsDropArea: WindowsDropArea = $Windows/DropArea
@@ -27,7 +25,6 @@ func TryOpenWindowForItem(InItem: ItemsUI_Item) -> WindowUI:
 	NewWindow.tree_entered.connect(OnWindowTreeEntered.bind(NewWindow))
 	NewWindow.tree_exiting.connect(OnWindowTreeExiting.bind(NewWindow))
 	_Windows.add_child(NewWindow)
-	NewWindow.global_position = InItem.get_global_mouse_position() + InItem.size * Vector2(0.2, -0.4)
 	return NewWindow
 
 ## Register + create the tab

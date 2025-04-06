@@ -20,9 +20,11 @@ func GetItemArray() -> Array[ItemsUI_Item]:
 ## Runtime item adding
 func AddNewItem(InData: ItemData) -> ItemsUI_Item:
 	
+	assert(InData)
+	
 	var OutItem := GameGlobals.ItemScene.instantiate() as ItemsUI_Item
 	OutItem._Data = InData
-	add_child(OutItem)
+	add_child.call_deferred(OutItem)
 	return OutItem
 
 func RemoveAllItems():

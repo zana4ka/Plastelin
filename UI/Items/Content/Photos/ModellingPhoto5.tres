@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PhotoData" load_steps=4 format=3 uid="uid://dwcbcgcx0712k"]
+
+[ext_resource type="Texture2D" uid="uid://ftoxhqvf7vxa" path="res://UI/Items/Content/Photos/Photo001a.png" id="1_w556f"]
+[ext_resource type="Texture2D" uid="uid://s1ymid0ibp3r" path="res://UI/Items/Content/Photos/Modelling005a.jpg" id="2_w556f"]
+[ext_resource type="Script" uid="uid://cnk0n55cboaep" path="res://UI/Items/PhotoData.gd" id="3_cadvd"]
+
+[resource]
+script = ExtResource("3_cadvd")
+PhotoTexture = ExtResource("2_w556f")
+IconTexture = ExtResource("1_w556f")
+Name = "MODELLING_PHOTO_5"
+IsInitiallyLocked = false
+metadata/_custom_type_script = "uid://cnk0n55cboaep"

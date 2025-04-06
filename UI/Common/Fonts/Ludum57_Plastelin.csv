@@ -6,5 +6,13 @@ SECRET_FOLDER_1,Shallow,Мелководье
 SECRET_FOLDER_2,Deeper...,Глубже...
 SECRET_FOLDER_3,Even deeper...,Ещё глубже...
 SECRET_FOLDER_4,Depths,Чертоги
-SECRET_DOC_1,NOT the payments,НЕ платежи
-MINI_GAME_1,revelations,откровения
+SECRET_DOCUMENT_1,NOT the payments.doc,НЕ платежи.doc
+SECRET_PHOTO_1,Nikita.png,Никита.png
+SECRET_GAME_1,revelations.exe,откровения.exe
+SECRET_GAME_2,N.GAME 2.exe,N.GAME 2.exe
+MODELLING_PHOTO_1,Lil boot.jpg,Сапожок.jpg
+MODELLING_PHOTO_2,Yellow thing.jpg,Жёлтая штука.jpg
+MODELLING_PHOTO_3,Winda47.jpg,Винда47.jpg
+MODELLING_PHOTO_4,Merdr wepon.jpg,Оруде убиства.jpg
+MODELLING_PHOTO_5,White thing.jpg,Белая штука.jpg
+MODELLING_PHOTO_6,Sus.jpg,Sus.jpg

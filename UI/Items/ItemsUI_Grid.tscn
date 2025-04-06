@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://1tlkpf00j01s" path="res://UI/Items/ItemsUI_Grid.gd" id="1_6cphr"]
 
 [node name="ItemsUI_Grid" type="GridContainer"]
-anchors_preset = -1
 offset_left = 8.0
 offset_top = 32.0
 columns = 13

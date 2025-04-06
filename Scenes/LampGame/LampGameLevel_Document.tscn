@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgrceqp5fcc6d"]
+
+[ext_resource type="Material" uid="uid://bcrsyr1hsriir" path="res://Scenes/LampGame/DocumentMaterial.tres" id="1_0ctb6"]
+[ext_resource type="Texture2D" uid="uid://4h1pkeju57yt" path="res://UI/Items/Content/Photos/Corpse001a.jpg" id="3_v2nsa"]
+[ext_resource type="Script" uid="uid://bihtmr85w70q1" path="res://Scenes/LampGame/LampGameLevel_Document.gd" id="4_ros37"]
+
+[node name="LampGameLevel_Document" type="TextureRect"]
+material = ExtResource("1_0ctb6")
+custom_minimum_size = Vector2(256, 256)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("3_v2nsa")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("4_ros37")

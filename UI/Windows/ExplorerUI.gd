@@ -1,7 +1,7 @@
 extends WindowUI
 class_name ExplorerUI
 
-@onready var _ItemsUI: ItemsUI_Grid = $VB/SC/ItemsUI
+@onready var _ItemsUI: ItemsUI_Grid = $VB/ItemsMC/Panel/SC/ItemsUI
 
 func _ready() -> void:
 	super()

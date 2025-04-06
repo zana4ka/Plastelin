@@ -5,7 +5,9 @@ class_name WindowUI
 
 var OwnerItem: ItemsUI_Item:
 	set(InItem):
+		
 		OwnerItem = InItem
+		
 		if is_node_ready():
 			UpdateFromOwnerItem()
 
@@ -20,6 +22,9 @@ func _ready() -> void:
 	
 	UpdateFromOwnerItem()
 	TryUnfold()
+	
+	global_position = get_global_mouse_position() + Vector2(24.0, -48.0)
+	global_position = GameGlobals.GetOnScreenClampedPosition_TopLeftAnchors(self) as Vector2
 
 func _get_drag_data(AtPosition: Vector2) -> Variant:
 	
@@ -28,9 +33,8 @@ func _get_drag_data(AtPosition: Vector2) -> Variant:
 	DragPreview.Offset = -AtPosition
 	set_drag_preview(DragPreview)
 	
-	set_meta(&"DragOffset", -AtPosition)
+	set_meta(&"DragPreview", DragPreview)
 	GameGlobals.IsDraggingWindow = true
-	
 	return self
 
 func OnFocusEntered():
