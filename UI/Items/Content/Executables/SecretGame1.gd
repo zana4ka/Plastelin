@@ -8,7 +8,7 @@ func HandlePreOpenWindow(InItem: ItemsUI_Item) -> bool:
 	if InItem.WasOpened:
 		return true
 	
-	var SecretGame1CutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/SecretGame1/CutSceneData.tres"))
+	var ShovelGameCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/ShovelGame/CutSceneData.tres"))
 	
-	await SecretGame1CutScene.Finished
+	await ShovelGameCutScene.Finished
 	return true

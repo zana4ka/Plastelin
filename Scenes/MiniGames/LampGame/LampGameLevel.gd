@@ -6,12 +6,12 @@ func _ready() -> void:
 	pass
 
 func _can_drop_data(AtPosition: Vector2, InData: Variant) -> bool:
-	return InData is LampGameLevel_Document
+	return InData is LampGameLevel_Photo
 
 func _drop_data(AtPosition: Vector2, InData: Variant) -> void:
 	
-	var _Document := InData as LampGameLevel_Document
-	_Document.position = AtPosition + _Document.get_meta(&"Offset")
+	var _Photo := InData as LampGameLevel_Photo
+	_Photo.position = AtPosition + _Photo.get_meta(&"Offset")
 	
-	_Document.move_to_front()
-	_Document.visible = true
+	_Photo.move_to_front()
+	_Photo.visible = true

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cu0cc4u6jy7rr"]
+
+[ext_resource type="Shader" uid="uid://ij03ysifepp0" path="res://Scenes/MiniGames/LampGame/PhotoShader.gdshader" id="1_nn543"]
+[ext_resource type="Texture2D" uid="uid://clkgsduuc78vh" path="res://Scenes/MiniGames/LampGame/Content/Photo002a_Mask.png" id="2_nn543"]
+
+[resource]
+shader = ExtResource("1_nn543")
+shader_parameter/Mask = ExtResource("2_nn543")
+shader_parameter/MaskColor = Color(0.4, 1, 0.4, 1)

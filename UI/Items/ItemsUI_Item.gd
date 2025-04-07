@@ -79,6 +79,8 @@ func OnButtonPressed():
 	var PrevPressedTimeTicksMs := LastPressedTimeTicksMs
 	LastPressedTimeTicksMs = Time.get_ticks_msec()
 	
+	GameGlobals._MouseClick.play()
+	
 	if PrevPressedTimeTicksMs + 500 < LastPressedTimeTicksMs:
 		return
 	

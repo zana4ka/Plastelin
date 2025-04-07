@@ -1,12 +1,14 @@
 extends CanvasLayer
 class_name DesktopCanvas
 
-@onready var _Background: TextureRect = $Background
-@onready var _ItemsUI: ItemsUI_Grid = $ItemsUI
+@onready var _MainControl: Control = $MainControl
 
-@onready var _Windows: Control = $Windows
-@onready var _WindowsDropArea: WindowsDropArea = $Windows/DropArea
-@onready var _TaskbarUI: TaskbarUI = $TaskbarUI
+@onready var _Background: TextureRect = $MainControl/Background
+@onready var _ItemsUI: ItemsUI_Grid = $MainControl/ItemsUI
+
+@onready var _Windows: Control = $MainControl/Windows
+@onready var _WindowsDropArea: WindowsDropArea = $MainControl/Windows/DropArea
+@onready var _TaskbarUI: TaskbarUI = $MainControl/TaskbarUI
 
 var WindowsDictionary: Dictionary[ItemsUI_Item, WindowUI] = {}
 
@@ -36,7 +38,7 @@ func TryOpenWindowForItem(InItem: ItemsUI_Item, OnScreenCenter: bool) -> WindowU
 	else:
 		NewWindow.position = _Windows.get_global_mouse_position() + Vector2(24.0, -48.0)
 	NewWindow.position = GameGlobals.GetOnScreenClampedPosition_TopLeftAnchors(NewWindow)
-	InItem._Data.HandlePostOpenWindow(InItem)
+	await InItem._Data.HandlePostOpenWindow(InItem)
 	return NewWindow
 
 ## Register + create the tab

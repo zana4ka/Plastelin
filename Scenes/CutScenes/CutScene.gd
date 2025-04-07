@@ -23,12 +23,13 @@ func _ready() -> void:
 
 func InitFromData():
 	
+	assert(_Fade.visible)
 	_Fade.color = _Data.FadeColor
 	
 	assert(not _Data.FrameTextureArray.is_empty())
 	
 	_CurrentFrame.visible = false
-	TryShowFrame(0, _Data.SkipFirstFrameFade)
+	TryShowFrame(0)
 
 var NextFrameMinTimeTicksMs: int = 0
 var CurrentFrame: int = 0
@@ -36,7 +37,7 @@ var CurrentFrame: int = 0
 func OnCurrentFramePressed():
 	TryShowFrame(CurrentFrame + 1)
 
-func TryShowFrame(InFrame: int, InSkipAnimation: bool = false) -> bool:
+func TryShowFrame(InFrame: int) -> bool:
 	
 	if Time.get_ticks_msec() < NextFrameMinTimeTicksMs:
 		return false
@@ -44,8 +45,7 @@ func TryShowFrame(InFrame: int, InSkipAnimation: bool = false) -> bool:
 	CurrentFrame = InFrame
 	NextFrameMinTimeTicksMs = Time.get_ticks_msec()
 	
-	_Data.HandlePendingFrame(self, InSkipAnimation)
-	
+	_Data.HandleShowFrame(self)
 	return true
 
 func ShowFrame_UpdateFrame():

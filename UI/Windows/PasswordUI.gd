@@ -27,3 +27,4 @@ func OnConfirmPressed():
 	else:
 		_LineEdit.text = ""
 		_AnimationPlayer.play(&"Decline")
+		GameGlobals._Error.play()

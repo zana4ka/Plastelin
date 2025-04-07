@@ -26,7 +26,9 @@ formats/zstd/compression_level=22
 [debug]
 
 gdscript/warnings/unused_variable=0
+gdscript/warnings/unused_private_class_variable=0
 gdscript/warnings/unused_parameter=0
+gdscript/warnings/redundant_await=0
 gdscript/warnings/integer_division=0
 
 [display]
@@ -41,6 +43,28 @@ mouse_cursor/custom_image_hotspot=Vector2(2, 2)
 [gui]
 
 theme/custom="uid://dqxisbq1p4utd"
+
+[importer_defaults]
+
+texture={
+"compress/channel_pack": 0,
+"compress/hdr_compression": 1,
+"compress/high_quality": false,
+"compress/lossy_quality": 0.7,
+"compress/mode": 1,
+"compress/normal_map": 0,
+"detect_3d/compress_to": 1,
+"mipmaps/generate": false,
+"mipmaps/limit": -1,
+"process/fix_alpha_border": true,
+"process/hdr_as_srgb": false,
+"process/hdr_clamp_exposure": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"process/size_limit": 0,
+"roughness/mode": 0,
+"roughness/src_normal": ""
+}
 
 [internationalization]
 

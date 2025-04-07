@@ -11,6 +11,7 @@ class_name TaskbarUI
 
 @onready var LanguageButton: Button = $MC/HB/ToolsPanel/VB/Language
 @onready var AudioButton: TextureButton = $MC/HB/ToolsPanel/VB/Audio
+@onready var AudioMixer: TaskbarUI_AudioMixer = $MC/HB/ToolsPanel/VB/Audio/Mixer
 @onready var TimeLabel: Label = $MC/HB/ToolsPanel/VB/Time
 @onready var TimeButtonTimer: Timer = $MC/HB/ToolsPanel/VB/Time/Timer
 
@@ -24,7 +25,11 @@ func _ready() -> void:
 		StartMenu.visible = false
 		
 		LanguageButton.toggled.connect(OnLanguageToggled)
-		AudioButton.toggled.connect(OnAudioToggled)
+		AudioButton.toggled.connect(OnAudioButtonToggled)
+		
+		AudioMixer.visibility_changed.connect(OnAudioMixerVisibilityChanged)
+		AudioMixer.visible = false
+		AudioMixer._Slider.value_changed.connect(OnSliderValueChanged)
 		
 		TimeButtonTimer.timeout.connect(OnTimeButtonTimerTimeout)
 		OnTimeButtonTimerTimeout()
@@ -51,12 +56,18 @@ func OnLanguageToggled(InToggledOn: bool):
 		LanguageButton.text = "En"
 		TranslationServer.set_locale("en")
 
-func OnAudioToggled(InToggledOn: bool):
+func OnAudioButtonToggled(InToggledOn: bool):
+	AudioMixer.visible = InToggledOn
+
+func OnAudioMixerVisibilityChanged():
+	AudioButton.button_pressed = AudioMixer.visible
+
+func OnSliderValueChanged(InValue: float):
 	
-	if InToggledOn:
-		AudioServer.set_bus_mute(0, true)
+	if InValue == 0.0:
+		AudioButton.texture_normal = load("res://UI/Taskbar/Content/AudioOff001a.png")
 	else:
-		AudioServer.set_bus_mute(0, false)
+		AudioButton.texture_normal = load("res://UI/Taskbar/Content/AudioOn001a.png")
 
 func OnTimeButtonTimerTimeout():
 	var TimeData := Time.get_time_dict_from_system()

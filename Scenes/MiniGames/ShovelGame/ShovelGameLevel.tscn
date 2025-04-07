@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://et8ew73vo8qp"]
+[gd_scene load_steps=16 format=3 uid="uid://et8ew73vo8qp"]
 
 [ext_resource type="Script" uid="uid://fl48c8y4nfii" path="res://Scenes/MiniGames/ShovelGame/ShovelGameLevel.gd" id="1_copjl"]
 [ext_resource type="SpriteFrames" uid="uid://dm5a4lj1qnurq" path="res://Scenes/MiniGames/ShovelGame/Content/Coffin001_Frames.tres" id="3_bfjjv"]
 [ext_resource type="Script" uid="uid://cbfs1fdmok57v" path="res://Scenes/Shake.gd" id="3_daxit"]
+[ext_resource type="Texture2D" uid="uid://dp4xktlwd6jny" path="res://Scenes/MiniGames/ShovelGame/Content/Hint001a.png" id="4_o7uik"]
+[ext_resource type="SpriteFrames" uid="uid://ck5rafuvehqfh" path="res://Scenes/MiniGames/ShovelGame/Content/Shovel001_Frames.tres" id="5_rmm2w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfjjv"]
 
@@ -83,6 +85,13 @@ script = ExtResource("3_daxit")
 
 [node name="Coffin" type="AnimatedSprite2D" parent="Control"]
 sprite_frames = ExtResource("3_bfjjv")
+frame = 4
+
+[node name="Hint" type="Sprite2D" parent="Control/Coffin"]
+position = Vector2(-148, -5.99998)
+rotation = 0.233874
+scale = Vector2(0.3725, 0.3725)
+texture = ExtResource("4_o7uik")
 
 [node name="Interact" type="Button" parent="Control/Coffin"]
 custom_minimum_size = Vector2(400, 400)
@@ -107,6 +116,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_mxlmb")
 flat = true
 
 [node name="Shovel" type="AnimatedSprite2D" parent="Control"]
+sprite_frames = ExtResource("5_rmm2w")
+
+[node name="ResetTimer" type="Timer" parent="Control/Shovel"]
+one_shot = true
 
 [node name="DigParticles" type="CPUParticles2D" parent="Control"]
 position = Vector2(0, -300)

@@ -10,7 +10,17 @@
 follow_viewport_enabled = true
 script = ExtResource("1_6gcnv")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="MainControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Background" type="TextureRect" parent="MainControl"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,18 +31,20 @@ mouse_filter = 0
 texture = ExtResource("2_318kx")
 expand_mode = 2
 
-[node name="ItemsUI" parent="." instance=ExtResource("3_g4fav")]
+[node name="ItemsUI" parent="MainControl" instance=ExtResource("3_g4fav")]
+offset_right = 2492.0
+offset_bottom = 932.0
 mouse_filter = 2
 
-[node name="Windows" type="Control" parent="."]
-layout_mode = 3
+[node name="Windows" type="Control" parent="MainControl"]
+layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="DropArea" type="Control" parent="Windows"]
+[node name="DropArea" type="Control" parent="MainControl/Windows"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,4 +54,5 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("7_olvdc")
 
-[node name="TaskbarUI" parent="." instance=ExtResource("2_4twul")]
+[node name="TaskbarUI" parent="MainControl" instance=ExtResource("2_4twul")]
+layout_mode = 1

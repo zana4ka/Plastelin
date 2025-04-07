@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="FolderData" load_steps=4 format=3 uid="uid://yg10shlscodd"]
+[gd_resource type="Resource" script_class="FolderData" load_steps=6 format=3 uid="uid://yg10shlscodd"]
 
 [ext_resource type="Texture2D" uid="uid://bpn26pmgjaemf" path="res://UI/Items/Content/Folders/MyComputer001a.png" id="1_tyllh"]
 [ext_resource type="Script" uid="uid://dm7a2qbe1p8sy" path="res://UI/Items/ItemData.gd" id="2_0c81t"]
 [ext_resource type="Script" uid="uid://0u1v5jvcen3b" path="res://UI/Items/FolderData.gd" id="3_36qbg"]
+[ext_resource type="LabelSettings" uid="uid://cet37rksbs5wj" path="res://UI/Items/Content/DefaultLS_Focused.tres" id="3_qkjqp"]
+[ext_resource type="LabelSettings" uid="uid://bqjah153tcqnj" path="res://UI/Items/Content/DefaultLS.tres" id="4_24xm7"]
 
 [resource]
 script = ExtResource("3_36qbg")
@@ -11,6 +13,9 @@ InnerItemDataArray = Array[ExtResource("2_0c81t")]([])
 IconTexture = ExtResource("1_tyllh")
 Name = "MY_COMPUTER"
 ForceOpenOnScreenCenter = false
+_LS = ExtResource("4_24xm7")
+_FocusedLS = ExtResource("3_qkjqp")
 IsInitiallyLocked = false
+OpenItemAfterUnlock = true
 UnlockPassword = ""
 metadata/_custom_type_script = "uid://0u1v5jvcen3b"

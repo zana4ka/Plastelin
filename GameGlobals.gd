@@ -1,5 +1,6 @@
 extends Node
 
+## Scenes
 @export var PasswordUIScene: PackedScene = preload("res://UI/Windows/PasswordUI.tscn")
 @export var ExplorerUIScene: PackedScene = preload("res://UI/Windows/ExplorerUI.tscn")
 @export var DocumentUIScene: PackedScene = preload("res://UI/Windows/DocumentUI.tscn")
@@ -14,6 +15,15 @@ extends Node
 @export var TaskbarTabScene: PackedScene = preload("res://UI/Taskbar/TaskbarUI_Tab.tscn")
 
 @export var CutSceneScene: PackedScene = preload("res://Scenes/CutScenes/CutScene.tscn")
+
+## Audio
+@onready var _GlobalLoop1: AudioStreamPlayer = $GlobalLoop1
+@onready var _GlobalLoop2: AudioStreamPlayer = $GlobalLoop2
+@onready var _MouseClick: AudioStreamPlayer = $MouseClick
+@onready var _StartUp: AudioStreamPlayer = $StartUp
+@onready var _CloseWindow: AudioStreamPlayer = $CloseWindow
+@onready var _CollapseWindow: AudioStreamPlayer = $CollapseWindow
+@onready var _Error: AudioStreamPlayer = $Error
 
 var _MainScene: MainScene
 

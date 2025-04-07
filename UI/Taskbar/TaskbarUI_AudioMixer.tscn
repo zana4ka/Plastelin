@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjybpfoyelfu3"]
+
+[ext_resource type="Script" uid="uid://cphfv3kt8o7sg" path="res://UI/Taskbar/TaskbarUI_AudioMixer.gd" id="1_s6lta"]
+[ext_resource type="StyleBox" uid="uid://cu5e1c2cu5kxq" path="res://UI/Taskbar/Content/AudioMixer001a.tres" id="2_vnn2b"]
+
+[node name="TaskbarUI_AudioMixer" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 2
+script = ExtResource("1_s6lta")
+
+[node name="Panel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(128, 200)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -101.12
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("2_vnn2b")
+
+[node name="Slider" type="VSlider" parent="Panel"]
+custom_minimum_size = Vector2(80, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
