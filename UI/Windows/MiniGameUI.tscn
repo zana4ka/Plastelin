@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://tj5ohhjgsg4p" path="res://UI/Windows/MiniGameUI.gd" id="1_h514d"]
 [ext_resource type="PackedScene" uid="uid://cw66orq8ug75g" path="res://UI/Windows/WindowUI_Header.tscn" id="2_u7t4d"]
-[ext_resource type="PackedScene" uid="uid://et8ew73vo8qp" path="res://Scenes/ShovelGame/ShovelGameLevel.tscn" id="3_dkl62"]
+[ext_resource type="PackedScene" uid="uid://et8ew73vo8qp" path="res://Scenes/MiniGames/ShovelGame/ShovelGameLevel.tscn" id="3_dkl62"]
 
 [node name="MiniGameUI" type="PanelContainer"]
 anchors_preset = 8

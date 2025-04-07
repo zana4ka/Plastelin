@@ -20,6 +20,8 @@ func TryOpenWindowForItem(InItem: ItemsUI_Item) -> WindowUI:
 		else:
 			return null
 	
+	await InItem._Data.HandlePreOpenWindow(InItem)
+	
 	var NewWindow := GameGlobals.CreateWindowForItem(InItem) as WindowUI
 	NewWindow.OwnerItem = InItem
 	NewWindow.tree_entered.connect(OnWindowTreeEntered.bind(NewWindow))

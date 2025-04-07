@@ -10,6 +10,8 @@ extends Node
 
 @export var TaskbarTabScene: PackedScene = preload("res://UI/Taskbar/TaskbarUI_Tab.tscn")
 
+@export var CutSceneScene: PackedScene = preload("res://Scenes/CutScenes/CutScene.tscn")
+
 var _MainScene: MainScene
 
 var IsDraggingWindow: bool = false

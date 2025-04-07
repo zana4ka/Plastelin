@@ -1,0 +1,42 @@
+[gd_resource type="AnimatedTexture" load_steps=13 format=3 uid="uid://ct71f2jvv1gba"]
+
+[ext_resource type="Texture2D" uid="uid://dnusfde87e0h3" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001a.png" id="1_3rtx2"]
+[ext_resource type="Texture2D" uid="uid://ovivp8arvkds" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001b.png" id="2_j7xno"]
+[ext_resource type="Texture2D" uid="uid://dmnml4ahkr1nt" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001k.png" id="3_waxeo"]
+[ext_resource type="Texture2D" uid="uid://d00wmwyj1dtya" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001l.png" id="4_axa6h"]
+[ext_resource type="Texture2D" uid="uid://bf57k03p7irf7" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001c.png" id="5_up4ol"]
+[ext_resource type="Texture2D" uid="uid://c4l1ynmfxdp55" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001d.png" id="6_xo7lo"]
+[ext_resource type="Texture2D" uid="uid://b485bccaio5dy" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001e.png" id="7_uearj"]
+[ext_resource type="Texture2D" uid="uid://gu210684eyev" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001f.png" id="8_wcw5o"]
+[ext_resource type="Texture2D" uid="uid://dvyabimuou5w7" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001g.png" id="9_56k0x"]
+[ext_resource type="Texture2D" uid="uid://dmtxjb4xteg5r" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001h.png" id="10_he05k"]
+[ext_resource type="Texture2D" uid="uid://cun0mmsn72rbf" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001i.png" id="11_r8p2a"]
+[ext_resource type="Texture2D" uid="uid://cvrrdrvkujvie" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001j.png" id="12_6o1mj"]
+
+[resource]
+frames = 12
+one_shot = true
+speed_scale = 12.0
+frame_0/texture = ExtResource("1_3rtx2")
+frame_1/texture = ExtResource("2_j7xno")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("5_up4ol")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("6_xo7lo")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("7_uearj")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("8_wcw5o")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("9_56k0x")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("10_he05k")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("11_r8p2a")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("12_6o1mj")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("3_waxeo")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("4_axa6h")
+frame_11/duration = 1.0

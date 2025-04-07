@@ -1,0 +1,2 @@
+extends TextureButton
+class_name CutScene_Frame

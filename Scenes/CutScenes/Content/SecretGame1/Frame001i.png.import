@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimos7rat0q2g"
-path="res://.godot/imported/Document001a.png-5a1f848419f7f386754acb03ace48827.ctex"
+uid="uid://cun0mmsn72rbf"
+path="res://.godot/imported/Frame001i.png-d02bdca7363a66ba5fe10f9407d84e0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/LampGame/Content/Document001a.png"
-dest_files=["res://.godot/imported/Document001a.png-5a1f848419f7f386754acb03ace48827.ctex"]
+source_file="res://Scenes/CutScenes/Content/SecretGame1/Frame001i.png"
+dest_files=["res://.godot/imported/Frame001i.png-d02bdca7363a66ba5fe10f9407d84e0a.ctex"]
 
 [params]
 

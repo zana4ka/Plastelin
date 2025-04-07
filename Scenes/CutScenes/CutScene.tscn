@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://w75fmaqpfxsp"]
+
+[ext_resource type="Script" uid="uid://bfsr7xe0od0r8" path="res://Scenes/CutScenes/CutScene.gd" id="1_qatlv"]
+[ext_resource type="PackedScene" uid="uid://bnj4dife3fb0q" path="res://Scenes/CutScenes/CutScene_Frame.tscn" id="2_hu7my"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f7g2w"]
+
+[sub_resource type="Animation" id="Animation_hu7my"]
+resource_name = "NextFrame"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.51, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ShowFrame_UpdateFrame"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_f7g2w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7jdvk"]
+_data = {
+&"NextFrame": SubResource("Animation_hu7my"),
+&"RESET": SubResource("Animation_f7g2w")
+}
+
+[node name="CutScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qatlv")
+
+[node name="FrameSwitcher" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_f7g2w")
+current_tab = 0
+tabs_visible = false
+
+[node name="CutScene_Frame" parent="FrameSwitcher" instance=ExtResource("2_hu7my")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Fade" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.4, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7jdvk")
+}

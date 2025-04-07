@@ -6,5 +6,5 @@ class_name ItemData
 
 @export var IsInitiallyLocked: bool = false
 
-func GetNamePostfix() -> String:
-	return ""
+func HandlePreOpenWindow(InItem: ItemsUI_Item):
+	pass

@@ -10,3 +10,7 @@ script = ExtResource("1_nhkr4")
 [node name="PlayerCamera" parent="." instance=ExtResource("2_7rqgy")]
 
 [node name="DesktopCanvas" parent="." instance=ExtResource("3_qxria")]
+
+[node name="CutSceneCanvas" type="CanvasLayer" parent="."]
+layer = 2
+follow_viewport_enabled = true

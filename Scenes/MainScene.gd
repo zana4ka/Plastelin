@@ -7,6 +7,7 @@ class_name MainScene
 
 @onready var _PlayerCamera: PlayerCamera = $PlayerCamera
 @onready var _DesktopCanvas: DesktopCanvas = $DesktopCanvas
+@onready var _CutSceneCanvas: CanvasLayer = $CutSceneCanvas
 
 func _ready():
 	
@@ -17,9 +18,10 @@ func _ready():
 	Input.set_custom_mouse_cursor(CursorDrag, Input.CURSOR_MOVE, Vector2(19.0, 2.0))
 	Input.set_custom_mouse_cursor(CursorDrag, Input.CURSOR_FORBIDDEN, Vector2(19.0, 2.0))
 	
-	InitScene1()
-	InitScene2()
-	InitScene3()
+	BeginPrologue()
+	#BeginScene1()
+	#BeginScene2()
+	#BeginScene3()
 
 func _enter_tree() -> void:
 	GameGlobals._MainScene = self
@@ -28,9 +30,17 @@ func _exit_tree() -> void:
 	GameGlobals._MainScene = null
 
 func TryOpenItem(InItem: ItemsUI_Item) -> WindowUI:
-	return _DesktopCanvas.TryOpenWindowForItem(InItem)
+	return await _DesktopCanvas.TryOpenWindowForItem(InItem)
 
-func InitScene1():
+func BeginPrologue():
+	
+	var PrologueCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Prologue/CutSceneData.tres"))
+	
+	await PrologueCutScene.Finished
+	
+	BeginScene1()
+
+func BeginScene1():
 	
 	assert(not has_meta(&"Scene1"))
 	set_meta(&"Scene1", true)
@@ -48,7 +58,7 @@ func InitScene1():
 	var ModellingPhoto3 := _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Photos/ModellingPhoto3.tres"))
 	ModellingPhoto3.GridPosition = Vector2i(6, 2)
 
-func InitScene2():
+func BeginScene2():
 	
 	assert(not has_meta(&"Scene2"))
 	set_meta(&"Scene2", true)
@@ -56,7 +66,7 @@ func InitScene2():
 	var SecretFolder2 := _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/SecretFolder2.tres"))
 	SecretFolder2.GridPosition = Vector2i(2, 1)
 
-func InitScene3():
+func BeginScene3():
 	
 	assert(not has_meta(&"Scene3"))
 	set_meta(&"Scene3", true)

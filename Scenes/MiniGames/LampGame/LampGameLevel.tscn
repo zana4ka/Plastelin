@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvjrsqwt1t5bb"]
 
-[ext_resource type="Script" uid="uid://vwtpd8on5yp7" path="res://Scenes/LampGame/LampGameLevel.gd" id="1_bk8g6"]
+[ext_resource type="Script" uid="uid://vwtpd8on5yp7" path="res://Scenes/MiniGames/LampGame/LampGameLevel.gd" id="1_bk8g6"]
 [ext_resource type="Texture2D" uid="uid://clygc6c7kwrf3" path="res://UI/Common/Panels/Panel002a.png" id="2_irij1"]
-[ext_resource type="Texture2D" uid="uid://cimos7rat0q2g" path="res://Scenes/LampGame/Content/Document001a.png" id="2_kf6ie"]
-[ext_resource type="Texture2D" uid="uid://cd1iafqesmlfq" path="res://Scenes/LampGame/Content/Light001a.png" id="2_rmr2u"]
-[ext_resource type="PackedScene" uid="uid://cgrceqp5fcc6d" path="res://Scenes/LampGame/LampGameLevel_Document.tscn" id="4_xcqy1"]
+[ext_resource type="Texture2D" uid="uid://cimos7rat0q2g" path="res://Scenes/MiniGames/LampGame/Content/Document001a.png" id="2_kf6ie"]
+[ext_resource type="Texture2D" uid="uid://cd1iafqesmlfq" path="res://Scenes/MiniGames/LampGame/Content/Light001a.png" id="2_rmr2u"]
+[ext_resource type="PackedScene" uid="uid://cgrceqp5fcc6d" path="res://Scenes/MiniGames/LampGame/LampGameLevel_Document.tscn" id="4_xcqy1"]
 
 [node name="LampGameLevel" type="Control"]
 layout_mode = 3

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnj4dife3fb0q"]
+
+[ext_resource type="Texture2D" uid="uid://cr0nyngxvd5v3" path="res://UI/Items/Content/Photos/Modelling001a.jpg" id="1_y268h"]
+[ext_resource type="Script" uid="uid://cctj3tccb61wa" path="res://Scenes/CutScenes/CutScene_Frame.gd" id="2_tons2"]
+
+[node name="CutScene_Frame" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_y268h")
+stretch_mode = 6
+script = ExtResource("2_tons2")
