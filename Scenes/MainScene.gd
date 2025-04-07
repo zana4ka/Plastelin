@@ -18,11 +18,15 @@ func _ready():
 	Input.set_custom_mouse_cursor(CursorDrag, Input.CURSOR_MOVE, Vector2(19.0, 2.0))
 	Input.set_custom_mouse_cursor(CursorDrag, Input.CURSOR_FORBIDDEN, Vector2(19.0, 2.0))
 	
-	#BeginPrologue()
-	BeginScene1()
+	BeginPrologue()
+	#BeginScene1()
 	#BeginScene2()
 	#BeginScene3()
+	#BeginScene4()
+	#BeginScene5()
+	#BeginScene6()
 	#BeginScene7()
+	#BeginScene8()
 
 func _enter_tree() -> void:
 	GameGlobals._MainScene = self
@@ -40,8 +44,8 @@ func BeginPrologue():
 	
 	var PrologueCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Prologue/CutSceneData.tres"))
 	
-	PrologueCutScene.FinishCutScene()
-	#await PrologueCutScene.Finished
+	#PrologueCutScene.FinishCutScene()
+	await PrologueCutScene.Finished
 	
 	BeginScene1()
 
@@ -52,9 +56,9 @@ func BeginScene1():
 	
 	_DesktopCanvas.SetBackground(load("res://UI/Desktop/Content/Background001a.jpg"))
 	
-	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/MyComputer.tres"))
-	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/SecretFolder1.tres"))
-	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Recycle.tres"))
+	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/MyComputer.tres")).GridPosition = Vector2i(0, 0)
+	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/SecretFolder1.tres")).GridPosition = Vector2i(0, 1)
+	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/Recycle.tres")).GridPosition = Vector2i(0, 2)
 	
 	var SecretFolder2 := _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/SecretFolder2.tres"))
 	SecretFolder2.GridPosition = Vector2i(2, 1)
@@ -67,6 +71,10 @@ func BeginScene1():
 	
 	var ModellingPhoto3 := _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Photos/ModellingPhoto3.tres"))
 	ModellingPhoto3.GridPosition = Vector2i(6, 2)
+	
+	## Debug
+	#var SecretDocument7 := _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Documents/SecretDocument7.tres"))
+	#SecretDocument7.GridPosition = Vector2i(1, 0)
 
 func BeginScene2():
 	
@@ -80,15 +88,64 @@ func BeginScene3():
 	assert(not has_meta(&"Scene3"))
 	set_meta(&"Scene3", true)
 	
+	## LampMiniGame
+
+func BeginScene4():
+	
+	assert(not has_meta(&"Scene4"))
+	set_meta(&"Scene4", true)
+	
+	## LampMiniGame
+
+func BeginScene5():
+	
+	assert(not has_meta(&"Scene5"))
+	set_meta(&"Scene5", true)
+	
+	## CutScene
+
+func BeginScene6():
+	
+	assert(not has_meta(&"Scene6"))
+	set_meta(&"Scene6", true)
+	
+	_DesktopCanvas.SetBackground(load("res://UI/Desktop/Content/Background003_Flash.tres"))
+	
+	await _DesktopCanvas.CloseAllWindows()
+	await _DesktopCanvas._ItemsUI.RemoveAllItems()
+	
+	_DesktopCanvas._ItemsUI.add_theme_constant_override(&"h_separation", 12)
+	_DesktopCanvas._TaskbarUI.visible = false
+	
 	var SecretFolder3 := _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/SecretFolder3.tres"))
-	SecretFolder3.GridPosition = Vector2i(2, 2)
+	SecretFolder3.GridPosition = Vector2i(3, 2)
 
 func BeginScene7():
 	
 	assert(not has_meta(&"Scene7"))
 	set_meta(&"Scene7", true)
 	
-	_DesktopCanvas.SetBackground(load("res://UI/Desktop/Content/Background003_Flash.tres"))
+	## SecretFolder3
+
+var FinalFolderOpenCounter: int = 0:
+	set(InCounter):
+		
+		FinalFolderOpenCounter = InCounter
+		
+		if FinalFolderOpenCounter >= 3:
+			BeginScene8()
+
+func BeginScene8():
 	
-	_DesktopCanvas._ItemsUI.RemoveAllItems()
+	assert(not has_meta(&"Scene8"))
+	set_meta(&"Scene8", true)
+	
+	await _DesktopCanvas.CloseAllWindows()
+	await _DesktopCanvas._ItemsUI.RemoveAllItems()
+	
+	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Photos/FinalPhoto1.tres")).GridPosition = Vector2i(2, 1)
+	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Photos/FinalPhoto2.tres")).GridPosition = Vector2i(3, 1)
+	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Photos/FinalPhoto3.tres")).GridPosition = Vector2i(4, 1)
+	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Photos/FinalPhoto4.tres")).GridPosition = Vector2i(2, 2)
+	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Photos/FinalPhoto5.tres")).GridPosition = Vector2i(3, 2)
 	

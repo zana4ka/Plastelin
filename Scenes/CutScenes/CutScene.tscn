@@ -44,6 +44,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CurrentFrame:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 2, 0]
+}
 
 [sub_resource type="Animation" id="Animation_f7g2w"]
 length = 0.001
@@ -71,6 +83,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CurrentFrame:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7jdvk"]
 _data = {
@@ -90,6 +114,7 @@ script = ExtResource("1_qatlv")
 [node name="CurrentFrame" parent="." instance=ExtResource("2_hu7my")]
 layout_mode = 2
 anchors_preset = 0
+mouse_default_cursor_shape = 2
 
 [node name="Text" type="Label" parent="."]
 layout_mode = 1

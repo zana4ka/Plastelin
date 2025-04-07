@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cm4kypyqba6hs"]
-
-[ext_resource type="Texture2D" uid="uid://ck7ujqmd18in4" path="res://UI/Windows95.png" id="1_dal44"]
-
-[resource]
-atlas = ExtResource("1_dal44")
-region = Rect2(463, 277, 18, 18)

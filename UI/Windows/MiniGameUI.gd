@@ -23,5 +23,5 @@ func UpdateFromOwnerItem():
 	_MiniGameLevel.OwnerMiniGameUI = self
 	_Viewport.add_child(_MiniGameLevel)
 
-func TryClose() -> bool:
-	return TryCollapse()
+func TryClose(InForceRemove: bool = false) -> bool:
+	return super(InForceRemove) if InForceRemove else TryCollapse()

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FolderData" load_steps=4 format=3 uid="uid://yg10shlscodd"]
+
+[ext_resource type="Texture2D" uid="uid://bpn26pmgjaemf" path="res://UI/Items/Content/Folders/MyComputer001a.png" id="1_tyllh"]
+[ext_resource type="Script" uid="uid://dm7a2qbe1p8sy" path="res://UI/Items/ItemData.gd" id="2_0c81t"]
+[ext_resource type="Script" uid="uid://0u1v5jvcen3b" path="res://UI/Items/FolderData.gd" id="3_36qbg"]
+
+[resource]
+script = ExtResource("3_36qbg")
+ExplorerPath = "SECRET_FOLDER_1_PATH"
+InnerItemDataArray = Array[ExtResource("2_0c81t")]([])
+IconTexture = ExtResource("1_tyllh")
+Name = "MY_COMPUTER"
+ForceOpenOnScreenCenter = false
+IsInitiallyLocked = false
+UnlockPassword = ""
+metadata/_custom_type_script = "uid://0u1v5jvcen3b"

@@ -33,3 +33,4 @@ func RemoveAllItems():
 	for SampleItem: ItemsUI_Item in ItemArray:
 		SampleItem.queue_free()
 	ItemArray.clear()
+	await get_tree().process_frame

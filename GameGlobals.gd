@@ -6,6 +6,8 @@ extends Node
 @export var PhotoUIScene: PackedScene = preload("res://UI/Windows/PhotoUI.tscn")
 @export var MiniGameUIScene: PackedScene = preload("res://UI/Windows/MiniGameUI.tscn")
 
+@export var WindowDragPreviewScene: PackedScene = preload("res://UI/Windows/WindowUI_DragPreview.tscn")
+
 @export var ItemScene: PackedScene = preload("res://UI/Items/ItemsUI_Item.tscn")
 @export var EmptyGridCellScene: PackedScene = preload("res://UI/Items/ItemsUI_EmptyGridCell.tscn")
 

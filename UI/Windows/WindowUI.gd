@@ -1,8 +1,6 @@
 extends PanelContainer
 class_name WindowUI
 
-@export var DragPreviewScene: PackedScene = preload("res://UI/Windows/WindowUI_DragPreview.tscn")
-
 var OwnerItem: ItemsUI_Item:
 	set(InItem):
 		
@@ -25,7 +23,7 @@ func _ready() -> void:
 
 func _get_drag_data(AtPosition: Vector2) -> Variant:
 	
-	var DragPreview := DragPreviewScene.instantiate() as Control
+	var DragPreview := GameGlobals.WindowDragPreviewScene.instantiate() as Control
 	DragPreview.size = size
 	DragPreview.Offset = -AtPosition
 	set_drag_preview(DragPreview)
@@ -51,10 +49,27 @@ func TryCollapse() -> bool:
 	
 	return not IsUnfolded()
 
-func TryExpand() -> bool:
-	return false
+func IsExpanded() -> bool:
+	return get_meta(&"IsExpanded", false)
 
-func TryClose() -> bool:
+func TryExpand() -> bool:
+	
+	if IsExpanded():
+		size = get_meta(&"DefaultSize")
+		position = get_meta(&"PreviousPosition")
+		
+		set_meta(&"IsExpanded", false)
+	else:
+		set_meta(&"DefaultSize", size)
+		set_meta(&"PreviousPosition", position)
+		
+		size = GameGlobals._MainScene._DesktopCanvas._Windows.size
+		position = Vector2.ZERO
+		
+		set_meta(&"IsExpanded", true)
+	return IsExpanded()
+
+func TryClose(InForceRemove: bool = false) -> bool:
 	queue_free()
 	return true
 

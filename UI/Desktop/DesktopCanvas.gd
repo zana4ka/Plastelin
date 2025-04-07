@@ -21,7 +21,8 @@ func TryOpenWindowForItem(InItem: ItemsUI_Item, OnScreenCenter: bool) -> WindowU
 		else:
 			return null
 	
-	await InItem._Data.HandlePreOpenWindow(InItem)
+	if not await InItem._Data.HandlePreOpenWindow(InItem):
+		return null
 	
 	var NewWindow := GameGlobals.CreateWindowForItem(InItem) as WindowUI
 	NewWindow.OwnerItem = InItem
@@ -35,6 +36,7 @@ func TryOpenWindowForItem(InItem: ItemsUI_Item, OnScreenCenter: bool) -> WindowU
 	else:
 		NewWindow.position = _Windows.get_global_mouse_position() + Vector2(24.0, -48.0)
 	NewWindow.position = GameGlobals.GetOnScreenClampedPosition_TopLeftAnchors(NewWindow)
+	InItem._Data.HandlePostOpenWindow(InItem)
 	return NewWindow
 
 ## Register + create the tab
@@ -48,10 +50,23 @@ func OnWindowTreeEntered(InWindow: WindowUI) -> void:
 ## UnRegister + remove the tab
 func OnWindowTreeExiting(InWindow: WindowUI) -> void:
 	
-	WindowsDictionary.erase(InWindow.OwnerItem)
+	if is_instance_valid(InWindow.OwnerItem):
+		WindowsDictionary.erase(InWindow.OwnerItem)
 	
 	assert(InWindow.TaskbarTab != null)
 	InWindow.TaskbarTab.queue_free()
 
+## Remove the window if exists
+func OnItemTreeExiting(InItem: ItemsUI_Item) -> void:
+	if InItem.is_queued_for_deletion() and WindowsDictionary.has(InItem):
+		WindowsDictionary[InItem].queue_free()
+
 func SetBackground(InTexture: Texture2D):
 	_Background.texture = InTexture
+
+func CloseAllWindows():
+	
+	for SampleWindowUI in WindowsDictionary.values():
+		if is_instance_valid(SampleWindowUI):
+			SampleWindowUI.TryClose.call_deferred(true)
+	await get_tree().process_frame

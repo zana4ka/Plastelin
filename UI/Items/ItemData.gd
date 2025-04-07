@@ -6,9 +6,25 @@ class_name ItemData
 @export var Name: String = "SECRET_FOLDER_1"
 @export var ForceOpenOnScreenCenter: bool = false
 
+@export_category("Label")
+@export var _LS: LabelSettings = preload("res://UI/Items/Content/DefaultLS.tres")
+@export var _FocusedLS: LabelSettings = preload("res://UI/Items/Content/DefaultLS_Focused.tres")
+
 @export_category("Lock")
 @export var IsInitiallyLocked: bool = false
+@export var OpenItemAfterUnlock: bool = true
 @export var UnlockPassword: String = ""
 
-func HandlePreOpenWindow(InItem: ItemsUI_Item):
+func HandlePostUnlock(InPasswordUI: PasswordUI):
+	
+	if OpenItemAfterUnlock:
+		InPasswordUI.tree_exited.connect(GameGlobals._MainScene.TryOpenItem.bind(InPasswordUI.OwnerItem, true), Object.CONNECT_DEFERRED)
+	
+	if InPasswordUI.TryClose():
+		InPasswordUI.OwnerItem.IsLocked = false
+
+func HandlePreOpenWindow(InItem: ItemsUI_Item) -> bool:
+	return true
+
+func HandlePostOpenWindow(InItem: ItemsUI_Item):
 	pass

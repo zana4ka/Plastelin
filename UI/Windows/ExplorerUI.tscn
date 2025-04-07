@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b572vcoxr00am" path="res://UI/Windows/Content/Expand002a.png" id="5_wre5g"]
 
 [node name="ExplorerUI" type="PanelContainer"]
-custom_minimum_size = Vector2(700, 500)
+custom_minimum_size = Vector2(700, 550)
 offset_right = 640.0
 offset_bottom = 480.0
 theme_override_styles/panel = ExtResource("3_0jqlm")
@@ -85,5 +85,5 @@ scroll_deadzone = 8
 
 [node name="ItemsUI" parent="VB/ItemsMC/Panel/SC" instance=ExtResource("3_svpkb")]
 layout_mode = 2
-columns = 5
-MinGridSize = Vector2i(4, 2)
+columns = 6
+MinGridSize = Vector2i(5, 3)

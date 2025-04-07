@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx5eh1gd6bq6g"]
+[gd_scene load_steps=8 format=3 uid="uid://dx5eh1gd6bq6g"]
 
 [ext_resource type="StyleBox" uid="uid://bt0poquh0krrk" path="res://UI/Taskbar/Content/StartMenu001a.tres" id="1_gl2mv"]
 [ext_resource type="Script" uid="uid://dsljdrh8pne5l" path="res://UI/Taskbar/TaskbarUI_StartMenu.gd" id="1_no6xm"]
-[ext_resource type="Texture2D" uid="uid://cm4kypyqba6hs" path="res://UI/Taskbar/Content/Help001a.tres" id="2_gl2mv"]
 [ext_resource type="StyleBox" uid="uid://c6x24knlx0ml6" path="res://UI/Common/Panels/Panel001a_Blue.tres" id="3_yoi6p"]
+[ext_resource type="Texture2D" uid="uid://bchlbpmobqeww" path="res://UI/Taskbar/Content/Help001a.png" id="4_r4qjl"]
+[ext_resource type="Texture2D" uid="uid://7tpl6nl4wcip" path="res://UI/Taskbar/Content/Settings001a.png" id="5_7upl6"]
+[ext_resource type="Texture2D" uid="uid://cravgo8elsiu8" path="res://UI/Taskbar/Content/ShutDown001a.png" id="6_2euhb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gl2mv"]
 
@@ -45,7 +47,7 @@ theme_override_styles/hover = ExtResource("3_yoi6p")
 theme_override_styles/pressed = ExtResource("3_yoi6p")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_gl2mv")
 text = "HELP"
-icon = ExtResource("2_gl2mv")
+icon = ExtResource("4_r4qjl")
 alignment = 0
 text_overrun_behavior = 3
 autowrap_mode = 3
@@ -68,7 +70,7 @@ theme_override_styles/hover = ExtResource("3_yoi6p")
 theme_override_styles/pressed = ExtResource("3_yoi6p")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_gl2mv")
 text = "SETTINGS"
-icon = ExtResource("2_gl2mv")
+icon = ExtResource("5_7upl6")
 alignment = 0
 text_overrun_behavior = 3
 autowrap_mode = 3
@@ -91,7 +93,7 @@ theme_override_styles/hover = ExtResource("3_yoi6p")
 theme_override_styles/pressed = ExtResource("3_yoi6p")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_gl2mv")
 text = "SHUT_DOWN"
-icon = ExtResource("2_gl2mv")
+icon = ExtResource("6_2euhb")
 alignment = 0
 text_overrun_behavior = 3
 autowrap_mode = 3

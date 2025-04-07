@@ -3,10 +3,26 @@ MY_COMPUTER,My Computer,Мой компьютер
 RECYCLE,Recycle Bin,Корзина
 START,Start,Пуск
 SECRET_FOLDER_1,Shallow,Мелководье
+SECRET_FOLDER_1_PATH,C:\Users\User\Desktop\Shallow,C:\Пользователи\User\Рабочий стол\Мелководье
 SECRET_FOLDER_2,Deeper...,Глубже...
+SECRET_FOLDER_2_PATH,C:\Users\User\Desktop\Shallow,C:\Пользователи\User\Рабочий стол\Мелководье
+SECRET_FOLDER_2_1,Deeper...,Глубже...
+SECRET_FOLDER_2_2,Deeper...,Глубже...
 SECRET_FOLDER_3,Even deeper...,Ещё глубже...
-SECRET_FOLDER_4,Depths,Чертоги
-SECRET_DOCUMENT_1,NOT the payments.doc,НЕ платежи.doc
+SECRET_FOLDER_3_PATH,C:\Users\User\Desktop\Even deeper...,C:\Пользователи\User\Рабочий стол\Ещё глубже...
+SECRET_FOLDER_3_1,Depths,Чертоги
+SECRET_FOLDER_3_2,Depths,Чертоги
+SECRET_FOLDER_3_3,Depths,Чертоги
+SECRET_FOLDER_3_4,Depths,Чертоги
+SECRET_DOCUMENT_1,Doc1.txt,Док1.txt
+SECRET_DOCUMENT_2,Doc2.txt,Док2.txt
+SECRET_DOCUMENT_3,Doc3.txt,Док3.txt
+SECRET_DOCUMENT_4,Doc4.txt,Док4.txt
+SECRET_DOCUMENT_5,Why?.txt,Зачем?.txt
+SECRET_DOCUMENT_6,How?.txt,Как?.txt
+SECRET_DOCUMENT_7,This_is_YOU.txt,Это_ТЫ.txt
+SECRET_DOCUMENT_8,IT'S ALL YOUR FAULT,ТЫ ВО ВСЁМ ВИНОВАТ
+SECRET_DOCUMENT_9,STOP LYING,ХВАТИТЬ ВРАТЬ
 SECRET_PHOTO_1,Nikita.png,Никита.png
 SECRET_GAME_1,revelations.exe,откровения.exe
 SECRET_GAME_2,N.GAME 2.exe,N.GAME 2.exe
@@ -17,3 +33,6 @@ MODELLING_PHOTO_4,Merdr wepon.jpg,Оруде убиства.jpg
 MODELLING_PHOTO_5,White thing.jpg,Белая штука.jpg
 MODELLING_PHOTO_6,Sus.jpg,Sus.jpg
 ENTER_PASSWORD,Enter the password...,Введите пароль...
+SHUT_DOWN,Shut down...,Завершить работу...
+SETTINGS,Settings,Настройки
+HELP,Help,Помощь

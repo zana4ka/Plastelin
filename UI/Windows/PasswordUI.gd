@@ -14,8 +14,8 @@ func _ready() -> void:
 
 func UpdateFromOwnerItem():
 	
-	var _ItemData := OwnerItem._Data
-	grab_focus.call_deferred()
+	assert(not OwnerItem._Data.UnlockPassword.is_empty())
+	_LineEdit.grab_focus.call_deferred()
 
 func OnConfirmPressed():
 	
@@ -23,11 +23,7 @@ func OnConfirmPressed():
 		return
 	
 	if _LineEdit.text == OwnerItem._Data.UnlockPassword:
-		
-		tree_exited.connect(GameGlobals._MainScene.TryOpenItem.bind(OwnerItem, true))
-		
-		if TryClose():
-			OwnerItem.IsLocked = false
+		OwnerItem._Data.HandlePostUnlock(self)
 	else:
 		_LineEdit.text = ""
 		_AnimationPlayer.play(&"Decline")

@@ -13,7 +13,10 @@ class_name ItemsUI_Item
 @onready var _Label: Label = $Control/Label
 
 var WasOpened: bool = false
-var IsLocked: bool = false
+var IsLocked: bool = false:
+	set(InIsLocked):
+		IsLocked = InIsLocked
+		_Button.modulate = Color.DIM_GRAY if IsLocked else Color.WHITE
 
 func _ready():
 	
@@ -25,6 +28,8 @@ func _ready():
 	
 	if ParentContainer:
 		ParentContainer.RegisterItem(self)
+	
+	tree_exiting.connect(GameGlobals._MainScene._DesktopCanvas.OnItemTreeExiting.bind(self))
 
 func _get_drag_data(AtPosition: Vector2) -> Variant:
 	var DragPreview := TextureRect.new()
@@ -44,6 +49,8 @@ func UpdateFromItemData():
 		return
 	
 	_Button.texture_normal = _Data.IconTexture
+	
+	_Label.label_settings = _Data._LS
 	_Label.text = _Data.Name
 	
 	if _Data.IsInitiallyLocked:
@@ -82,12 +89,10 @@ func OnButtonFocusEntered():
 	
 	modulate = Color.SKY_BLUE
 	
-	_Label.add_theme_color_override(&"font_color", Color.WHITE)
-	_Label.add_theme_color_override(&"font_shadow_color", Color.BLUE)
+	_Label.label_settings = _Data._FocusedLS
 
 func OnButtonFocusExited():
 	
 	modulate = Color.WHITE
 	
-	_Label.remove_theme_color_override(&"font_color")
-	_Label.add_theme_color_override(&"font_shadow_color", Color.TRANSPARENT)
+	_Label.label_settings = _Data._LS

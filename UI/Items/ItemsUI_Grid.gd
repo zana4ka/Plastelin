@@ -2,7 +2,11 @@
 extends ItemsUIBase
 class_name ItemsUI_Grid
 
-@export var MinGridSize: Vector2i = Vector2i(12, 4)
+@export var MinGridSize: Vector2i = Vector2i(12, 4):
+	set(InSize):
+		MinGridSize = InSize
+		ReBuild()
+
 @export var OwnerWindowUI: WindowUI
 
 @onready var SelfGrid: GridContainer = self as Control as GridContainer
@@ -69,8 +73,8 @@ func RegisterItem(InItem: ItemsUI_Item):
 		var MaxPosition := GetMaxPosition()
 		
 		var HasFound := false
-		for SampleX: int in MaxPosition.x:
-			for SampleY: int in MaxPosition.y:
+		for SampleY: int in MaxPosition.y:
+			for SampleX: int in MaxPosition.x:
 				
 				var SamplePosition := Vector2i(SampleX, SampleY)
 				if ItemDictionary.has(SamplePosition):
@@ -112,5 +116,5 @@ func GetItemArray() -> Array[ItemsUI_Item]:
 	return ItemDictionary.values()
 
 func RemoveAllItems():
-	super()
+	await super()
 	ItemDictionary.clear()

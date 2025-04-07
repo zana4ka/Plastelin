@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PhotoData" load_steps=6 format=3 uid="uid://c7g8c5r6ubf8q"]
+
+[ext_resource type="Texture2D" uid="uid://ftoxhqvf7vxa" path="res://UI/Items/Content/Photos/Photo001a.png" id="1_u33ex"]
+[ext_resource type="Texture2D" uid="uid://cr0nyngxvd5v3" path="res://UI/Items/Content/Photos/Modelling001a.jpg" id="2_n5b5f"]
+[ext_resource type="LabelSettings" uid="uid://cet37rksbs5wj" path="res://UI/Items/Content/DefaultLS_Focused.tres" id="3_qw4b2"]
+[ext_resource type="LabelSettings" uid="uid://bj7aioopaodka" path="res://UI/Items/Content/Folders/SecretFolder3_LS.tres" id="4_u33ex"]
+[ext_resource type="Script" uid="uid://cnk0n55cboaep" path="res://UI/Items/PhotoData.gd" id="5_h6anq"]
+
+[resource]
+script = ExtResource("5_h6anq")
+PhotoTexture = ExtResource("2_n5b5f")
+IconTexture = ExtResource("1_u33ex")
+Name = "FINAL_PHOTO_3"
+ForceOpenOnScreenCenter = false
+_LS = ExtResource("4_u33ex")
+_FocusedLS = ExtResource("3_qw4b2")
+IsInitiallyLocked = false
+UnlockPassword = ""
+metadata/_custom_type_script = "uid://cnk0n55cboaep"
