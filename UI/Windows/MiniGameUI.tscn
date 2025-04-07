@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://4hb4uivoypvg"]
+[gd_scene load_steps=4 format=3 uid="uid://4hb4uivoypvg"]
 
 [ext_resource type="Script" uid="uid://tj5ohhjgsg4p" path="res://UI/Windows/MiniGameUI.gd" id="1_h514d"]
 [ext_resource type="PackedScene" uid="uid://cw66orq8ug75g" path="res://UI/Windows/WindowUI_Header.tscn" id="2_u7t4d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_781oj"]
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
 
 [node name="MiniGameUI" type="PanelContainer"]
 anchors_preset = 8
@@ -9,12 +15,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = -298.0
-offset_right = 192.0
-offset_bottom = 298.0
+offset_left = -404.0
+offset_top = -342.0
+offset_right = 416.0
+offset_bottom = 342.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(400, 342)
 script = ExtResource("1_h514d")
 
 [node name="VB" type="VBoxContainer" parent="."]
@@ -25,13 +32,19 @@ mouse_filter = 2
 layout_mode = 2
 OwnerWindowUI = NodePath("../..")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="VB"]
+[node name="ViewportPanel" type="PanelContainer" parent="VB"]
+clip_children = 1
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_781oj")
+
+[node name="Container" type="SubViewportContainer" parent="VB/ViewportPanel"]
+layout_mode = 2
 mouse_filter = 0
 
-[node name="SubViewport" type="SubViewport" parent="VB/SubViewportContainer"]
+[node name="Viewport" type="SubViewport" parent="VB/ViewportPanel/Container"]
 disable_3d = true
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true

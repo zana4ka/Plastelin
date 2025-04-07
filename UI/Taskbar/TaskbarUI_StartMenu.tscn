@@ -8,7 +8,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gl2mv"]
 
 [node name="TaskbarUI_StartMenu" type="PanelContainer"]
-custom_minimum_size = Vector2(256, 540)
+custom_minimum_size = Vector2(256, 427)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0

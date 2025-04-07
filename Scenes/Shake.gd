@@ -1,6 +1,10 @@
 extends Control
 class_name Shake
 
+var ShakeTarget: Control = self
+
+var CenterPosition: Vector2 = Vector2.ZERO
+
 var MaxOffset: Vector2 = Vector2(10.0, 10.0)
 var MaxRotation: float = 0.01
 
@@ -17,17 +21,19 @@ func _process(InDelta: float):
 		var TargetOffset := MaxOffset * DecayAlpha
 		var TargetRotation := MaxRotation * DecayAlpha
 		
-		position = Vector2(
+		ShakeTarget.position = CenterPosition + Vector2(
 			randf_range(-TargetOffset.x, TargetOffset.x),
 			randf_range(-TargetOffset.y, TargetOffset.y),
 		)
-		rotation = randf_range(-TargetRotation, TargetRotation)
+		ShakeTarget.rotation = randf_range(-TargetRotation, TargetRotation)
 		
 		DecayAlpha -= InDelta * DecaySpeed
 
 func Start(InMaxOffset: Vector2, InMaxRotation: float, InDecaySpeed: float):
 	
 	assert(is_node_ready())
+	
+	CenterPosition = ShakeTarget.position
 	
 	MaxOffset = InMaxOffset
 	MaxRotation = InMaxRotation

@@ -4,9 +4,6 @@ class_name PhotoUI
 @onready var _Photo: TextureRect = $VB/Control/Photo
 
 func _ready() -> void:
-	
-	#_Image.focus_entered.connect(OnFocusEntered)
-	
 	super()
 
 func UpdateFromOwnerItem():

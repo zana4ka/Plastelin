@@ -30,8 +30,8 @@ func _enter_tree() -> void:
 func _exit_tree() -> void:
 	GameGlobals._MainScene = null
 
-func TryOpenItem(InItem: ItemsUI_Item) -> WindowUI:
-	return await _DesktopCanvas.TryOpenWindowForItem(InItem)
+func TryOpenItem(InItem: ItemsUI_Item, InScreenCenter: bool = false) -> WindowUI:
+	return await _DesktopCanvas.TryOpenWindowForItem(InItem, InScreenCenter)
 
 func BeginPrologue():
 	

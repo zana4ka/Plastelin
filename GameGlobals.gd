@@ -1,5 +1,6 @@
 extends Node
 
+@export var PasswordUIScene: PackedScene = preload("res://UI/Windows/PasswordUI.tscn")
 @export var ExplorerUIScene: PackedScene = preload("res://UI/Windows/ExplorerUI.tscn")
 @export var DocumentUIScene: PackedScene = preload("res://UI/Windows/DocumentUI.tscn")
 @export var PhotoUIScene: PackedScene = preload("res://UI/Windows/PhotoUI.tscn")
@@ -20,7 +21,9 @@ func CreateWindowForItem(InItem: ItemsUI_Item) -> WindowUI:
 	
 	var OutWindow: WindowUI = null
 	
-	if InItem._Data is FolderData:
+	if InItem.IsLocked:
+		OutWindow = PasswordUIScene.instantiate()
+	elif InItem._Data is FolderData:
 		OutWindow = ExplorerUIScene.instantiate()
 	elif InItem._Data is DocumentData:
 		OutWindow = DocumentUIScene.instantiate()

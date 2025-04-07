@@ -2,8 +2,8 @@ extends MiniGameLevel
 class_name ShovelGameLevel
 
 @onready var _Shake: Shake = $Control/Shake
-@onready var DigParticles: CPUParticles2D = $Control/Shake/DigParticles
-@onready var Interact: Button = $Control/Shake/GroundFrames/Interact
+@onready var DigParticles: CPUParticles2D = $Control/DigParticles
+@onready var Interact: Button = $Control/GroundFrames/Interact
 
 @onready var _AnimationPlayer: AnimationPlayer = $AnimationPlayer
 
@@ -13,7 +13,9 @@ func _ready() -> void:
 	
 	Interact.pressed.connect(OnInteractPressed)
 	
-	OwnerMiniGameUI._Header._Close.disabled = true
+	#OwnerMiniGameUI._Header._Close.disabled = true
+	
+	_Shake.ShakeTarget = OwnerMiniGameUI
 
 func OnInteractPressed():
 	TryProgress()
@@ -29,14 +31,14 @@ func TryProgress() -> bool:
 		
 		if ProgressTicks % 2 == 0:
 			
-			_Shake.Start(Vector2(5.0, 5.0), 0.025, 1.0)
+			_Shake.Start(Vector2(5.0, 5.0), 0.02, 1.0)
 			DigParticles.restart()
 			
 			_AnimationPlayer.play(&"NextLayer")
 			
 			NextProgressMinTimeTicksMs = Time.get_ticks_msec() + 1000
 		else:
-			_Shake.Start(Vector2(2.0, 2.0), 0.01, 2.0)
+			_Shake.Start(Vector2(2.0, 2.0), 0.004, 2.0)
 			
 			NextProgressMinTimeTicksMs = Time.get_ticks_msec() + 400
 		

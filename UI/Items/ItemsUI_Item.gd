@@ -12,6 +12,7 @@ class_name ItemsUI_Item
 @onready var _Button: TextureButton = $Button
 @onready var _Label: Label = $Control/Label
 
+var WasOpened: bool = false
 var IsLocked: bool = false
 
 func _ready():
@@ -74,10 +75,8 @@ func OnButtonPressed():
 	if PrevPressedTimeTicksMs + 500 < LastPressedTimeTicksMs:
 		return
 	
-	if IsLocked:
-		OS.alert("Can't open!")
-	else:
-		GameGlobals._MainScene.TryOpenItem(self)
+	if await GameGlobals._MainScene.TryOpenItem(self):
+		WasOpened = true
 
 func OnButtonFocusEntered():
 	

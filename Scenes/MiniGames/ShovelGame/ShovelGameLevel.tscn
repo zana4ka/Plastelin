@@ -41,7 +41,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Shake/GroundFrames:self_modulate")
+tracks/0/path = NodePath("Control/GroundFrames:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -56,7 +56,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Shake/GroundFrames:self_modulate")
+tracks/0/path = NodePath("Control/GroundFrames:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -96,10 +96,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_daxit")
 
-[node name="GroundFrames" type="AnimatedSprite2D" parent="Control/Shake"]
+[node name="GroundFrames" type="AnimatedSprite2D" parent="Control"]
 sprite_frames = SubResource("SpriteFrames_pyw5u")
 
-[node name="Interact" type="Button" parent="Control/Shake/GroundFrames"]
+[node name="Interact" type="Button" parent="Control/GroundFrames"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -118,9 +118,9 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_1r7wx")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mxlmb")
 flat = true
 
-[node name="ShovelFrames" type="AnimatedSprite2D" parent="Control/Shake"]
+[node name="ShovelFrames" type="AnimatedSprite2D" parent="Control"]
 
-[node name="DigParticles" type="CPUParticles2D" parent="Control/Shake"]
+[node name="DigParticles" type="CPUParticles2D" parent="Control"]
 position = Vector2(0, -300)
 emitting = false
 amount = 64

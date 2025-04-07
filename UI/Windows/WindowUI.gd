@@ -22,9 +22,6 @@ func _ready() -> void:
 	
 	UpdateFromOwnerItem()
 	TryUnfold()
-	
-	global_position = get_global_mouse_position() + Vector2(24.0, -48.0)
-	global_position = GameGlobals.GetOnScreenClampedPosition_TopLeftAnchors(self) as Vector2
 
 func _get_drag_data(AtPosition: Vector2) -> Variant:
 	

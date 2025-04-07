@@ -1,3 +1,4 @@
+@tool
 extends VBoxContainer
 class_name WindowUI_Header
 
@@ -9,23 +10,36 @@ class_name WindowUI_Header
 		if is_node_ready():
 			UpdateFromOwner()
 
+@export var ShowToolBar: bool = true:
+	set(InShow):
+		
+		ShowToolBar = InShow
+		
+		if not is_node_ready():
+			await ready
+		_ToolBarVB.visible = ShowToolBar
+
 @onready var _Icon: TextureRect = $TitleBarPanel/MC/VB/Icon
 @onready var _Label: Label = $TitleBarPanel/MC/VB/Label
 @onready var _Collapse: TextureButton = $TitleBarPanel/MC/VB/ButtonsVB/Collapse
 @onready var _Expand: TextureButton = $TitleBarPanel/MC/VB/ButtonsVB/Expand
 @onready var _Close: TextureButton = $TitleBarPanel/MC/VB/ButtonsVB/Close
 
+@onready var _ToolBarVB: HBoxContainer = $ToolBarVB
+
 func _ready() -> void:
 	
 	assert(OwnerWindowUI)
 	
-	_Collapse.pressed.connect(Collapse)
-	_Expand.pressed.connect(Expand)
-	_Close.pressed.connect(Close)
-	
-	_Expand.disabled = true
-	
-	UpdateFromOwner()
+	if not Engine.is_editor_hint():
+		
+		_Collapse.pressed.connect(Collapse)
+		_Expand.pressed.connect(Expand)
+		_Close.pressed.connect(Close)
+		
+		_Expand.disabled = true
+		
+		UpdateFromOwner()
 
 func UpdateFromOwner():
 	

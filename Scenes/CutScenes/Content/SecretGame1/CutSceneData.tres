@@ -7,7 +7,7 @@
 script = ExtResource("2_jd551")
 FadeColor = Color(1, 0, 0, 1)
 FadeDuration = 0.25
-SkipFirstFrameFade = false
+SkipFirstFrameFade = true
 FrameTextureArray = Array[Texture2D]([ExtResource("1_2v1km")])
 FrameTextArray = Array[String](["Раз ты это видишь — ты хочешь правды. Тогда играй."])
 FrameTextColor = Color(0.8, 0, 0, 1)
