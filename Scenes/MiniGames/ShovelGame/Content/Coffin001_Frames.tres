@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dm5a4lj1qnurq"]
+
+[ext_resource type="Texture2D" uid="uid://cnpq8x6igc2it" path="res://Scenes/MiniGames/ShovelGame/Content/Coffin001a.jpg" id="1_texhc"]
+[ext_resource type="Texture2D" uid="uid://qf82sl4vm638" path="res://Scenes/MiniGames/ShovelGame/Content/Coffin001b.jpg" id="2_ciqmf"]
+[ext_resource type="Texture2D" uid="uid://deca4km0vrkhn" path="res://Scenes/MiniGames/ShovelGame/Content/Coffin001c.jpg" id="3_uvxpb"]
+[ext_resource type="Texture2D" uid="uid://dlx7cerk2ioi5" path="res://Scenes/MiniGames/ShovelGame/Content/Coffin001d.jpg" id="4_b8p7a"]
+[ext_resource type="Texture2D" uid="uid://dxgbol1k4po4j" path="res://Scenes/MiniGames/ShovelGame/Content/Coffin001e.jpg" id="5_s38vs"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_texhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ciqmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uvxpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b8p7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s38vs")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]

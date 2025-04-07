@@ -19,6 +19,10 @@ config/icon="res://Icon.svg"
 
 GameGlobals="*res://GameGlobals.tscn"
 
+[compression]
+
+formats/zstd/compression_level=22
+
 [debug]
 
 gdscript/warnings/unused_variable=0

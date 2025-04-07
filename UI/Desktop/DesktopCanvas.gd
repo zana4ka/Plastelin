@@ -13,7 +13,7 @@ var WindowsDictionary: Dictionary[ItemsUI_Item, WindowUI] = {}
 func _ready() -> void:
 	pass
 
-func TryOpenWindowForItem(InItem: ItemsUI_Item, InScreenCenter: bool) -> WindowUI:
+func TryOpenWindowForItem(InItem: ItemsUI_Item, OnScreenCenter: bool) -> WindowUI:
 	
 	if WindowsDictionary.has(InItem):
 		if WindowsDictionary[InItem].TryUnfold():
@@ -29,7 +29,7 @@ func TryOpenWindowForItem(InItem: ItemsUI_Item, InScreenCenter: bool) -> WindowU
 	NewWindow.tree_exiting.connect(OnWindowTreeExiting.bind(NewWindow))
 	_Windows.add_child(NewWindow)
 	
-	if InScreenCenter:
+	if OnScreenCenter:
 		NewWindow.position = _Windows.size * 0.5 - NewWindow.size * 0.5
 		NewWindow.position.y -= 32.0
 	else:

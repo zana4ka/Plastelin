@@ -22,3 +22,6 @@ func UpdateFromOwnerItem():
 	_MiniGameLevel = _MiniGameData.MiniGameScene.instantiate()
 	_MiniGameLevel.OwnerMiniGameUI = self
 	_Viewport.add_child(_MiniGameLevel)
+
+func TryClose() -> bool:
+	return TryCollapse()

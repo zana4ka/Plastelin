@@ -75,7 +75,7 @@ func OnButtonPressed():
 	if PrevPressedTimeTicksMs + 500 < LastPressedTimeTicksMs:
 		return
 	
-	if await GameGlobals._MainScene.TryOpenItem(self):
+	if await GameGlobals._MainScene.TryOpenItem(self, _Data.ForceOpenOnScreenCenter):
 		WasOpened = true
 
 func OnButtonFocusEntered():

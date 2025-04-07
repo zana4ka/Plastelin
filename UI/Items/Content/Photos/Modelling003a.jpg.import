@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Modelling003a.jpg-5856ead09f49a7a594ba6c2b91b
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
