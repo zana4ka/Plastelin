@@ -1,6 +1,7 @@
 extends CanvasLayer
 class_name DesktopCanvas
 
+@onready var _Background: TextureRect = $Background
 @onready var _ItemsUI: ItemsUI_Grid = $ItemsUI
 
 @onready var _Windows: Control = $Windows
@@ -44,3 +45,6 @@ func OnWindowTreeExiting(InWindow: WindowUI) -> void:
 	
 	assert(InWindow.TaskbarTab != null)
 	InWindow.TaskbarTab.queue_free()
+
+func SetBackground(InTexture: Texture2D):
+	_Background.texture = InTexture

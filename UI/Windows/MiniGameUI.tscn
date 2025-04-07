@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://4hb4uivoypvg"]
+[gd_scene load_steps=3 format=3 uid="uid://4hb4uivoypvg"]
 
 [ext_resource type="Script" uid="uid://tj5ohhjgsg4p" path="res://UI/Windows/MiniGameUI.gd" id="1_h514d"]
 [ext_resource type="PackedScene" uid="uid://cw66orq8ug75g" path="res://UI/Windows/WindowUI_Header.tscn" id="2_u7t4d"]
-[ext_resource type="PackedScene" uid="uid://et8ew73vo8qp" path="res://Scenes/MiniGames/ShovelGame/ShovelGameLevel.tscn" id="3_dkl62"]
 
 [node name="MiniGameUI" type="PanelContainer"]
 anchors_preset = 8
@@ -39,5 +38,3 @@ snap_2d_transforms_to_pixel = true
 snap_2d_vertices_to_pixel = true
 size = Vector2i(800, 600)
 render_target_update_mode = 4
-
-[node name="ShovelGameLevel" parent="VB/SubViewportContainer/SubViewport" instance=ExtResource("3_dkl62")]

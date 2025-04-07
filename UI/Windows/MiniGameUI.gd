@@ -1,6 +1,7 @@
 extends WindowUI
 class_name MiniGameUI
 
+@onready var _Header: WindowUI_Header = $VB/Header
 @onready var _SubViewport: SubViewport = $VB/SubViewportContainer/SubViewport
 
 var _MiniGameLevel: MiniGameLevel
@@ -21,4 +22,5 @@ func UpdateFromOwnerItem():
 	
 	var _MiniGameData := OwnerItem._Data as MiniGameData
 	_MiniGameLevel = _MiniGameData.MiniGameScene.instantiate()
+	_MiniGameLevel.OwnerMiniGameUI = self
 	_SubViewport.add_child(_MiniGameLevel)

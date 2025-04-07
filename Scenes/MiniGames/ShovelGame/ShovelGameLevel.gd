@@ -5,22 +5,49 @@ class_name ShovelGameLevel
 @onready var DigParticles: CPUParticles2D = $Control/Shake/DigParticles
 @onready var Interact: Button = $Control/Shake/GroundFrames/Interact
 
+@onready var _AnimationPlayer: AnimationPlayer = $AnimationPlayer
+
+var ProgressTicks: int = 0
+
 func _ready() -> void:
+	
 	Interact.pressed.connect(OnInteractPressed)
+	
+	OwnerMiniGameUI._Header._Close.disabled = true
 
 func OnInteractPressed():
 	TryProgress()
 
-var LastProgressTimeTicksMs: int = 0
+var NextProgressMinTimeTicksMs: int = 0
 
 func TryProgress() -> bool:
 	
-	if LastProgressTimeTicksMs + 1000 < Time.get_ticks_msec():
+	if NextProgressMinTimeTicksMs < Time.get_ticks_msec():
 		
-		LastProgressTimeTicksMs = Time.get_ticks_msec()
+		ProgressTicks += 1
+		Interact.text = String.num_int64(ProgressTicks)
 		
-		_Shake.Start(Vector2(4.0, 4.0), 0.04, 1.0)
-		DigParticles.restart()
+		if ProgressTicks % 2 == 0:
+			
+			_Shake.Start(Vector2(5.0, 5.0), 0.025, 1.0)
+			DigParticles.restart()
+			
+			_AnimationPlayer.play(&"NextLayer")
+			
+			NextProgressMinTimeTicksMs = Time.get_ticks_msec() + 1000
+		else:
+			_Shake.Start(Vector2(2.0, 2.0), 0.01, 2.0)
+			
+			NextProgressMinTimeTicksMs = Time.get_ticks_msec() + 400
+		
+		if ProgressTicks == 6:
+			FinishGame()
 		
 		return true
 	return false
+
+func FinishGame():
+	
+	Interact.disabled = true
+	
+	GameGlobals._MainScene.BeginScene2()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fytyx5agjtia" path="res://UI/Desktop/DesktopCanvas.gd" id="1_6gcnv"]
 [ext_resource type="PackedScene" uid="uid://bq1pastnn4u4f" path="res://UI/Taskbar/TaskbarUI.tscn" id="2_4twul"]
-[ext_resource type="Texture2D" uid="uid://cbxrbtso1rldy" path="res://UI/Desktop/Content/Background001.png" id="2_62lbm"]
+[ext_resource type="Texture2D" uid="uid://b78k8a82kdyev" path="res://UI/Desktop/Content/Background001a.jpg" id="2_318kx"]
 [ext_resource type="PackedScene" uid="uid://dirr3cyfcr80n" path="res://UI/Items/ItemsUI_Grid.tscn" id="3_g4fav"]
 [ext_resource type="Script" uid="uid://2yt6aumlf4b6" path="res://UI/Windows/WindowsArea.gd" id="7_olvdc"]
 
@@ -18,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
 mouse_filter = 0
-texture = ExtResource("2_62lbm")
+texture = ExtResource("2_318kx")
 expand_mode = 2
 
 [node name="ItemsUI" parent="." instance=ExtResource("3_g4fav")]

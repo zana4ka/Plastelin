@@ -8,75 +8,64 @@ static func BeginCutScene(InData: CutSceneData) -> CutScene:
 	GameGlobals._MainScene._CutSceneCanvas.add_child(NewCutScene)
 	return NewCutScene
 
-@export var FrameScene: PackedScene = preload("res://Scenes/CutScenes/CutScene_Frame.tscn")
-
-@onready var FrameSwitcher: TabContainer = $FrameSwitcher
+@onready var _CurrentFrame: CutScene_Frame = $CurrentFrame
+@onready var _Text: Label = $Text
 @onready var _Fade: ColorRect = $Fade
 @onready var _AnimationPlayer: AnimationPlayer = $AnimationPlayer
 
 var _Data: CutSceneData
 
-var FrameArray: Array[CutScene_Frame] = []
-
 func _ready() -> void:
+	
+	_CurrentFrame.pressed.connect(OnCurrentFramePressed)
+	
 	InitFromData()
 
 func InitFromData():
-	
-	assert(FrameArray.is_empty())
-	
-	for SampleChild: Node in FrameSwitcher.get_children():
-		SampleChild.queue_free()
 	
 	_Fade.color = _Data.FadeColor
 	
 	assert(not _Data.FrameTextureArray.is_empty())
 	
-	for SampleFrameIndex: int in range(_Data.FrameTextureArray.size()):
-		
-		var SampleFrame := FrameScene.instantiate() as CutScene_Frame
-		
-		SampleFrame.texture_normal = _Data.FrameTextureArray[SampleFrameIndex]
-		SampleFrame.pressed.connect(TryShowFrame.bind(SampleFrameIndex + 1))
-		
-		FrameSwitcher.add_child(SampleFrame)
-		FrameArray.append(SampleFrame)
-	
-	TryShowFrame(0, true)
+	_CurrentFrame.visible = false
+	TryShowFrame(0, _Data.SkipFirstFrameFade)
 
-var PendingFrame: int = -1
+var NextFrameMinTimeTicksMs: int = 0
+var CurrentFrame: int = 0
+
+func OnCurrentFramePressed():
+	TryShowFrame(CurrentFrame + 1)
 
 func TryShowFrame(InFrame: int, InSkipAnimation: bool = false) -> bool:
 	
-	if _AnimationPlayer.is_playing():
+	if Time.get_ticks_msec() < NextFrameMinTimeTicksMs:
 		return false
 	
-	PendingFrame = InFrame
+	CurrentFrame = InFrame
+	NextFrameMinTimeTicksMs = Time.get_ticks_msec()
 	
-	if _Data.FadeDuration > 0.0:
-		_AnimationPlayer.play(&"NextFrame", -1.0, 1.0 / _Data.FadeDuration)
-		
-		if InSkipAnimation:
-			_AnimationPlayer.advance(1.0)
-		
-	else:
-		ShowFrame_UpdateFrame()
+	_Data.HandlePendingFrame(self, InSkipAnimation)
 	
 	return true
 
 func ShowFrame_UpdateFrame():
 	
-	if PendingFrame < FrameArray.size():
-		FrameSwitcher.visible = true
-		FrameSwitcher.current_tab = PendingFrame
+	if CurrentFrame < _Data.FrameTextureArray.size():
+		
+		_CurrentFrame.visible = true
+		_CurrentFrame.texture_normal = _Data.FrameTextureArray[CurrentFrame]
+		
+		if CurrentFrame < _Data.FrameTextArray.size():
+			_Text.text = _Data.FrameTextArray[CurrentFrame]
+			_Text.visible = true
 	else:
 		FinishCutScene(true)
 
 signal Finished()
 
-func FinishCutScene(InWaitForAnimation: bool):
+func FinishCutScene(InWaitForAnimation: bool = true):
 	
-	FrameSwitcher.visible = false
+	_CurrentFrame.visible = false
 	Finished.emit()
 	
 	if InWaitForAnimation and _AnimationPlayer.is_playing():

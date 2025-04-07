@@ -23,6 +23,8 @@ func _ready() -> void:
 	_Expand.pressed.connect(Expand)
 	_Close.pressed.connect(Close)
 	
+	_Expand.disabled = true
+	
 	UpdateFromOwner()
 
 func UpdateFromOwner():

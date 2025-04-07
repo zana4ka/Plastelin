@@ -1,0 +1,58 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://ee5yxl1qw0vs"]
+
+[ext_resource type="Texture2D" uid="uid://c8yxud01441tl" path="res://UI/Desktop/Content/Background003a.jpg" id="1_3ra3j"]
+[ext_resource type="Texture2D" uid="uid://bl6smypddpucg" path="res://UI/Desktop/Content/Background003b.jpg" id="2_hb7db"]
+
+[resource]
+frames = 26
+frame_0/texture = ExtResource("1_3ra3j")
+frame_1/texture = ExtResource("2_hb7db")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("1_3ra3j")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("2_hb7db")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("1_3ra3j")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("2_hb7db")
+frame_5/duration = 0.1
+frame_6/texture = ExtResource("1_3ra3j")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("2_hb7db")
+frame_7/duration = 0.08
+frame_8/texture = ExtResource("1_3ra3j")
+frame_8/duration = 0.08
+frame_9/texture = ExtResource("2_hb7db")
+frame_9/duration = 0.08
+frame_10/texture = ExtResource("1_3ra3j")
+frame_10/duration = 0.5
+frame_11/texture = ExtResource("2_hb7db")
+frame_11/duration = 0.1
+frame_12/texture = ExtResource("1_3ra3j")
+frame_12/duration = 0.5
+frame_13/texture = ExtResource("2_hb7db")
+frame_13/duration = 0.2
+frame_14/texture = ExtResource("1_3ra3j")
+frame_14/duration = 0.2
+frame_15/texture = ExtResource("2_hb7db")
+frame_15/duration = 0.5
+frame_16/texture = ExtResource("1_3ra3j")
+frame_16/duration = 0.5
+frame_17/texture = ExtResource("2_hb7db")
+frame_17/duration = 0.1
+frame_18/texture = ExtResource("1_3ra3j")
+frame_18/duration = 0.1
+frame_19/texture = ExtResource("2_hb7db")
+frame_19/duration = 0.1
+frame_20/texture = ExtResource("1_3ra3j")
+frame_20/duration = 0.1
+frame_21/texture = ExtResource("2_hb7db")
+frame_21/duration = 1.0
+frame_22/texture = ExtResource("1_3ra3j")
+frame_22/duration = 0.2
+frame_23/texture = ExtResource("2_hb7db")
+frame_23/duration = 0.2
+frame_24/texture = ExtResource("1_3ra3j")
+frame_24/duration = 0.2
+frame_25/texture = ExtResource("2_hb7db")
+frame_25/duration = 0.2

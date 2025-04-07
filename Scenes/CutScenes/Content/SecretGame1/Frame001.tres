@@ -1,10 +1,12 @@
-[gd_resource type="AnimatedTexture" load_steps=13 format=3 uid="uid://ct71f2jvv1gba"]
+[gd_resource type="AnimatedTexture" load_steps=15 format=3 uid="uid://ct71f2jvv1gba"]
 
 [ext_resource type="Texture2D" uid="uid://dnusfde87e0h3" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001a.png" id="1_3rtx2"]
 [ext_resource type="Texture2D" uid="uid://ovivp8arvkds" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001b.png" id="2_j7xno"]
 [ext_resource type="Texture2D" uid="uid://dmnml4ahkr1nt" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001k.png" id="3_waxeo"]
 [ext_resource type="Texture2D" uid="uid://d00wmwyj1dtya" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001l.png" id="4_axa6h"]
+[ext_resource type="Texture2D" uid="uid://btyggww1j6ird" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001m.png" id="5_5bmpn"]
 [ext_resource type="Texture2D" uid="uid://bf57k03p7irf7" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001c.png" id="5_up4ol"]
+[ext_resource type="Texture2D" uid="uid://cbxx42ovgasp5" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001n.png" id="6_5tmth"]
 [ext_resource type="Texture2D" uid="uid://c4l1ynmfxdp55" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001d.png" id="6_xo7lo"]
 [ext_resource type="Texture2D" uid="uid://b485bccaio5dy" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001e.png" id="7_uearj"]
 [ext_resource type="Texture2D" uid="uid://gu210684eyev" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001f.png" id="8_wcw5o"]
@@ -14,9 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://cvrrdrvkujvie" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001j.png" id="12_6o1mj"]
 
 [resource]
-frames = 12
+frames = 14
 one_shot = true
-speed_scale = 12.0
+speed_scale = 28.0
 frame_0/texture = ExtResource("1_3rtx2")
 frame_1/texture = ExtResource("2_j7xno")
 frame_1/duration = 1.0
@@ -40,3 +42,7 @@ frame_10/texture = ExtResource("3_waxeo")
 frame_10/duration = 1.0
 frame_11/texture = ExtResource("4_axa6h")
 frame_11/duration = 1.0
+frame_12/texture = ExtResource("5_5bmpn")
+frame_12/duration = 1.0
+frame_13/texture = ExtResource("6_5tmth")
+frame_13/duration = 1.0

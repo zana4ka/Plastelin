@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://w75fmaqpfxsp"]
+[gd_scene load_steps=6 format=3 uid="uid://w75fmaqpfxsp"]
 
 [ext_resource type="Script" uid="uid://bfsr7xe0od0r8" path="res://Scenes/CutScenes/CutScene.gd" id="1_qatlv"]
 [ext_resource type="PackedScene" uid="uid://bnj4dife3fb0q" path="res://Scenes/CutScenes/CutScene_Frame.tscn" id="2_hu7my"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f7g2w"]
 
 [sub_resource type="Animation" id="Animation_hu7my"]
 resource_name = "NextFrame"
@@ -34,6 +32,18 @@ tracks/1/keys = {
 "method": &"ShowFrame_UpdateFrame"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_f7g2w"]
 length = 0.001
@@ -48,6 +58,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Text:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7jdvk"]
@@ -65,20 +87,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qatlv")
 
-[node name="FrameSwitcher" type="TabContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_f7g2w")
-current_tab = 0
-tabs_visible = false
-
-[node name="CutScene_Frame" parent="FrameSwitcher" instance=ExtResource("2_hu7my")]
+[node name="CurrentFrame" parent="." instance=ExtResource("2_hu7my")]
 layout_mode = 2
-metadata/_tab_index = 0
+anchors_preset = 0
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+offset_left = -133.5
+offset_top = -53.0
+offset_right = 133.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "Сапог ебать"
 
 [node name="Fade" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="CutSceneData" load_steps=3 format=3 uid="uid://b3o7i3dfw3k6b"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b3o7i3dfw3k6b"]
 
 [ext_resource type="Texture2D" uid="uid://ct71f2jvv1gba" path="res://Scenes/CutScenes/Content/SecretGame1/Frame001.tres" id="1_2v1km"]
-[ext_resource type="Script" uid="uid://dk1edm4qmw31p" path="res://Scenes/CutScenes/CutSceneData.gd" id="2_o2tws"]
+[ext_resource type="Script" uid="uid://dsu3vj63883bx" path="res://Scenes/CutScenes/Content/SecretGame1/CutSceneData.gd" id="2_jd551"]
 
 [resource]
-script = ExtResource("2_o2tws")
-FadeColor = Color(0.4, 0, 0, 1)
-FadeDuration = 0.0
+script = ExtResource("2_jd551")
+FadeColor = Color(1, 0, 0, 1)
+FadeDuration = 0.25
+SkipFirstFrameFade = false
 FrameTextureArray = Array[Texture2D]([ExtResource("1_2v1km")])
+FrameTextArray = Array[String](["Раз ты это видишь — ты хочешь правды. Тогда играй."])
+FrameTextColor = Color(0.8, 0, 0, 1)
 metadata/_custom_type_script = "uid://dk1edm4qmw31p"

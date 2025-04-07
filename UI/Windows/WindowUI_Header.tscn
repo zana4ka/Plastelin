@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw66orq8ug75g"]
+[gd_scene load_steps=12 format=3 uid="uid://cw66orq8ug75g"]
 
 [ext_resource type="Texture2D" uid="uid://cx2oqtnys177k" path="res://UI/Items/Content/Folders/Folder001a.png" id="1_682r6"]
 [ext_resource type="Script" uid="uid://dfp1woh7yiqx4" path="res://UI/Windows/WindowUI_Header.gd" id="1_q44cs"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://6yltjlvukyju" path="res://UI/Windows/Content/Collapse001b.png" id="5_h3k5v"]
 [ext_resource type="Texture2D" uid="uid://ca07df2c1py6j" path="res://UI/Windows/Content/Close001a.png" id="6_crdwa"]
 [ext_resource type="Texture2D" uid="uid://i3enx8u7xp8d" path="res://UI/Windows/Content/Expand001b.png" id="7_iue83"]
+[ext_resource type="Texture2D" uid="uid://d18vaqj1vilg6" path="res://UI/Windows/Content/Expand001a_Disabled.png" id="8_0k4yj"]
 [ext_resource type="Texture2D" uid="uid://boy1rxa64hbuq" path="res://UI/Windows/Content/Close001b.png" id="9_0k4yj"]
+[ext_resource type="Texture2D" uid="uid://bqqaiiye2bljy" path="res://UI/Windows/Content/Close001a_Disabled.png" id="11_usujb"]
 
 [node name="WindowUI_Header" type="VBoxContainer"]
 offset_right = 288.0
@@ -69,6 +71,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("5_5rrod")
 texture_pressed = ExtResource("7_iue83")
+texture_disabled = ExtResource("8_0k4yj")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -79,6 +82,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("6_crdwa")
 texture_pressed = ExtResource("9_0k4yj")
+texture_disabled = ExtResource("11_usujb")
 ignore_texture_size = true
 stretch_mode = 0
 

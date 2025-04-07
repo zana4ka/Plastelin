@@ -2,7 +2,7 @@ extends MiniGameLevel
 class_name LampGameLevel
 
 func _ready() -> void:
-	pass
+	OwnerMiniGameUI._Header._Close.visible = false
 
 func _can_drop_data(AtPosition: Vector2, InData: Variant) -> bool:
 	return InData is LampGameLevel_Document
