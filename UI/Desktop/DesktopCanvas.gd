@@ -10,18 +10,27 @@ class_name DesktopCanvas
 @onready var _WindowsDropArea: WindowsDropArea = $MainControl/Windows/DropArea
 @onready var _TaskbarUI: TaskbarUI = $MainControl/TaskbarUI
 
-var WindowsDictionary: Dictionary[ItemsUI_Item, WindowUI] = {}
+## Keys are ItemsUI_Item instance ids
+var WindowsDictionary: Dictionary[int, WindowUI] = {}
 
 func _ready() -> void:
 	pass
 
 func TryOpenWindowForItem(InItem: ItemsUI_Item, OnScreenCenter: bool) -> WindowUI:
 	
-	if WindowsDictionary.has(InItem):
-		if WindowsDictionary[InItem].TryUnfold():
-			return WindowsDictionary[InItem]
+	var ItemInstanceId := InItem.get_instance_id()
+	CloseInvalidWindows()
+	
+	if WindowsDictionary.has(ItemInstanceId):
+		if WindowsDictionary[ItemInstanceId].TryUnfold():
+			return WindowsDictionary[ItemInstanceId]
 		else:
 			return null
+	
+	if WindowsDictionary.size() > 5:
+		GameGlobals._Error.play()
+		OS.alert("Too many tabs!")
+		return null
 	
 	if not await InItem._Data.HandlePreOpenWindow(InItem):
 		return null
@@ -44,7 +53,12 @@ func TryOpenWindowForItem(InItem: ItemsUI_Item, OnScreenCenter: bool) -> WindowU
 ## Register + create the tab
 func OnWindowTreeEntered(InWindow: WindowUI) -> void:
 	
-	WindowsDictionary[InWindow.OwnerItem] = InWindow
+	if not is_instance_valid(InWindow.OwnerItem):
+		push_error("InWindow.OwnerItem is invalid!")
+		return
+	
+	var OwnerItemInstanceId := InWindow.OwnerItem.get_instance_id()
+	WindowsDictionary[OwnerItemInstanceId] = InWindow
 	
 	assert(InWindow.TaskbarTab == null)
 	_TaskbarUI.AddTabFor(InWindow)
@@ -53,22 +67,38 @@ func OnWindowTreeEntered(InWindow: WindowUI) -> void:
 func OnWindowTreeExiting(InWindow: WindowUI) -> void:
 	
 	if is_instance_valid(InWindow.OwnerItem):
-		WindowsDictionary.erase(InWindow.OwnerItem)
+		var OwnerItemInstanceId := InWindow.OwnerItem.get_instance_id()
+		WindowsDictionary.erase(OwnerItemInstanceId)
+	#else:
+	#	push_error("InWindow.OwnerItem is invalid!")
 	
 	assert(InWindow.TaskbarTab != null)
 	InWindow.TaskbarTab.queue_free()
 
 ## Remove the window if exists
 func OnItemTreeExiting(InItem: ItemsUI_Item) -> void:
-	if InItem.is_queued_for_deletion() and WindowsDictionary.has(InItem):
-		WindowsDictionary[InItem].queue_free()
+	
+	var ItemInstanceId := InItem.get_instance_id()
+	if InItem.is_queued_for_deletion() and WindowsDictionary.has(ItemInstanceId):
+		WindowsDictionary[ItemInstanceId].queue_free()
 
 func SetBackground(InTexture: Texture2D):
 	_Background.texture = InTexture
 
+func CloseInvalidWindows():
+	
+	for SampleInstanceId: int in WindowsDictionary.keys():
+		if not is_instance_valid(WindowsDictionary[SampleInstanceId]):
+			WindowsDictionary.erase(SampleInstanceId)
+
 func CloseAllWindows():
 	
-	for SampleWindowUI in WindowsDictionary.values():
-		if is_instance_valid(SampleWindowUI):
-			SampleWindowUI.TryClose.call_deferred(true)
-	await get_tree().process_frame
+	for SampleInstanceId: int in WindowsDictionary.keys():
+		WindowsDictionary[SampleInstanceId].TryClose()
+	WindowsDictionary.clear()
+
+var EasterFolder: ItemsUI_Item
+
+func TryOpenEasterWindow():
+	if is_instance_valid(EasterFolder):
+		TryOpenWindowForItem(EasterFolder, true)

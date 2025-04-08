@@ -1,21 +1,19 @@
-[gd_resource type="Resource" script_class="FolderData" load_steps=9 format=3 uid="uid://cxk2njaru51wh"]
+[gd_resource type="Resource" script_class="FolderData" load_steps=7 format=3 uid="uid://cxk2njaru51wh"]
 
 [ext_resource type="Texture2D" uid="uid://ctlywdmaaui0w" path="res://UI/Items/Content/Folders/Recycle001a.png" id="1_fqe88"]
 [ext_resource type="Script" uid="uid://dm7a2qbe1p8sy" path="res://UI/Items/ItemData.gd" id="2_703o1"]
+[ext_resource type="Resource" uid="uid://bhvqvrpvlynjb" path="res://UI/Items/Content/Documents/Easter/EasterDocument3.tres" id="3_0n0a3"]
 [ext_resource type="Script" uid="uid://0u1v5jvcen3b" path="res://UI/Items/FolderData.gd" id="3_107cu"]
-[ext_resource type="Resource" uid="uid://bxd61wdsxwxlb" path="res://UI/Items/Content/Photos/Modelling/ModellingPhoto1.tres" id="3_lw7x0"]
-[ext_resource type="Resource" uid="uid://c5u4qoti2p7d0" path="res://UI/Items/Content/Photos/Modelling/ModellingPhoto2.tres" id="4_4hoke"]
-[ext_resource type="Resource" uid="uid://iyy5phul6rxn" path="res://UI/Items/Content/Photos/Modelling/ModellingPhoto3.tres" id="5_xs450"]
 [ext_resource type="LabelSettings" uid="uid://cet37rksbs5wj" path="res://UI/Common/DefaultLS_Focused.tres" id="6_kuid7"]
 [ext_resource type="LabelSettings" uid="uid://bqjah153tcqnj" path="res://UI/Common/DefaultLS.tres" id="7_42jlp"]
 
 [resource]
 script = ExtResource("3_107cu")
-ExplorerPath = "SECRET_FOLDER_1_PATH"
-InnerItemDataArray = Array[ExtResource("2_703o1")]([ExtResource("3_lw7x0"), ExtResource("4_4hoke"), ExtResource("5_xs450")])
+ExplorerPathStart = "DESKTOP_PATH"
+InnerItemDataArray = Array[ExtResource("2_703o1")]([ExtResource("3_0n0a3")])
 IconTexture = ExtResource("1_fqe88")
 Name = "RECYCLE"
-ForceOpenOnScreenCenter = false
+ForceOpenOnScreenCenter = true
 _LS = ExtResource("7_42jlp")
 _FocusedLS = ExtResource("6_kuid7")
 IsInitiallyLocked = false

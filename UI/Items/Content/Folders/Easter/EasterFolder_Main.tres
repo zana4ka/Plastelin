@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=12 format=3 uid="uid://dsdqei0urc0so"]
+
+[ext_resource type="Texture2D" uid="uid://7tpl6nl4wcip" path="res://UI/Taskbar/Content/Settings001a.png" id="1_23ve3"]
+[ext_resource type="Script" uid="uid://dm7a2qbe1p8sy" path="res://UI/Items/ItemData.gd" id="2_j5b7p"]
+[ext_resource type="Resource" uid="uid://bxd61wdsxwxlb" path="res://UI/Items/Content/Photos/Modelling/ModellingPhoto1.tres" id="3_mgbqm"]
+[ext_resource type="LabelSettings" uid="uid://cet37rksbs5wj" path="res://UI/Common/DefaultLS_Focused.tres" id="4_5ccs7"]
+[ext_resource type="Resource" uid="uid://c5u4qoti2p7d0" path="res://UI/Items/Content/Photos/Modelling/ModellingPhoto2.tres" id="4_evo2t"]
+[ext_resource type="Resource" uid="uid://iyy5phul6rxn" path="res://UI/Items/Content/Photos/Modelling/ModellingPhoto3.tres" id="5_8hc58"]
+[ext_resource type="LabelSettings" uid="uid://bqjah153tcqnj" path="res://UI/Common/DefaultLS.tres" id="5_j5e3u"]
+[ext_resource type="Resource" uid="uid://dmktxgpahpb1a" path="res://UI/Items/Content/Photos/Modelling/ModellingPhoto4.tres" id="6_dw3lu"]
+[ext_resource type="Resource" uid="uid://dwcbcgcx0712k" path="res://UI/Items/Content/Photos/Modelling/ModellingPhoto5.tres" id="7_ygvux"]
+[ext_resource type="Resource" uid="uid://c5r5f07umepe" path="res://UI/Items/Content/Photos/Modelling/ModellingPhoto6.tres" id="8_rblmv"]
+[ext_resource type="Script" uid="uid://fpxyj16x1pp7" path="res://UI/Items/Content/Folders/Easter/EasterFolder_Main.gd" id="11_ah3vc"]
+
+[resource]
+script = ExtResource("11_ah3vc")
+ExplorerPathStart = "DESKTOP_PATH"
+InnerItemDataArray = Array[ExtResource("2_j5b7p")]([ExtResource("3_mgbqm"), ExtResource("4_evo2t"), ExtResource("5_8hc58"), ExtResource("6_dw3lu"), ExtResource("7_ygvux"), ExtResource("8_rblmv")])
+IconTexture = ExtResource("1_23ve3")
+Name = "EASTER_FOLDER_MAIN"
+ForceOpenOnScreenCenter = false
+_LS = ExtResource("5_j5e3u")
+_FocusedLS = ExtResource("4_5ccs7")
+IsInitiallyLocked = true
+OpenItemAfterUnlock = true
+UnlockPassword = ""
+metadata/_custom_type_script = "uid://0u1v5jvcen3b"

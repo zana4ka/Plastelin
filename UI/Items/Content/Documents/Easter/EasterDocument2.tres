@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dv4plo3q4wm8c"]
+
+[ext_resource type="Texture2D" uid="uid://bip3jnkwsuwym" path="res://UI/Items/Content/Documents/Document001a.png" id="1_u553g"]
+[ext_resource type="LabelSettings" uid="uid://cet37rksbs5wj" path="res://UI/Common/DefaultLS_Focused.tres" id="2_aidjs"]
+[ext_resource type="LabelSettings" uid="uid://bqjah153tcqnj" path="res://UI/Common/DefaultLS.tres" id="3_7srup"]
+[ext_resource type="Script" uid="uid://bd1lvr5ekxw68" path="res://UI/Items/Content/Documents/Easter/EasterDocument2.gd" id="4_yaho5"]
+
+[resource]
+script = ExtResource("4_yaho5")
+DocumentText = "Some
+scary text."
+IsEditable = false
+IconTexture = ExtResource("1_u553g")
+Name = "EASTER_DOCUMENT_2"
+ForceOpenOnScreenCenter = false
+_LS = ExtResource("3_7srup")
+_FocusedLS = ExtResource("2_aidjs")
+IsInitiallyLocked = false
+OpenItemAfterUnlock = true
+UnlockPassword = ""
+metadata/_custom_type_script = "uid://dm7a2qbe1p8sy"

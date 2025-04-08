@@ -15,6 +15,9 @@ class_name ItemData
 @export var OpenItemAfterUnlock: bool = true
 @export var UnlockPassword: String = ""
 
+func GetUnlockPassword() -> String:
+	return UnlockPassword
+
 func HandlePostUnlock(InPasswordUI: PasswordUI):
 	
 	if OpenItemAfterUnlock:

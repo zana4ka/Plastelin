@@ -11,6 +11,8 @@ class_name MainScene
 
 @onready var _AnimationPlayer: AnimationPlayer = $AnimationPlayer
 
+@onready var EasterRandomPassword: int = randi_range(1000, 9999)
+
 func _ready():
 	
 	#Input.set_custom_mouse_cursor(CursorPointer, Input.CURSOR_ARROW, Vector2(2.0, 2.0))
@@ -65,6 +67,8 @@ func BeginScene1():
 	set_meta(&"Scene1", true)
 	
 	_DesktopCanvas.SetBackground(load("res://UI/Desktop/Content/Background001a.jpg"))
+	
+	SpawnEasterFolder()
 	
 	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/MyComputer.tres")).GridPosition = Vector2i(0, 0)
 	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/SecretFolder1.tres")).GridPosition = Vector2i(0, 1)
@@ -136,6 +140,8 @@ func BeginScene6():
 	await _DesktopCanvas.CloseAllWindows()
 	await _DesktopCanvas._ItemsUI.RemoveAllItems()
 	
+	SpawnEasterFolder()
+	
 	_DesktopCanvas._ItemsUI.add_theme_constant_override(&"h_separation", 12)
 	_DesktopCanvas._TaskbarUI.visible = false
 	
@@ -177,3 +183,7 @@ func PlayCredits():
 	GameGlobals._GlobalLoop2.stop()
 	
 	_AnimationPlayer.play(&"Credits")
+
+func SpawnEasterFolder():
+	_DesktopCanvas.EasterFolder = _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/Easter/EasterFolder_Main.tres"))
+	_DesktopCanvas.EasterFolder.GridPosition = Vector2i(0, 6)

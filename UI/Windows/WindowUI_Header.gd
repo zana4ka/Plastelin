@@ -29,9 +29,9 @@ class_name WindowUI_Header
 
 func _ready() -> void:
 	
-	assert(OwnerWindowUI)
-	
 	if not Engine.is_editor_hint():
+		
+		assert(OwnerWindowUI)
 		
 		_Collapse.pressed.connect(Collapse)
 		_Expand.pressed.connect(Expand)

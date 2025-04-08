@@ -13,7 +13,7 @@ func _ready() -> void:
 func UpdateFromOwnerItem():
 	
 	var _DocumentData := OwnerItem._Data as DocumentData
-	_Text.text = _DocumentData.get_meta(&"EditedText", tr(_DocumentData.DocumentText))
+	_Text.text = _DocumentData.get_meta(&"EditedText", _DocumentData.GetDocumentText())
 	_Text.editable = _DocumentData.IsEditable
 
 func OnTextChanged():

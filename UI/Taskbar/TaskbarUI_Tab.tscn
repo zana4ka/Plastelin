@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://cx2oqtnys177k" path="res://UI/Items/Content/Folders/Folder001a.png" id="2_1weeq"]
 
 [node name="TaskbarUI_Tab" type="MarginContainer"]
-offset_right = 40.0
+offset_right = 240.0
 offset_bottom = 40.0
 script = ExtResource("1_mw3bo")
 
 [node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 toggle_mode = true
 text = "Some tab"
 icon = ExtResource("2_1weeq")
 alignment = 0
 text_overrun_behavior = 3
+clip_text = true
 expand_icon = true

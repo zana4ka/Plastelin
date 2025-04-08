@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="FolderData" load_steps=7 format=3 uid="uid://dfxbu0nihw4lm"]
+
+[ext_resource type="Texture2D" uid="uid://cx2oqtnys177k" path="res://UI/Items/Content/Folders/Folder001a.png" id="1_jdaw6"]
+[ext_resource type="Script" uid="uid://dm7a2qbe1p8sy" path="res://UI/Items/ItemData.gd" id="2_5tdbh"]
+[ext_resource type="LabelSettings" uid="uid://cet37rksbs5wj" path="res://UI/Common/DefaultLS_Focused.tres" id="3_5slvb"]
+[ext_resource type="Resource" uid="uid://cogg2lts033sv" path="res://UI/Items/Content/Folders/Easter/EasterFolder2_2.tres" id="3_5tdbh"]
+[ext_resource type="LabelSettings" uid="uid://bqjah153tcqnj" path="res://UI/Common/DefaultLS.tres" id="4_241je"]
+[ext_resource type="Script" uid="uid://0u1v5jvcen3b" path="res://UI/Items/FolderData.gd" id="5_wagrl"]
+
+[resource]
+script = ExtResource("5_wagrl")
+ExplorerPathStart = "DESKTOP_PATH"
+InnerItemDataArray = Array[ExtResource("2_5tdbh")]([ExtResource("3_5tdbh")])
+IconTexture = ExtResource("1_jdaw6")
+Name = "EASTER_FOLDER_B"
+ForceOpenOnScreenCenter = false
+_LS = ExtResource("4_241je")
+_FocusedLS = ExtResource("3_5slvb")
+IsInitiallyLocked = false
+OpenItemAfterUnlock = true
+UnlockPassword = ""
+metadata/_custom_type_script = "uid://0u1v5jvcen3b"

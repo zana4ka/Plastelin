@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=6 format=3 uid="uid://b1rso1a8l1sfx"]
 
 [ext_resource type="Texture2D" uid="uid://ftoxhqvf7vxa" path="res://UI/Items/Content/Photos/Photo001a.png" id="1_hwyby"]
-[ext_resource type="Texture2D" uid="uid://b0iba04biemhc" path="res://UI/Items/Content/Photos/Final/Bed001a.jpg" id="2_ecgkq"]
+[ext_resource type="Texture2D" uid="uid://c2u3qm0lvdp4d" path="res://UI/Items/Content/Photos/Corpse002a.png" id="2_ecgkq"]
 [ext_resource type="LabelSettings" uid="uid://cet37rksbs5wj" path="res://UI/Common/DefaultLS_Focused.tres" id="3_17kgg"]
 [ext_resource type="LabelSettings" uid="uid://bj7aioopaodka" path="res://UI/Items/Content/Folders/SecretFolder3_LS.tres" id="4_hwyby"]
 [ext_resource type="Script" uid="uid://dh6b1hwwie4tv" path="res://UI/Items/Content/Photos/Final/FinalPhoto.gd" id="5_ecgkq"]

@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func UpdateFromOwnerItem():
 	
-	assert(not OwnerItem._Data.UnlockPassword.is_empty())
+	assert(not OwnerItem._Data.GetUnlockPassword().is_empty())
 	_LineEdit.grab_focus.call_deferred()
 
 func OnConfirmPressed():
@@ -29,7 +29,7 @@ func TryConfirmPassword():
 	if _LineEdit.text.is_empty():
 		return
 	
-	if _LineEdit.text == OwnerItem._Data.UnlockPassword:
+	if _LineEdit.text == OwnerItem._Data.GetUnlockPassword():
 		OwnerItem._Data.HandlePostUnlock(self)
 	else:
 		_LineEdit.text = ""

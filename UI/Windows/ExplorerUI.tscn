@@ -49,6 +49,7 @@ text = "D:\\ScientificWays\\Projects\\Plastelin"
 vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
+text_direction = 2
 
 [node name="TextureButton" type="TextureButton" parent="VB/AddressHB"]
 custom_minimum_size = Vector2(32, 32)

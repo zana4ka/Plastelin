@@ -3,6 +3,7 @@ extends PanelContainer
 class_name TaskbarUI
 
 @export var TabScene: PackedScene = preload("res://UI/Taskbar/TaskbarUI_Tab.tscn")
+@export var TabSize: float = 240.0
 
 @onready var StartButton: Button = $MC/HB/Start
 @onready var StartMenu: TaskbarUI_StartMenu = $MC/HB/Start/Menu
@@ -33,6 +34,11 @@ func _ready() -> void:
 		
 		TimeButtonTimer.timeout.connect(OnTimeButtonTimerTimeout)
 		OnTimeButtonTimerTimeout()
+		
+		if TranslationServer.get_locale().left(2) == "ru":
+			OnLanguageToggled(true)
+		else:
+			OnLanguageToggled(false)
 
 ## Start
 func OnStartToggled(InToggledOn: bool):
@@ -45,6 +51,17 @@ func OnStartMenuVisibilityChanged():
 func AddTabFor(InWindow: WindowUI):
 	var NewTab := InWindow.CreateTaskbarTab()
 	TabsHB.add_child(NewTab)
+	UpdateTabsSize()
+
+func UpdateTabsSize():
+	
+	var Tabs := TabsHB.get_children()
+	if Tabs.size() <= 0:
+		return
+	
+	var UpdatedTabSize := minf(TabsHB.size.x / Tabs.size(), TabSize)
+	for SampleTab: TaskbarUI_Tab in Tabs:
+		SampleTab.custom_minimum_size.x = UpdatedTabSize
 
 ## Tools
 func OnLanguageToggled(InToggledOn: bool):

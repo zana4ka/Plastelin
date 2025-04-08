@@ -16,4 +16,5 @@ func UpdateFromOwnerItem():
 	for SampleInnerItemData: ItemData in OwnerFolderData.InnerItemDataArray:
 		_ItemsUI.AddNewItem(SampleInnerItemData)
 	
-	_Path.text = OwnerFolderData.ExplorerPath
+	OwnerFolderData.TryGeneratePathsRecursive()
+	_Path.text = OwnerFolderData.GeneratedPath
