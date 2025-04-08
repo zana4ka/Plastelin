@@ -10,6 +10,7 @@ class_name ItemsUI_Item
 @onready var ParentContainer: ItemsUIBase = get_parent() as ItemsUIBase
 
 @onready var _Button: TextureButton = $Button
+@onready var _Lock: TextureRect = $Button/Lock
 @onready var _Label: Label = $Control/Label
 
 var WasOpened: bool = false
@@ -17,19 +18,23 @@ var IsLocked: bool = false:
 	set(InIsLocked):
 		IsLocked = InIsLocked
 		_Button.modulate = Color.DIM_GRAY if IsLocked else Color.WHITE
+		_Lock.visible = InIsLocked
 
 func _ready():
 	
-	_Button.pressed.connect(OnButtonPressed)
-	_Button.focus_entered.connect(OnButtonFocusEntered)
-	_Button.focus_exited.connect(OnButtonFocusExited)
-	
-	UpdateFromItemData()
-	
-	if ParentContainer:
-		ParentContainer.RegisterItem(self)
-	
-	tree_exiting.connect(GameGlobals._MainScene._DesktopCanvas.OnItemTreeExiting.bind(self))
+	if not Engine.is_editor_hint():
+		
+		_Button.pressed.connect(OnButtonPressed)
+		_Button.focus_entered.connect(OnButtonFocusEntered)
+		_Button.focus_exited.connect(OnButtonFocusExited)
+		
+		UpdateFromItemData()
+		
+		if ParentContainer:
+			ParentContainer.RegisterItem(self)
+		
+		IsLocked = IsLocked
+		tree_exiting.connect(GameGlobals._MainScene._DesktopCanvas.OnItemTreeExiting.bind(self))
 
 func _get_drag_data(AtPosition: Vector2) -> Variant:
 	var DragPreview := TextureRect.new()

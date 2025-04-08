@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://et8ew73vo8qp"]
+[gd_scene load_steps=18 format=3 uid="uid://et8ew73vo8qp"]
 
 [ext_resource type="Script" uid="uid://fl48c8y4nfii" path="res://Scenes/MiniGames/ShovelGame/ShovelGameLevel.gd" id="1_copjl"]
 [ext_resource type="SpriteFrames" uid="uid://dm5a4lj1qnurq" path="res://Scenes/MiniGames/ShovelGame/Content/Coffin001_Frames.tres" id="3_bfjjv"]
 [ext_resource type="Script" uid="uid://cbfs1fdmok57v" path="res://Scenes/Shake.gd" id="3_daxit"]
 [ext_resource type="Texture2D" uid="uid://dp4xktlwd6jny" path="res://Scenes/MiniGames/ShovelGame/Content/Hint001a.png" id="4_o7uik"]
 [ext_resource type="SpriteFrames" uid="uid://ck5rafuvehqfh" path="res://Scenes/MiniGames/ShovelGame/Content/Shovel001_Frames.tres" id="5_rmm2w"]
+[ext_resource type="Texture2D" uid="uid://d2j5yetwo8gff" path="res://Scenes/MiniGames/ShovelGame/Content/Particles/Dirt001a.png" id="6_tt2hp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfjjv"]
 
@@ -17,6 +18,13 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1r7wx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxlmb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1r7wx"]
+light_mode = 1
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
 [sub_resource type="Curve" id="Curve_mywho"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.498285), 0.0, 0.0, 0, 0]
@@ -84,6 +92,7 @@ grow_vertical = 2
 script = ExtResource("3_daxit")
 
 [node name="Coffin" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(0, -100)
 sprite_frames = ExtResource("3_bfjjv")
 frame = 4
 
@@ -94,16 +103,16 @@ scale = Vector2(0.3725, 0.3725)
 texture = ExtResource("4_o7uik")
 
 [node name="Interact" type="Button" parent="Control/Coffin"]
-custom_minimum_size = Vector2(400, 400)
+custom_minimum_size = Vector2(600, 600)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -400.0
-offset_right = -400.0
-offset_bottom = -400.0
+offset_left = -700.0
+offset_top = -700.0
+offset_right = -100.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
@@ -116,30 +125,35 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_mxlmb")
 flat = true
 
 [node name="Shovel" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(0, -100)
 sprite_frames = ExtResource("5_rmm2w")
 
 [node name="ResetTimer" type="Timer" parent="Control/Shovel"]
 one_shot = true
 
 [node name="DigParticles" type="CPUParticles2D" parent="Control"]
+material = SubResource("CanvasItemMaterial_1r7wx")
 position = Vector2(0, -300)
 emitting = false
 amount = 80
+texture = ExtResource("6_tt2hp")
 lifetime = 3.0
 one_shot = true
 speed_scale = 6.0
 explosiveness = 0.2
 randomness = 0.5
-fixed_fps = 30
+lifetime_randomness = 0.5
 emission_shape = 3
 emission_rect_extents = Vector2(400, 4)
 direction = Vector2(0, 1)
 spread = 90.0
 gravity = Vector2(0, 100)
 initial_velocity_max = 100.0
-scale_amount_max = 10.0
+angle_max = 360.0
+scale_amount_min = 0.1
 scale_amount_curve = SubResource("Curve_mywho")
-color = Color(0.624406, 0.311306, 0.181542, 1)
+color = Color(0.8, 0.4024, 0.232, 1)
+anim_offset_max = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

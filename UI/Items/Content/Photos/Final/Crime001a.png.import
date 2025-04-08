@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch5ml1jctvnt"
-path="res://.godot/imported/Newspaper001a.png-9b936e7e21cb271a298f3e7ded66d191.ctex"
+uid="uid://n1g1648vj4g6"
+path="res://.godot/imported/Crime001a.png-806a6d69b089a125c90e079f8d983548.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/MiniGames/LampGame/Content/Newspaper001a.png"
-dest_files=["res://.godot/imported/Newspaper001a.png-9b936e7e21cb271a298f3e7ded66d191.ctex"]
+source_file="res://UI/Items/Content/Photos/Final/Crime001a.png"
+dest_files=["res://.godot/imported/Crime001a.png-806a6d69b089a125c90e079f8d983548.ctex"]
 
 [params]
 

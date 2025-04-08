@@ -85,5 +85,5 @@ scroll_deadzone = 8
 
 [node name="ItemsUI" parent="VB/ItemsMC/Panel/SC" instance=ExtResource("3_svpkb")]
 layout_mode = 2
-columns = 6
-MinGridSize = Vector2i(5, 3)
+columns = 5
+MinGridSize = Vector2i(4, 3)

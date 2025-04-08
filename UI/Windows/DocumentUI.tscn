@@ -40,3 +40,4 @@ grow_vertical = 2
 text = "Some
 scary text."
 placeholder_text = "Don't look behind you..."
+wrap_mode = 1

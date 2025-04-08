@@ -6,10 +6,15 @@ class_name DocumentUI
 func _ready() -> void:
 	
 	_Text.focus_entered.connect(OnFocusEntered)
+	_Text.text_changed.connect(OnTextChanged)
 	
 	super()
 
 func UpdateFromOwnerItem():
 	
 	var _DocumentData := OwnerItem._Data as DocumentData
-	_Text.text = _DocumentData.DocumentText
+	_Text.text = _DocumentData.get_meta(&"EditedText", tr(_DocumentData.DocumentText))
+	_Text.editable = _DocumentData.IsEditable
+
+func OnTextChanged():
+	OwnerItem._Data.set_meta(&"EditedText", _Text.text)

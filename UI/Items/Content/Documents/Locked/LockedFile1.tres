@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DocumentData" load_steps=5 format=3 uid="uid://bftavpa556h87"]
+
+[ext_resource type="Texture2D" uid="uid://bip3jnkwsuwym" path="res://UI/Items/Content/Documents/Document001a.png" id="1_sgx35"]
+[ext_resource type="LabelSettings" uid="uid://cet37rksbs5wj" path="res://UI/Common/DefaultLS_Focused.tres" id="2_noft1"]
+[ext_resource type="LabelSettings" uid="uid://bqjah153tcqnj" path="res://UI/Common/DefaultLS.tres" id="3_mhagw"]
+[ext_resource type="Script" uid="uid://dvfqta357s6gd" path="res://UI/Items/DocumentData.gd" id="4_gme8i"]
+
+[resource]
+script = ExtResource("4_gme8i")
+DocumentText = "AAAAAAAAAAAAAAAAAAAHHHHH"
+IconTexture = ExtResource("1_sgx35")
+Name = "LOCKED_FILE_1"
+ForceOpenOnScreenCenter = false
+_LS = ExtResource("3_mhagw")
+_FocusedLS = ExtResource("2_noft1")
+IsInitiallyLocked = true
+OpenItemAfterUnlock = true
+UnlockPassword = "246463y3635tdvs"
+metadata/_custom_type_script = "uid://dm7a2qbe1p8sy"

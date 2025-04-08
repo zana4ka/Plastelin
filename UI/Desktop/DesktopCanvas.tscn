@@ -32,6 +32,9 @@ texture = ExtResource("2_318kx")
 expand_mode = 2
 
 [node name="ItemsUI" parent="MainControl" instance=ExtResource("3_g4fav")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
 offset_right = 2492.0
 offset_bottom = 932.0
 mouse_filter = 2

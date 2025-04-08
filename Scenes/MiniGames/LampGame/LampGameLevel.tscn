@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvjrsqwt1t5bb"]
+[gd_scene load_steps=17 format=3 uid="uid://dvjrsqwt1t5bb"]
 
 [ext_resource type="Script" uid="uid://vwtpd8on5yp7" path="res://Scenes/MiniGames/LampGame/LampGameLevel.gd" id="1_bk8g6"]
-[ext_resource type="Texture2D" uid="uid://clygc6c7kwrf3" path="res://UI/Common/Panels/Panel002a.png" id="2_irij1"]
 [ext_resource type="Texture2D" uid="uid://cd1iafqesmlfq" path="res://Scenes/MiniGames/LampGame/Content/Light001a.png" id="2_rmr2u"]
+[ext_resource type="Texture2D" uid="uid://d4lq1pomtprkl" path="res://Scenes/MiniGames/LampGame/Content/Table001a.png" id="2_vw0j1"]
+[ext_resource type="Texture2D" uid="uid://do6gvri1dtm5h" path="res://Scenes/MiniGames/LampGame/Content/Lamp001a.png" id="3_fq7eg"]
 [ext_resource type="PackedScene" uid="uid://cgrceqp5fcc6d" path="res://Scenes/MiniGames/LampGame/LampGameLevel_Photo.tscn" id="4_xcqy1"]
+[ext_resource type="Texture2D" uid="uid://disavdhdbh1ki" path="res://Scenes/MiniGames/LampGame/Content/Light002a.png" id="5_4d8r5"]
 [ext_resource type="Texture2D" uid="uid://ue6amyxkftts" path="res://Scenes/MiniGames/LampGame/Content/EmptyPhoto001a.png" id="5_773t0"]
 [ext_resource type="Texture2D" uid="uid://cv0x3ay0p4pnn" path="res://Scenes/MiniGames/LampGame/Content/Photo002a.png" id="5_qf4f8"]
 [ext_resource type="Material" uid="uid://wfuwlej3ehjn" path="res://Scenes/MiniGames/LampGame/Content/EmptyPhoto001a_Material.tres" id="5_vrlwk"]
@@ -14,7 +16,6 @@
 [ext_resource type="Material" uid="uid://cu0cc4u6jy7rr" path="res://Scenes/MiniGames/LampGame/Content/Photo002a_Material.tres" id="7_vrlwk"]
 [ext_resource type="Material" uid="uid://dqh3ttpklol4" path="res://Scenes/MiniGames/LampGame/Content/Photo003a_Material.tres" id="9_0vua3"]
 [ext_resource type="Material" uid="uid://cw42kwnr8uf6g" path="res://Scenes/MiniGames/LampGame/Content/Photo004a_Material.tres" id="11_8cp01"]
-[ext_resource type="Texture2D" uid="uid://ch5ml1jctvnt" path="res://Scenes/MiniGames/LampGame/Content/Newspaper001a.png" id="15_0vua3"]
 
 [node name="LampGameLevel" type="Control"]
 layout_mode = 3
@@ -34,128 +35,116 @@ offset_right = 400.0
 offset_bottom = 300.0
 
 [node name="Background" type="Sprite2D" parent="Control"]
-texture = ExtResource("2_irij1")
+texture = ExtResource("2_vw0j1")
 
-[node name="Lamp" type="AnimatedSprite2D" parent="Control"]
+[node name="Shadow" type="Sprite2D" parent="Control/Background"]
+z_index = 1
+texture = ExtResource("5_4d8r5")
 
-[node name="PointLight2D" type="PointLight2D" parent="Control/Lamp"]
+[node name="Lamp" type="Sprite2D" parent="Control"]
+light_mask = 2
+z_index = 1
+texture = ExtResource("3_fq7eg")
+
+[node name="PointLight1" type="PointLight2D" parent="Control/Lamp"]
 color = Color(1, 0, 1, 1)
+energy = 2.0
 texture = ExtResource("2_rmr2u")
 
 [node name="EmptyPhoto1" parent="." instance=ExtResource("4_xcqy1")]
 material = ExtResource("5_vrlwk")
-custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 514.0
-offset_top = 397.0
-offset_right = 642.0
-offset_bottom = 525.0
+offset_left = 499.0
+offset_top = 468.0
+offset_right = 627.0
+offset_bottom = 596.0
 grow_horizontal = 1
 grow_vertical = 1
+rotation = -0.253073
 texture = ExtResource("5_773t0")
 
 [node name="EmptyPhoto2" parent="." instance=ExtResource("4_xcqy1")]
 material = ExtResource("7_0vua3")
-custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 381.0
-offset_top = 62.0
-offset_right = 509.0
-offset_bottom = 190.0
+offset_left = 376.0
+offset_top = 97.0
+offset_right = 504.0
+offset_bottom = 225.0
 grow_horizontal = 1
 grow_vertical = 1
 texture = ExtResource("6_dglxh")
 
 [node name="Photo1" parent="." instance=ExtResource("4_xcqy1")]
-custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 521.0
-offset_top = 230.0
-offset_right = 649.0
-offset_bottom = 358.0
+offset_left = 584.0
+offset_top = 298.0
+offset_right = 712.0
+offset_bottom = 426.0
 grow_horizontal = 1
 grow_vertical = 1
+rotation = 0.0872665
 
 [node name="Photo2" parent="." instance=ExtResource("4_xcqy1")]
 material = ExtResource("7_vrlwk")
-custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 338.0
-offset_top = 447.0
-offset_right = 466.0
-offset_bottom = 575.0
+offset_left = 351.0
+offset_top = 455.0
+offset_right = 479.0
+offset_bottom = 583.0
 grow_horizontal = 1
 grow_vertical = 1
 texture = ExtResource("5_qf4f8")
 
 [node name="Photo3" parent="." instance=ExtResource("4_xcqy1")]
 material = ExtResource("9_0vua3")
-custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 164.0
-offset_top = 319.0
-offset_right = 292.0
-offset_bottom = 447.0
+offset_left = 172.0
+offset_top = 401.0
+offset_right = 300.0
+offset_bottom = 529.0
 grow_horizontal = 1
 grow_vertical = 1
+rotation = 0.378736
 texture = ExtResource("6_dclk7")
 
 [node name="Photo4" parent="." instance=ExtResource("4_xcqy1")]
 material = ExtResource("11_8cp01")
-custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 153.0
-offset_top = 162.0
-offset_right = 281.0
-offset_bottom = 290.0
+offset_left = 564.0
+offset_top = 152.0
+offset_right = 692.0
+offset_bottom = 280.0
 grow_horizontal = 1
 grow_vertical = 1
+rotation = -0.336849
 texture = ExtResource("7_1f537")
-
-[node name="Newspaper1" parent="." instance=ExtResource("4_xcqy1")]
-material = ExtResource("11_8cp01")
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 1
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 573.0
-offset_top = 68.0
-offset_right = 701.0
-offset_bottom = 196.0
-grow_horizontal = 1
-grow_vertical = 1
-rotation = 0.42237
-texture = ExtResource("15_0vua3")

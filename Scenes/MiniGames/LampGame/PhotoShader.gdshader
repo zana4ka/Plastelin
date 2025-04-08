@@ -12,7 +12,7 @@ void light() {
 	
 	vec3 DefaultColor = COLOR.rgb * LIGHT_COLOR.rgb;
 	
-	vec3 MaskLight = COLOR.rgb * texture(Mask, UV).r * MaskColor;
+	vec3 MaskLight = COLOR.rgb * texture(Mask, UV).a * MaskColor;
 	MaskLight = MaskLight * pow(LIGHT_COLOR.a, 10.0) * 5.0;
 	LIGHT = vec4(DefaultColor + MaskLight, LIGHT_COLOR.a) * LIGHT_ENERGY;
 }

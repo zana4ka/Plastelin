@@ -7,8 +7,8 @@ class_name ItemData
 @export var ForceOpenOnScreenCenter: bool = false
 
 @export_category("Label")
-@export var _LS: LabelSettings = preload("res://UI/Items/Content/DefaultLS.tres")
-@export var _FocusedLS: LabelSettings = preload("res://UI/Items/Content/DefaultLS_Focused.tres")
+@export var _LS: LabelSettings = preload("res://UI/Common/DefaultLS.tres")
+@export var _FocusedLS: LabelSettings = preload("res://UI/Common/DefaultLS_Focused.tres")
 
 @export_category("Lock")
 @export var IsInitiallyLocked: bool = false

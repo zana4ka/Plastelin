@@ -45,7 +45,6 @@ alignment = 0
 expand_icon = true
 
 [node name="Menu" parent="MC/HB/Start" instance=ExtResource("3_6i67l")]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0

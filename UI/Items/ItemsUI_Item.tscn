@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh2v8xnyv0ja6"]
+[gd_scene load_steps=6 format=3 uid="uid://dh2v8xnyv0ja6"]
 
 [ext_resource type="Script" uid="uid://daw10lsm55b86" path="res://UI/Items/ItemsUI_Item.gd" id="1_ok6d5"]
 [ext_resource type="Resource" uid="uid://yg10shlscodd" path="res://UI/Items/Content/Folders/MyComputer.tres" id="2_m4jeu"]
 [ext_resource type="Texture2D" uid="uid://bpn26pmgjaemf" path="res://UI/Items/Content/Folders/MyComputer001a.png" id="3_sbneb"]
-[ext_resource type="LabelSettings" uid="uid://bqjah153tcqnj" path="res://UI/Items/Content/DefaultLS.tres" id="4_sbneb"]
+[ext_resource type="Texture2D" uid="uid://d1aeoaqf4s5ij" path="res://UI/Items/Content/Lock001a.png" id="4_j7s47"]
+[ext_resource type="LabelSettings" uid="uid://bqjah153tcqnj" path="res://UI/Common/DefaultLS.tres" id="4_sbneb"]
 
 [node name="ItemsUI_Item" type="VBoxContainer"]
 custom_minimum_size = Vector2(180, 180)
@@ -22,6 +23,20 @@ action_mode = 0
 texture_normal = ExtResource("3_sbneb")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Lock" type="TextureRect" parent="Button"]
+visible = false
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 32.0
+grow_vertical = 0
+texture = ExtResource("4_j7s47")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 2

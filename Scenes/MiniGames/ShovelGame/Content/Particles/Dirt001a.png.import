@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n1g1648vj4g6"
-path="res://.godot/imported/Crime001a.png-2bf97815b1b6c55b3403f428bd73e7c8.ctex"
+uid="uid://d2j5yetwo8gff"
+path="res://.godot/imported/Dirt001a.png-597b5f0e43a5badd3590a531ae47ce77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Items/Content/Photos/Crime001a.png"
-dest_files=["res://.godot/imported/Crime001a.png-2bf97815b1b6c55b3403f428bd73e7c8.ctex"]
+source_file="res://Scenes/MiniGames/ShovelGame/Content/Particles/Dirt001a.png"
+dest_files=["res://.godot/imported/Dirt001a.png-597b5f0e43a5badd3590a531ae47ce77.ctex"]
 
 [params]
 
