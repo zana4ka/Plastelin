@@ -7,8 +7,8 @@
 script = ExtResource("4_481si")
 FadeColor = Color(0.4, 0, 0, 1)
 FadeDuration = 0.5
-SkipFadeOnFrames = Array[int]([0])
-FrameTextureArray = Array[Texture2D]([ExtResource("1_rrjl2")])
-FrameTextArray = Array[String]([])
+SkipFadeOnFrames = Array[int]([])
+FrameTextureArray = Array[Texture2D]([ExtResource("1_rrjl2"), ExtResource("1_rrjl2")])
+FrameTextArray = Array[String](["CUTSCENE_PREFINAL_1", "CUTSCENE_PREFINAL_2"])
 FrameTextColor = Color(0.8, 0, 0, 1)
 metadata/_custom_type_script = "uid://dk1edm4qmw31p"

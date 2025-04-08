@@ -10,9 +10,6 @@ FadeColor = Color(1, 0, 0, 1)
 FadeDuration = 0.25
 SkipFadeOnFrames = Array[int]([0, 1, 2])
 FrameTextureArray = Array[Texture2D]([ExtResource("1_2v1km"), ExtResource("2_y7ncd"), ExtResource("2_y7ncd")])
-FrameTextArray = Array[String](["Раз ты это видишь...", "Раз ты это видишь...
-Ты хочешь правды.", "Раз ты это видишь...
-Ты хочешь правды.
-Тогда играй!"])
+FrameTextArray = Array[String](["CUTSCENE_SHOVELGAME_1", "CUTSCENE_SHOVELGAME_2", "CUTSCENE_SHOVELGAME_3"])
 FrameTextColor = Color(0.8, 0, 0, 1)
 metadata/_custom_type_script = "uid://dk1edm4qmw31p"

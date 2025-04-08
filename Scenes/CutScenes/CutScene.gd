@@ -28,6 +28,7 @@ func InitFromData():
 	
 	assert(not _Data.FrameTextureArray.is_empty())
 	
+	_Text.visible = false
 	_CurrentFrame.visible = false
 	TryShowFrame(0)
 

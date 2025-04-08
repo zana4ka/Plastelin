@@ -23,4 +23,5 @@ func _get_drag_data(AtPosition: Vector2) -> Variant:
 	
 	set_meta(&"Offset", -AtPosition)
 	visible = false
+	GameGlobals._PhotoPickUp.play()
 	return self

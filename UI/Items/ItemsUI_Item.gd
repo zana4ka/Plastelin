@@ -42,6 +42,7 @@ func _get_drag_data(AtPosition: Vector2) -> Variant:
 	DragPreview.stretch_mode = TextureRect.StretchMode.STRETCH_SCALE
 	DragPreview.expand_mode = TextureRect.ExpandMode.EXPAND_IGNORE_SIZE
 	DragPreview.custom_minimum_size = _Button.custom_minimum_size
+	GameGlobals._PhotoPickUp.play()
 	set_drag_preview(DragPreview)
 	return self
 

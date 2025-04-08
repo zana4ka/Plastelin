@@ -1,6 +1,7 @@
 keys,en,ru
 MY_COMPUTER,My Computer,Мой компьютер
 RECYCLE,Recycle Bin,Корзина
+NEW_DOCUMENT_1,Text document.txt,Текстовый документ.txt
 START,Start,Пуск
 SHUT_DOWN,Shut down...,Завершить работу...
 SETTINGS,Settings,Настройки
@@ -41,11 +42,11 @@ SECRET_PHOTO_2,Corpse1.jpg,Труп1.jpg
 SECRET_PHOTO_3,Corpse2.jpg,Труп2.jpg
 SECRET_PHOTO_4,Newspaper.jpg,Газета.jpg
 SECRET_PHOTO_5,,
-FINAL_PHOTO_1,Mom.pdf,Потерпевшая_0584.pdf
-FINAL_PHOTO_2,Hammer.jpg,Фото_С_Дела_0584.pdf
-FINAL_PHOTO_3,Blanket.jpg,Фото_С_Дела_0584.pdf
-FINAL_PHOTO_4,Corpse.jpg,Тело_0584.pdf
-FINAL_PHOTO_5,Bed.jpg,Место_0584.pdf
+FINAL_PHOTO_1,Victim_0584.pdf,Потерпевшая_0584.pdf
+FINAL_PHOTO_2,Photo_From_Case_0584.pdf,Фото_С_Дела_0584.pdf
+FINAL_PHOTO_3,Photo_From_Case_0584.pdf,Фото_С_Дела_0584.pdf
+FINAL_PHOTO_4,Body_0584.pdf,Тело_0584.pdf
+FINAL_PHOTO_5,Place_0584.pdf,Место_0584.pdf
 SECRET_GAME_1,revelations.exe,откровения.exe
 SECRET_GAME_2,N.GAME 2.exe,N.GAME 2.exe
 MODELLING_PHOTO_1,Lil boot.jpg,Сапожок.jpg
@@ -56,4 +57,25 @@ MODELLING_PHOTO_5,White thing.jpg,Белая штука.jpg
 MODELLING_PHOTO_6,Sus.jpg,Sus.jpg
 LOCKED_FILE_1,YOU SAW.pdf,ТЫ УВИДЕЛ.pdf
 LOCKED_FILE_2,THEM BURN.txt,ОНИ ГОРЯТ.txt
-NEW_DOCUMENT_1,Text document.txt,Текстовый документ.txt
+CUTSCENE_SHOVELGAME_1,If you see it...,Раз ты это видишь...
+CUTSCENE_SHOVELGAME_2,"If you see it...
+You want the truth.","Раз ты это видишь...
+Ты хочешь правды."
+CUTSCENE_SHOVELGAME_3,"If you see it...
+You want the truth.
+Then play!","Раз ты это видишь...
+Ты хочешь правды.
+Тогда играй!"
+CUTSCENE_PREFINAL_1,Coincidence?,Совпадение?
+CUTSCENE_PREFINAL_2,"Coincidence?
+Or was someone watching me from the very beginning?..","Совпадение?
+Или кто-то наблюдал за мной с самого начала?.."
+CUTSCENE_FINAL_1,"Mini comic:
+The hero is overcome by a fit of deja vu.","Мини комикс:
+Героя охватывает приступ дежавю."
+CUTSCENE_FINAL_2,"He enters the room, sounds:
+dull blows
+someone's voice screaming his name.","Он входит в комнату, звуки:
+тупые удары
+чей-то голос, кричащий его имя."
+CUTSCENE_FINAL_3,The last image is his hand reaching for the bloody bed.,"Последний образ — его рука, тянущаяся к окровавленной постели."

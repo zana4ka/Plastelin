@@ -50,15 +50,17 @@ func TryProgress() -> bool:
 			_Shake.Start(Vector2(5.0, 5.0), 0.02, 1.0)
 			DigParticles.restart()
 			
+			GameGlobals._DirtDigging.play()
 			_AnimationPlayer.play(&"NextLayer")
 			
 			NextProgressMinTimeTicksMs = Time.get_ticks_msec() + 500
 			
 		elif ProgressTicks % 3 == 0:
 			
-			pass
+			GameGlobals._WindowClose.play()
 			
 		else:
+			GameGlobals._WindowCollapse.play()
 			_Shake.Start(Vector2(2.0, 2.0), 0.002, 2.0)
 			
 			NextProgressMinTimeTicksMs = Time.get_ticks_msec() + 200

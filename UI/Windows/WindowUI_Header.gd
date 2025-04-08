@@ -49,13 +49,13 @@ func UpdateFromOwner():
 		_Label.text = _OwnerItemData.Name
 
 func Collapse():
-	GameGlobals._CollapseWindow.play()
+	GameGlobals._WindowCollapse.play()
 	OwnerWindowUI.TryCollapse()
 
 func Expand():
-	GameGlobals._CollapseWindow.play()
+	GameGlobals._WindowCollapse.play()
 	OwnerWindowUI.TryExpand()
 
 func Close():
-	GameGlobals._CloseWindow.play()
+	GameGlobals._WindowClose.play()
 	OwnerWindowUI.TryClose()

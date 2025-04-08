@@ -1,11 +1,16 @@
 [gd_resource type="Resource" script_class="CutSceneData" load_steps=5 format=3 uid="uid://d2hs7gwsrqr1v"]
 
-[ext_resource type="Texture2D" uid="uid://cr0nyngxvd5v3" path="res://UI/Items/Content/Photos/Modelling/Modelling001a.jpg" id="1_ktv2i"]
+[ext_resource type="Texture2D" uid="uid://b2jwdeh5j0nok" path="res://Scenes/CutScenes/Content/Prologue/Prologue001.tres" id="1_1msdb"]
 [ext_resource type="Script" uid="uid://dk1edm4qmw31p" path="res://Scenes/CutScenes/CutSceneData.gd" id="1_my4n2"]
-[ext_resource type="Texture2D" uid="uid://sitk0dgxkcb1" path="res://UI/Items/Content/Photos/Modelling/Modelling002a.jpg" id="2_2c015"]
-[ext_resource type="Texture2D" uid="uid://bkjxbcyi4205" path="res://UI/Items/Content/Photos/Modelling/Modelling003a.jpg" id="3_xvae5"]
+[ext_resource type="Texture2D" uid="uid://dll8qj3pfxk2f" path="res://Scenes/CutScenes/Content/Prologue/Prologue002.tres" id="2_87ev2"]
+[ext_resource type="Texture2D" uid="uid://ccryeetsjnhv3" path="res://Scenes/CutScenes/Content/Prologue/Prologue003.tres" id="3_87ev2"]
 
 [resource]
 script = ExtResource("1_my4n2")
-FrameTextureArray = Array[Texture2D]([ExtResource("1_ktv2i"), ExtResource("2_2c015"), ExtResource("3_xvae5")])
+FadeColor = Color(0.4, 0, 0, 1)
+FadeDuration = 0.0
+SkipFadeOnFrames = Array[int]([0])
+FrameTextureArray = Array[Texture2D]([ExtResource("1_1msdb"), ExtResource("2_87ev2"), ExtResource("3_87ev2")])
+FrameTextArray = Array[String]([])
+FrameTextColor = Color(0.8, 0, 0, 1)
 metadata/_custom_type_script = "uid://dk1edm4qmw31p"

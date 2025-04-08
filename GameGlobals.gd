@@ -21,9 +21,24 @@ extends Node
 @onready var _GlobalLoop2: AudioStreamPlayer = $GlobalLoop2
 @onready var _MouseClick: AudioStreamPlayer = $MouseClick
 @onready var _StartUp: AudioStreamPlayer = $StartUp
-@onready var _CloseWindow: AudioStreamPlayer = $CloseWindow
-@onready var _CollapseWindow: AudioStreamPlayer = $CollapseWindow
+@onready var _WindowClose: AudioStreamPlayer = $WindowClose
+@onready var _WindowCollapse: AudioStreamPlayer = $WindowCollapse
 @onready var _Error: AudioStreamPlayer = $Error
+@onready var _DirtDigging: AudioStreamPlayer = $DirtDigging
+@onready var _PhotoPickUp: AudioStreamPlayer = $PhotoPickUp
+
+## Panels
+@onready var _Panel001a: StyleBox = preload("res://UI/Common/Panels/Panel001a.tres")
+@onready var _Panel001a_Blue: StyleBox = preload("res://UI/Common/Panels/Panel001a_Blue.tres")
+@onready var _Panel002a: StyleBox = preload("res://UI/Common/Panels/Panel002a.tres")
+@onready var _Panel002a_Smaller: StyleBox = preload("res://UI/Common/Panels/Panel002a_Smaller.tres")
+@onready var _Panel002b: StyleBox = preload("res://UI/Common/Panels/Panel002b.tres")
+@onready var _Panel002c: StyleBox = preload("res://UI/Common/Panels/Panel002c.tres")
+@onready var _Panel003a: StyleBox = preload("res://UI/Common/Panels/Panel003a.tres")
+@onready var _Panel003a_Blue: StyleBox = preload("res://UI/Common/Panels/Panel003a_Blue.tres")
+@onready var _Panel003b: StyleBox = preload("res://UI/Common/Panels/Panel003b.tres")
+@onready var _Panel003b_Blue: StyleBox = preload("res://UI/Common/Panels/Panel003b_Blue.tres")
+@onready var _Panel004a: StyleBox = preload("res://UI/Common/Panels/Panel004a.tres")
 
 var _MainScene: MainScene
 
@@ -55,3 +70,22 @@ func GetOnScreenClampedPosition_TopLeftAnchors(InControl: Control) -> Vector2:
 	ClampedPosition.x = clampf(CurrentPosition.x, PositionBoundaries.position.x, PositionBoundaries.end.x)
 	ClampedPosition.y = clampf(CurrentPosition.y, PositionBoundaries.position.y, PositionBoundaries.end.y)
 	return ClampedPosition
+
+func UpdatePanelsModulate(InColor: Color):
+	
+	_Panel001a.modulate_color = InColor
+	_Panel001a_Blue.modulate_color = InColor
+	
+	_Panel002a.modulate_color = InColor
+	_Panel002a_Smaller.modulate_color = InColor
+	_Panel002a.modulate_color = InColor
+	_Panel002b.modulate_color = InColor
+	_Panel002c.modulate_color = InColor
+	
+	_Panel003a.modulate_color = InColor
+	_Panel003a_Blue.modulate_color = InColor
+	
+	_Panel003b.modulate_color = InColor
+	_Panel003b_Blue.modulate_color = InColor
+	
+	_Panel004a.modulate_color = InColor

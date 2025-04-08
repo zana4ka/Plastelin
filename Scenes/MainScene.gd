@@ -97,8 +97,7 @@ func BeginScene2():
 	set_meta(&"Scene2", true)
 	
 	_DesktopCanvas.SetBackground(load("res://UI/Desktop/Content/Background002a.jpg"))
-	
-	
+	GameGlobals.UpdatePanelsModulate(Color.TEAL)
 
 func BeginScene3():
 	
@@ -132,6 +131,7 @@ func BeginScene6():
 	await PreFinalCutScene.Finished
 	
 	_DesktopCanvas.SetBackground(load("res://UI/Desktop/Content/Background003_Flash.tres"))
+	GameGlobals.UpdatePanelsModulate(Color.CRIMSON)
 	
 	await _DesktopCanvas.CloseAllWindows()
 	await _DesktopCanvas._ItemsUI.RemoveAllItems()

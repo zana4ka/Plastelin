@@ -1,0 +1,14 @@
+[gd_resource type="AnimatedTexture" load_steps=4 format=3 uid="uid://b2jwdeh5j0nok"]
+
+[ext_resource type="Texture2D" uid="uid://cbuob3loolfej" path="res://Scenes/CutScenes/Content/Prologue/Prologue001a.jpg" id="1_7ypg4"]
+[ext_resource type="Texture2D" uid="uid://26ltdvdefye5" path="res://Scenes/CutScenes/Content/Prologue/Prologue001b.jpg" id="2_mfrn8"]
+[ext_resource type="Texture2D" uid="uid://bk7ro2andgtus" path="res://Scenes/CutScenes/Content/Prologue/Prologue001c.jpg" id="3_3dnq6"]
+
+[resource]
+frames = 3
+speed_scale = 2.0
+frame_0/texture = ExtResource("1_7ypg4")
+frame_1/texture = ExtResource("2_mfrn8")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_3dnq6")
+frame_2/duration = 1.0
