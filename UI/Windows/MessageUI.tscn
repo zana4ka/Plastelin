@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://q4iu86hek3nq"]
+
+[ext_resource type="Script" uid="uid://cmr6sxlr5bc8m" path="res://UI/Windows/MessageUI.gd" id="1_m1ogl"]
+[ext_resource type="PackedScene" uid="uid://cw66orq8ug75g" path="res://UI/Windows/WindowUI_Header.tscn" id="2_0dtyu"]
+[ext_resource type="Script" uid="uid://daluic2vq2mkk" path="res://UI/Common/ButtonCommon.gd" id="3_1mxlk"]
+
+[sub_resource type="Animation" id="Animation_0squn"]
+resource_name = "Accept"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.6, 1, 0.6, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q2eee"]
+resource_name = "Decline"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(2, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 0.6, 0.6, 1), Color(1, 1, 1, 1), Color(1, 0.6, 0.6, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_87tt0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0squn"]
+_data = {
+&"Accept": SubResource("Animation_0squn"),
+&"Decline": SubResource("Animation_q2eee"),
+&"RESET": SubResource("Animation_87tt0")
+}
+
+[node name="MessageUI" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m1ogl")
+
+[node name="VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Header" parent="VB" node_paths=PackedStringArray("OwnerWindowUI") instance=ExtResource("2_0dtyu")]
+layout_mode = 2
+OwnerWindowUI = NodePath("../..")
+ShowToolBar = false
+
+[node name="MC" type="MarginContainer" parent="VB"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VB" type="VBoxContainer" parent="VB/MC"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VB/MC/VB"]
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Too many tabs!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm" type="Button" parent="VB/MC/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "OK"
+script = ExtResource("3_1mxlk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0squn")
+}

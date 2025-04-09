@@ -5,6 +5,8 @@ class_name ItemData
 @export var IconTexture: Texture2D = preload("res://UI/Items/Content/Folders/Folder001a.png")
 @export var Name: String = "SECRET_FOLDER_1"
 @export var ForceOpenOnScreenCenter: bool = false
+@export var ForceExpand: bool = false
+@export var CanBeMoved: bool = true
 
 @export_category("Label")
 @export var _LS: LabelSettings = preload("res://UI/Common/DefaultLS.tres")

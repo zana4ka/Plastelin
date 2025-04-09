@@ -36,7 +36,8 @@ func OnFocusEntered():
 	move_to_front()
 
 func UpdateFromOwnerItem():
-	pass
+	if OwnerItem._Data.ForceExpand:
+		TryExpand.call_deferred()
 
 func TryCollapse() -> bool:
 	

@@ -59,4 +59,3 @@ script = ExtResource("7_olvdc")
 
 [node name="TaskbarUI" parent="MainControl" instance=ExtResource("2_4twul")]
 layout_mode = 1
-TabSize = 240.0

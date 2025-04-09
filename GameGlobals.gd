@@ -6,6 +6,7 @@ extends Node
 @export var DocumentUIScene: PackedScene = preload("res://UI/Windows/DocumentUI.tscn")
 @export var PhotoUIScene: PackedScene = preload("res://UI/Windows/PhotoUI.tscn")
 @export var MiniGameUIScene: PackedScene = preload("res://UI/Windows/MiniGameUI.tscn")
+@export var MessageUIScene: PackedScene = preload("res://UI/Windows/MessageUI.tscn")
 
 @export var WindowDragPreviewScene: PackedScene = preload("res://UI/Windows/WindowUI_DragPreview.tscn")
 
@@ -21,9 +22,11 @@ extends Node
 @onready var _GlobalLoop2: AudioStreamPlayer = $GlobalLoop2
 @onready var _MouseClick: AudioStreamPlayer = $MouseClick
 @onready var _StartUp: AudioStreamPlayer = $StartUp
+@onready var _ShutDown: AudioStreamPlayer = $ShutDown
 @onready var _WindowClose: AudioStreamPlayer = $WindowClose
 @onready var _WindowCollapse: AudioStreamPlayer = $WindowCollapse
 @onready var _Error: AudioStreamPlayer = $Error
+@onready var _Accept: AudioStreamPlayer = $Accept
 @onready var _DirtDigging: AudioStreamPlayer = $DirtDigging
 @onready var _PhotoPickUp: AudioStreamPlayer = $PhotoPickUp
 
@@ -58,6 +61,8 @@ func CreateWindowForItem(InItem: ItemsUI_Item) -> WindowUI:
 		OutWindow = PhotoUIScene.instantiate()
 	elif InItem._Data is MiniGameData:
 		OutWindow = MiniGameUIScene.instantiate()
+	elif InItem._Data is MessageData:
+		OutWindow = MessageUIScene.instantiate()
 	return OutWindow
 
 func GetOnScreenClampedPosition_TopLeftAnchors(InControl: Control) -> Vector2:

@@ -30,24 +30,32 @@ func _ready():
 		
 		UpdateFromItemData()
 		
-		if ParentContainer:
-			ParentContainer.RegisterItem(self)
-		
+		## Update state
 		IsLocked = IsLocked
+		
 		tree_exiting.connect(GameGlobals._MainScene._DesktopCanvas.OnItemTreeExiting.bind(self))
 
 func _get_drag_data(AtPosition: Vector2) -> Variant:
-	var DragPreview := TextureRect.new()
-	DragPreview.texture = _Data.IconTexture
-	DragPreview.stretch_mode = TextureRect.StretchMode.STRETCH_SCALE
-	DragPreview.expand_mode = TextureRect.ExpandMode.EXPAND_IGNORE_SIZE
-	DragPreview.custom_minimum_size = _Button.custom_minimum_size
-	GameGlobals._PhotoPickUp.play()
-	set_drag_preview(DragPreview)
-	return self
+	
+	if _Data.CanBeMoved:
+		
+		var DragPreview := TextureRect.new()
+		DragPreview.texture = _Data.IconTexture
+		DragPreview.stretch_mode = TextureRect.StretchMode.STRETCH_SCALE
+		DragPreview.expand_mode = TextureRect.ExpandMode.EXPAND_IGNORE_SIZE
+		DragPreview.custom_minimum_size = _Button.custom_minimum_size
+		set_drag_preview(DragPreview)
+		return self
+	else:
+		return null
 
 func _can_drop_data(AtPosition: Vector2, InData: Variant) -> bool:
-	return super(AtPosition, InData) and (InData != self)
+	
+	if not super(AtPosition, InData) or InData == self:
+		return false
+	
+	var DropItem := InData as ItemsUI_GridCell
+	return ParentContainer == DropItem.ParentContainer and _Data.CanBeMoved
 
 func UpdateFromItemData():
 	

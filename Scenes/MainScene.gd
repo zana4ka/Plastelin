@@ -9,6 +9,8 @@ class_name MainScene
 @onready var _DesktopCanvas: DesktopCanvas = $DesktopCanvas
 @onready var _CutSceneCanvas: CanvasLayer = $CutSceneCanvas
 
+@onready var _CreditsText: RichTextLabel = $CreditsCanvas/CreditsColor/Text
+
 @onready var _AnimationPlayer: AnimationPlayer = $AnimationPlayer
 
 @onready var EasterRandomPassword: int = randi_range(1000, 9999)
@@ -31,6 +33,7 @@ func _ready():
 	#BeginScene6()
 	#BeginScene7()
 	#BeginScene8()
+	#PlayCredits()
 
 func _enter_tree() -> void:
 	GameGlobals._MainScene = self
@@ -42,6 +45,9 @@ func TryOpenItem(InItem: ItemsUI_Item, OnScreenCenter: bool = false) -> WindowUI
 	return await _DesktopCanvas.TryOpenWindowForItem(InItem, OnScreenCenter)
 
 func HandleShutDown():
+	GameGlobals._ShutDown.play()
+	GameGlobals._GlobalLoop1.stop()
+	GameGlobals._GlobalLoop2.stop()
 	_AnimationPlayer.play(&"ShutDown")
 
 func HandleShutDown_Finish():
@@ -69,6 +75,7 @@ func BeginScene1():
 	_DesktopCanvas.SetBackground(load("res://UI/Desktop/Content/Background001a.jpg"))
 	
 	SpawnEasterFolder()
+	SpawnTabsMessageFile()
 	
 	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/MyComputer.tres")).GridPosition = Vector2i(0, 0)
 	_DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/SecretFolder1.tres")).GridPosition = Vector2i(0, 1)
@@ -138,15 +145,16 @@ func BeginScene6():
 	GameGlobals.UpdatePanelsModulate(Color.CRIMSON)
 	
 	await _DesktopCanvas.CloseAllWindows()
-	await _DesktopCanvas._ItemsUI.RemoveAllItems()
+	_DesktopCanvas._ItemsUI.RemoveAllItems()
 	
 	SpawnEasterFolder()
-	
-	_DesktopCanvas._ItemsUI.add_theme_constant_override(&"h_separation", 12)
-	_DesktopCanvas._TaskbarUI.visible = false
+	SpawnTabsMessageFile()
 	
 	var SecretFolder3 := _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/SecretFolder3.tres"))
-	SecretFolder3.GridPosition = Vector2i(3, 2)
+	SecretFolder3.GridPosition = Vector2i(0, 0)
+	
+	SecretFolder3.ready.connect(_DesktopCanvas._ItemsUI.MoveToScreenCenter, Object.CONNECT_DEFERRED)
+	_DesktopCanvas._TaskbarUI.visible = false
 	
 	GameGlobals._GlobalLoop1.stop()
 	GameGlobals._GlobalLoop2.play()
@@ -183,7 +191,38 @@ func PlayCredits():
 	GameGlobals._GlobalLoop2.stop()
 	
 	_AnimationPlayer.play(&"Credits")
+	
+	_CreditsText.text = ""
+	
+	_CreditsText.push_paragraph(HORIZONTAL_ALIGNMENT_LEFT)
+	_CreditsText.add_image(load("res://Scenes/Credits/IWantPizza.png"), 112, 112)
+	_CreditsText.add_text(TranslationServer.translate("CREDITS_1") + "\n\n")
+	_CreditsText.pop()
+	
+	_CreditsText.push_paragraph(HORIZONTAL_ALIGNMENT_CENTER)
+	_CreditsText.add_image(load("res://Scenes/Credits/zanayn.png"), 112, 112)
+	_CreditsText.add_text(TranslationServer.translate("CREDITS_2") + "\n\n")
+	_CreditsText.pop()
+	
+	_CreditsText.push_paragraph(HORIZONTAL_ALIGNMENT_RIGHT)
+	_CreditsText.add_image(load("res://Scenes/Credits/Pompila.png"), 112, 112)
+	_CreditsText.add_text(TranslationServer.translate("CREDITS_3") + "\n\n")
+	_CreditsText.pop()
+	
+	_CreditsText.push_paragraph(HORIZONTAL_ALIGNMENT_CENTER)
+	_CreditsText.add_image(load("res://Scenes/Credits/Prussichger.png"), 112, 112)
+	_CreditsText.add_text(TranslationServer.translate("CREDITS_4") + "\n\n")
+	_CreditsText.pop()
+	
+	_CreditsText.push_paragraph(HORIZONTAL_ALIGNMENT_LEFT)
+	_CreditsText.add_image(load("res://Scenes/Credits/ElLozerroXD.png"), 112, 112)
+	_CreditsText.add_text(TranslationServer.translate("CREDITS_5"))
+	_CreditsText.pop()
 
 func SpawnEasterFolder():
 	_DesktopCanvas.EasterFolder = _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/Easter/EasterFolder_Main.tres"))
 	_DesktopCanvas.EasterFolder.GridPosition = Vector2i(0, 6)
+
+func SpawnTabsMessageFile():
+	_DesktopCanvas.TabsMessageFile = _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Messages/TabsMessage.tres"))
+	_DesktopCanvas.TabsMessageFile.GridPosition = Vector2i(1, 6)

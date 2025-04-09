@@ -14,6 +14,11 @@ class_name ItemsUI_Grid
 var ItemDictionary: Dictionary[Vector2i, ItemsUI_Item] = {}
 var EmptyGridCellDictionary: Dictionary[Vector2i, Control] = {}
 
+func _ready() -> void:
+	
+	super()
+	
+
 func GetMaxPosition() -> Vector2i:
 	
 	var OutMax := Vector2i.ZERO
@@ -23,7 +28,7 @@ func GetMaxPosition() -> Vector2i:
 
 func ReBuild():
 	
-	if not is_node_ready():
+	if not is_node_ready() or Engine.is_editor_hint():
 		return
 	
 	#print("ReBuild...")
@@ -46,11 +51,11 @@ func ReBuild():
 			var SamplePosition := Vector2i(SampleX, SampleY)
 			if ItemDictionary.has(SamplePosition):
 				
-				var SampleIcon := ItemDictionary[SamplePosition]
-				move_child(SampleIcon, ChildIndex)
-				SampleIcon.SkipReplace = true
-				SampleIcon.GridPosition = SamplePosition
-				SampleIcon.SkipReplace = false
+				var SampleItem := ItemDictionary[SamplePosition]
+				move_child(SampleItem, ChildIndex)
+				SampleItem.SkipReplace = true
+				SampleItem.GridPosition = SamplePosition
+				SampleItem.SkipReplace = false
 			else:
 				var NewEmptyGridCell := GameGlobals.EmptyGridCellScene.instantiate() as ItemsUI_GridCell
 				NewEmptyGridCell.GridPosition = SamplePosition
@@ -104,11 +109,11 @@ func ReplaceItemsOnPositions(InA: Vector2i, InB: Vector2i):
 	if InA == InB:
 		return
 	
-	var IconA: ItemsUI_Item = ItemDictionary[InA] if ItemDictionary.has(InA) else null
-	var IconB: ItemsUI_Item = ItemDictionary[InB] if ItemDictionary.has(InB) else null
+	var ItemA: ItemsUI_Item = ItemDictionary[InA] if ItemDictionary.has(InA) else null
+	var ItemB: ItemsUI_Item = ItemDictionary[InB] if ItemDictionary.has(InB) else null
 	
-	ItemDictionary[InA] = IconB
-	ItemDictionary[InB] = IconA
+	ItemDictionary[InA] = ItemB
+	ItemDictionary[InB] = ItemA
 	
 	ReBuild()
 
@@ -116,5 +121,22 @@ func GetItemArray() -> Array[ItemsUI_Item]:
 	return ItemDictionary.values()
 
 func RemoveAllItems():
-	await super()
+	
+	super()
+	
 	ItemDictionary.clear()
+
+func MoveToScreenCenter():
+	
+	set_anchors_preset(Control.PRESET_CENTER, true)
+	
+	var ItemArray := GetItemArray()
+	if ItemArray.is_empty():
+		push_warning("ItemArray is empty, offset is unknown!")
+		return
+	
+	var CellChild := ItemArray[0] as ItemsUI_GridCell
+	offset_left = -CellChild.size.x * 0.5
+	offset_right = CellChild.size.x * 0.5
+	offset_top = -CellChild.size.y * 0.5
+	offset_bottom = CellChild.size.y * 0.5

@@ -8,6 +8,7 @@ class_name TaskbarUI
 @onready var StartButton: Button = $MC/HB/Start
 @onready var StartMenu: TaskbarUI_StartMenu = $MC/HB/Start/Menu
 
+@onready var TabsSC: ScrollContainer = $MC/HB/TabsSC
 @onready var TabsHB: HBoxContainer = $MC/HB/TabsSC/HB
 
 @onready var LanguageButton: Button = $MC/HB/ToolsPanel/VB/Language
@@ -50,6 +51,7 @@ func OnStartMenuVisibilityChanged():
 ## Tabs
 func AddTabFor(InWindow: WindowUI):
 	var NewTab := InWindow.CreateTaskbarTab()
+	NewTab.tree_exited.connect(UpdateTabsSize, Object.CONNECT_DEFERRED)
 	TabsHB.add_child(NewTab)
 	UpdateTabsSize()
 
@@ -59,9 +61,9 @@ func UpdateTabsSize():
 	if Tabs.size() <= 0:
 		return
 	
-	var UpdatedTabSize := minf(TabsHB.size.x / Tabs.size(), TabSize)
+	var UpdatedTabSize := minf(TabsSC.size.x / Tabs.size(), TabSize)
 	for SampleTab: TaskbarUI_Tab in Tabs:
-		SampleTab.custom_minimum_size.x = UpdatedTabSize
+		SampleTab._Button.custom_minimum_size.x = UpdatedTabSize
 
 ## Tools
 func OnLanguageToggled(InToggledOn: bool):

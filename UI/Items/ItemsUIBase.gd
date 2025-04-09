@@ -24,6 +24,7 @@ func AddNewItem(InData: ItemData) -> ItemsUI_Item:
 	
 	var OutItem := GameGlobals.ItemScene.instantiate() as ItemsUI_Item
 	OutItem._Data = InData
+	OutItem.ready.connect(RegisterItem.bind(OutItem), Object.CONNECT_DEFERRED)
 	add_child.call_deferred(OutItem)
 	return OutItem
 
@@ -33,4 +34,3 @@ func RemoveAllItems():
 	for SampleItem: ItemsUI_Item in ItemArray:
 		SampleItem.queue_free()
 	ItemArray.clear()
-	await get_tree().process_frame

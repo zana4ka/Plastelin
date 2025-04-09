@@ -21,6 +21,12 @@ func _ready() -> void:
 	
 	InitFromData()
 
+func _unhandled_input(InEvent: InputEvent) -> void:
+	
+	if InEvent is InputEventKey:
+		if InEvent.is_pressed():
+			OnCurrentFramePressed()
+
 func InitFromData():
 	
 	assert(_Fade.visible)
@@ -30,7 +36,10 @@ func InitFromData():
 	
 	_Text.visible = false
 	_CurrentFrame.visible = false
+	
 	TryShowFrame(0)
+	
+	NextFrameMinTimeTicksMs = maxi(NextFrameMinTimeTicksMs, Time.get_ticks_msec() + 500)
 
 var NextFrameMinTimeTicksMs: int = 0
 var CurrentFrame: int = 0

@@ -9,6 +9,7 @@ offset_bottom = 40.0
 script = ExtResource("1_mw3bo")
 
 [node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(240, 40)
 layout_mode = 2
 toggle_mode = true
 text = "Some tab"

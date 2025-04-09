@@ -5,10 +5,15 @@ class_name ExplorerUI
 @onready var _ItemsUI: ItemsUI_Grid = $VB/ItemsMC/Panel/SC/ItemsUI
 
 func _ready() -> void:
+	
 	super()
+	
+	if not Engine.is_editor_hint():
+		assert(_ItemsUI.OwnerWindowUI)
 
 func UpdateFromOwnerItem():
 	
+	super()
 	
 	_ItemsUI.RemoveAllItems()
 	

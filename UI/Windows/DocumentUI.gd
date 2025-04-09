@@ -12,6 +12,8 @@ func _ready() -> void:
 
 func UpdateFromOwnerItem():
 	
+	super()
+	
 	var _DocumentData := OwnerItem._Data as DocumentData
 	_Text.text = _DocumentData.get_meta(&"EditedText", _DocumentData.GetDocumentText())
 	_Text.editable = _DocumentData.IsEditable

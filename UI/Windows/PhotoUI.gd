@@ -8,5 +8,7 @@ func _ready() -> void:
 
 func UpdateFromOwnerItem():
 	
+	super()
+	
 	var _PhotoData := OwnerItem._Data as PhotoData
 	_Photo.texture = _PhotoData.PhotoTexture

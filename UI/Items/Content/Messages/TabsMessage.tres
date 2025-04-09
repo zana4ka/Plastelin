@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="MessageData" load_steps=5 format=3 uid="uid://dm3pjjyqgn2hn"]
+
+[ext_resource type="Texture2D" uid="uid://cx2oqtnys177k" path="res://UI/Items/Content/Folders/Folder001a.png" id="1_px7bx"]
+[ext_resource type="LabelSettings" uid="uid://cet37rksbs5wj" path="res://UI/Common/DefaultLS_Focused.tres" id="2_w8mdi"]
+[ext_resource type="LabelSettings" uid="uid://bqjah153tcqnj" path="res://UI/Common/DefaultLS.tres" id="3_p05rv"]
+[ext_resource type="Script" uid="uid://c63hhmuhgej37" path="res://UI/Items/MessageData.gd" id="4_6loas"]
+
+[resource]
+script = ExtResource("4_6loas")
+MessageText = "TABS_MESSAGE"
+PopUpAnimation = &"Decline"
+IconTexture = ExtResource("1_px7bx")
+Name = "TabsMessage"
+ForceOpenOnScreenCenter = false
+_LS = ExtResource("3_p05rv")
+_FocusedLS = ExtResource("2_w8mdi")
+IsInitiallyLocked = false
+OpenItemAfterUnlock = true
+UnlockPassword = ""
+metadata/_custom_type_script = "uid://c63hhmuhgej37"

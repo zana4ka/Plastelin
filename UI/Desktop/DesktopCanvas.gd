@@ -12,11 +12,12 @@ class_name DesktopCanvas
 
 ## Keys are ItemsUI_Item instance ids
 var WindowsDictionary: Dictionary[int, WindowUI] = {}
+var WindowsLimit: int = 5
 
 func _ready() -> void:
 	pass
 
-func TryOpenWindowForItem(InItem: ItemsUI_Item, OnScreenCenter: bool) -> WindowUI:
+func TryOpenWindowForItem(InItem: ItemsUI_Item, OnScreenCenter: bool, InIgnoreLimits: bool = false) -> WindowUI:
 	
 	var ItemInstanceId := InItem.get_instance_id()
 	CloseInvalidWindows()
@@ -27,9 +28,8 @@ func TryOpenWindowForItem(InItem: ItemsUI_Item, OnScreenCenter: bool) -> WindowU
 		else:
 			return null
 	
-	if WindowsDictionary.size() > 5:
-		GameGlobals._Error.play()
-		OS.alert("Too many tabs!")
+	if not InIgnoreLimits and WindowsDictionary.size() > WindowsLimit:
+		TryOpenTabsMessageWindow()
 		return null
 	
 	if not await InItem._Data.HandlePreOpenWindow(InItem):
@@ -98,7 +98,18 @@ func CloseAllWindows():
 	WindowsDictionary.clear()
 
 var EasterFolder: ItemsUI_Item
+var TabsMessageFile: ItemsUI_Item
 
 func TryOpenEasterWindow():
 	if is_instance_valid(EasterFolder):
 		TryOpenWindowForItem(EasterFolder, true)
+
+func TryOpenTabsMessageWindow():
+	
+	if is_instance_valid(TabsMessageFile):
+		
+		if WindowsDictionary.has(TabsMessageFile.get_instance_id()):
+			var MessageWindow := WindowsDictionary[TabsMessageFile.get_instance_id()] as MessageUI
+			MessageWindow.PlayPopUp()
+		else:
+			TryOpenWindowForItem(TabsMessageFile, true, true)

@@ -12,6 +12,9 @@ func _can_drop_data(AtPosition: Vector2, InData: Variant) -> bool:
 	return InData is ItemsUI_GridCell
 
 func _drop_data(AtPosition: Vector2, InData: Variant):
+	
+	GameGlobals._PhotoPickUp.play()
+	
 	var DropItem := InData as ItemsUI_GridCell
 	SwapGridPositionWith(DropItem)
 

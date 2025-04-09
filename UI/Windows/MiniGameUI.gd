@@ -11,9 +11,16 @@ func _ready() -> void:
 	#_CanvasLayer.focus_entered.connect(OnFocusEntered)
 	
 	super()
-	
+
+func _enter_tree() -> void:
+	GameGlobals._MainScene._DesktopCanvas.WindowsLimit += 1
+
+func _exit_tree() -> void:
+	GameGlobals._MainScene._DesktopCanvas.WindowsLimit -= 1
 
 func UpdateFromOwnerItem():
+	
+	super()
 	
 	for SampleChild: Node in _Viewport.get_children():
 		SampleChild.queue_free()

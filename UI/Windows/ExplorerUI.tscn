@@ -78,13 +78,13 @@ size_flags_vertical = 3
 [node name="SC" type="ScrollContainer" parent="VB/ItemsMC/Panel"]
 layout_mode = 2
 size_flags_vertical = 3
-mouse_filter = 2
 follow_focus = true
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 scroll_deadzone = 8
 
-[node name="ItemsUI" parent="VB/ItemsMC/Panel/SC" instance=ExtResource("3_svpkb")]
+[node name="ItemsUI" parent="VB/ItemsMC/Panel/SC" node_paths=PackedStringArray("OwnerWindowUI") instance=ExtResource("3_svpkb")]
 layout_mode = 2
 columns = 5
 MinGridSize = Vector2i(4, 3)
+OwnerWindowUI = NodePath("../../../../..")

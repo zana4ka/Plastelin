@@ -8,6 +8,7 @@ SETTINGS,Settings,Настройки
 HELP,Help,Помощь
 ENTER_PASSWORD,Enter the password...,Введите пароль...
 ARE_YOU_SURE,Are you sure?,Вы уверены?
+TABS_MESSAGE,Too many tabs!,Слишком много вкладок!
 DESKTOP_PATH,C:\User\Desktop,C:\User\Рабочий стол
 SECRET_FOLDER_1,New folder,Новая папка
 SECRET_FOLDER_2,New folder (1),Новая папка (1)
@@ -169,12 +170,8 @@ EASTER_DOCUMENT_1_CONTENT,At least you tried...,Ну ты старался...
 EASTER_DOCUMENT_2,Sett.txt,Наст.txt
 EASTER_DOCUMENT_3,ings.txt,ройки.txt
 SHUT_DOWN_MESSAGE,Even the sighted live blindly,Даже зрячий живёт вслепую
-CREDITS,"IwantPizza - Lead, Game Designer
-Pompila - artlid, artist
-ElLozerroXD - artist
-Prussichger - artist
-zanayyn - developer","IwantPizza - лид, геймдизайнер
-Pompila - артлид, художник
-ElLozerroXD - художник
-Prussichger - художник
-zanayyn - разработчик"
+CREDITS_1,"IwantPizza - Lead, Game Designer","IwantPizza - Лид, Геймдизайнер"
+CREDITS_2,zanayn - Developer,zanayn - Разработчик
+CREDITS_3,"Pompila - Art Lead, Artist","Pompila - Артлид, Художник"
+CREDITS_4,Prussichger - Artist,Prussichger - Художник
+CREDITS_5,ElLozerroXD - Artist,ElLozerroXD - Художник

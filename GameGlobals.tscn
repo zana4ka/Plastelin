@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://byad4n43xn8cn"]
+[gd_scene load_steps=13 format=3 uid="uid://byad4n43xn8cn"]
 
 [ext_resource type="Script" uid="uid://cxg47geop7n1d" path="res://GameGlobals.gd" id="1_ebyop"]
 [ext_resource type="AudioStream" uid="uid://ia2uoeen5jvm" path="res://Audio/PC001a.mp3" id="2_dnnx4"]
@@ -6,10 +6,12 @@
 [ext_resource type="AudioStream" uid="uid://bd4gh5cefodyv" path="res://Audio/MouseClick001a.mp3" id="4_pkm8e"]
 [ext_resource type="AudioStream" uid="uid://d0yoe1ai6neb4" path="res://Audio/StartUp001a.mp3" id="5_uu7h5"]
 [ext_resource type="AudioStream" uid="uid://cpifvcaw3as7a" path="res://Audio/WindowClose001a.mp3" id="6_b4t1x"]
+[ext_resource type="AudioStream" uid="uid://deps5v7op82ep" path="res://Audio/ShutDown001a.mp3" id="6_fqpxp"]
 [ext_resource type="AudioStream" uid="uid://b4dtnajc6dt44" path="res://Audio/WindowCollapse001a.mp3" id="7_fqpxp"]
 [ext_resource type="AudioStream" uid="uid://53c72jl4ol3p" path="res://Audio/Error001a.mp3" id="8_nynhd"]
+[ext_resource type="AudioStream" uid="uid://dyuw5078eyi10" path="res://Audio/Accept001a.mp3" id="9_uu7h5"]
 [ext_resource type="AudioStream" uid="uid://exbuoftsfm8t" path="res://Audio/DirtDigging001b.mp3" id="9_x44md"]
-[ext_resource type="AudioStream" uid="uid://soyr8ko2e0e4" path="res://Audio/PhotoPickUp001a.mp3" id="10_pkm8e"]
+[ext_resource type="AudioStream" uid="uid://dwry1k0exvwp3" path="res://Audio/PhotoPickUp001b.mp3" id="12_b4t1x"]
 
 [node name="GameGlobals" type="Node"]
 script = ExtResource("1_ebyop")
@@ -26,6 +28,9 @@ stream = ExtResource("4_pkm8e")
 [node name="StartUp" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_uu7h5")
 
+[node name="ShutDown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fqpxp")
+
 [node name="WindowCollapse" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_b4t1x")
 
@@ -35,8 +40,11 @@ stream = ExtResource("7_fqpxp")
 [node name="Error" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_nynhd")
 
+[node name="Accept" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_uu7h5")
+
 [node name="DirtDigging" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_x44md")
 
 [node name="PhotoPickUp" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_pkm8e")
+stream = ExtResource("12_b4t1x")
