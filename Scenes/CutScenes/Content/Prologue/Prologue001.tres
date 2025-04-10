@@ -1,14 +1,14 @@
-[gd_resource type="AnimatedTexture" load_steps=4 format=3 uid="uid://b2jwdeh5j0nok"]
+[gd_resource type="AnimatedTexture" load_steps=4 format=3 uid="uid://d1v1rthf8dvwe"]
 
-[ext_resource type="Texture2D" uid="uid://cbuob3loolfej" path="res://Scenes/CutScenes/Content/Prologue/Prologue001a.jpg" id="1_7ypg4"]
-[ext_resource type="Texture2D" uid="uid://26ltdvdefye5" path="res://Scenes/CutScenes/Content/Prologue/Prologue001b.jpg" id="2_mfrn8"]
-[ext_resource type="Texture2D" uid="uid://bk7ro2andgtus" path="res://Scenes/CutScenes/Content/Prologue/Prologue001c.jpg" id="3_3dnq6"]
+[ext_resource type="Texture2D" uid="uid://dgmgus82v4m87" path="res://Scenes/CutScenes/Content/Prologue/Prologue001a.png" id="1_sr4pe"]
+[ext_resource type="Texture2D" uid="uid://d06qimxnan2xx" path="res://Scenes/CutScenes/Content/Prologue/Prologue001b.png" id="2_k4pxe"]
+[ext_resource type="Texture2D" uid="uid://ddbfjuwet66si" path="res://Scenes/CutScenes/Content/Prologue/Prologue001c.png" id="3_utkbh"]
 
 [resource]
 frames = 3
 speed_scale = 2.0
-frame_0/texture = ExtResource("1_7ypg4")
-frame_1/texture = ExtResource("2_mfrn8")
+frame_0/texture = ExtResource("1_sr4pe")
+frame_1/texture = ExtResource("2_k4pxe")
 frame_1/duration = 1.0
-frame_2/texture = ExtResource("3_3dnq6")
+frame_2/texture = ExtResource("3_utkbh")
 frame_2/duration = 1.0

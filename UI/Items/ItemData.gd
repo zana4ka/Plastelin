@@ -17,6 +17,8 @@ class_name ItemData
 @export var OpenItemAfterUnlock: bool = true
 @export var UnlockPassword: String = ""
 
+const WasOpenedMeta: StringName = &"WasOpened"
+
 func GetUnlockPassword() -> String:
 	return UnlockPassword
 
@@ -33,3 +35,9 @@ func HandlePreOpenWindow(InItem: ItemsUI_Item) -> bool:
 
 func HandlePostOpenWindow(InItem: ItemsUI_Item):
 	pass
+
+func WasOpened() -> bool:
+	return get_meta(WasOpenedMeta, false)
+
+func SetWasOpened(InWasOpened: bool):
+	set_meta(WasOpenedMeta, InWasOpened)

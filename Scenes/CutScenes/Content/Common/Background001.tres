@@ -1,0 +1,17 @@
+[gd_resource type="AnimatedTexture" load_steps=5 format=3 uid="uid://cendqcldwf2lk"]
+
+[ext_resource type="Texture2D" uid="uid://6m3sgms3dlwf" path="res://Scenes/CutScenes/Content/Common/Background001a.png" id="1_p0nx3"]
+[ext_resource type="Texture2D" uid="uid://c1g1ik5eo8xnv" path="res://Scenes/CutScenes/Content/Common/Background001b.png" id="2_2x3b4"]
+[ext_resource type="Texture2D" uid="uid://bed8ae0ofjnjn" path="res://Scenes/CutScenes/Content/Common/Background001c.png" id="3_vv1fu"]
+[ext_resource type="Texture2D" uid="uid://bens3qviy3g33" path="res://Scenes/CutScenes/Content/Common/Background001d.png" id="4_fop04"]
+
+[resource]
+frames = 4
+speed_scale = 2.0
+frame_0/texture = ExtResource("1_p0nx3")
+frame_1/texture = ExtResource("2_2x3b4")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_vv1fu")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_fop04")
+frame_3/duration = 1.0

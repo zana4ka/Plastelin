@@ -56,6 +56,10 @@ autowrap_mode = 3
 expand_icon = true
 script = ExtResource("5_2euhb")
 
+[node name="Confirm" parent="VB/Help" instance=ExtResource("7_7upl6")]
+layout_mode = 1
+ConfirmText = "HELP_CONFIRM"
+
 [node name="Settings" type="Button" parent="VB"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2

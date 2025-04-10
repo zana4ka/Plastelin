@@ -19,6 +19,8 @@ class_name WindowUI_Header
 			await ready
 		_ToolBarVB.visible = ShowToolBar
 
+@onready var _HeaderClick: Control = $TitleBarPanel/HeaderClick
+
 @onready var _Icon: TextureRect = $TitleBarPanel/MC/VB/Icon
 @onready var _Label: Label = $TitleBarPanel/MC/VB/Label
 @onready var _Collapse: TextureButton = $TitleBarPanel/MC/VB/ButtonsVB/Collapse
@@ -37,7 +39,7 @@ func _ready() -> void:
 		_Expand.pressed.connect(Expand)
 		_Close.pressed.connect(Close)
 		
-		#_Expand.disabled = true
+		_HeaderClick.gui_input.connect(HandleHeaderClickUnput)
 		
 		UpdateFromOwner()
 
@@ -59,3 +61,9 @@ func Expand():
 func Close():
 	GameGlobals._WindowClose.play()
 	OwnerWindowUI.TryClose()
+
+func HandleHeaderClickUnput(InEvent: InputEvent):
+	
+	if InEvent is InputEventMouseButton:
+		if InEvent.double_click:
+			Expand()

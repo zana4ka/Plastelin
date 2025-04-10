@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://cx8q83c0rvvuh"]
+
+[ext_resource type="Texture2D" uid="uid://ftoxhqvf7vxa" path="res://UI/Items/Content/Photos/Photo001a.png" id="1_8ycpl"]
+[ext_resource type="Texture2D" uid="uid://c2u3qm0lvdp4d" path="res://UI/Items/Content/Photos/Final/Body002a.png" id="2_28in7"]
+[ext_resource type="LabelSettings" uid="uid://cet37rksbs5wj" path="res://UI/Common/DefaultLS_Focused.tres" id="3_e2qon"]
+[ext_resource type="LabelSettings" uid="uid://bj7aioopaodka" path="res://UI/Common/RedLS.tres" id="4_8ycpl"]
+[ext_resource type="Script" uid="uid://dh6b1hwwie4tv" path="res://UI/Items/Content/Photos/Final/FinalPhoto.gd" id="5_jskyd"]
+
+[resource]
+script = ExtResource("5_jskyd")
+PhotoTexture = ExtResource("2_28in7")
+IconTexture = ExtResource("1_8ycpl")
+Name = "BODY_PHOTO_2"
+ForceOpenOnScreenCenter = false
+ForceExpand = false
+CanBeMoved = true
+_LS = ExtResource("4_8ycpl")
+_FocusedLS = ExtResource("3_e2qon")
+IsInitiallyLocked = false
+OpenItemAfterUnlock = true
+UnlockPassword = ""
+metadata/_custom_type_script = "uid://cnk0n55cboaep"

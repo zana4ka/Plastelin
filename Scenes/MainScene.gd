@@ -24,7 +24,12 @@ func _ready():
 	Input.set_custom_mouse_cursor(CursorDrag, Input.CURSOR_MOVE, Vector2(19.0, 2.0))
 	Input.set_custom_mouse_cursor(CursorDrag, Input.CURSOR_FORBIDDEN, Vector2(19.0, 2.0))
 	
+	## Debug
+	#TranslationServer.set_locale("ru")
+	
 	BeginPrologue()
+	
+	## Debug
 	#BeginScene1()
 	#BeginScene2()
 	#BeginScene3()
@@ -44,21 +49,17 @@ func _exit_tree() -> void:
 func TryOpenItem(InItem: ItemsUI_Item, OnScreenCenter: bool = false) -> WindowUI:
 	return await _DesktopCanvas.TryOpenWindowForItem(InItem, OnScreenCenter)
 
-func HandleShutDown():
-	GameGlobals._ShutDown.play()
-	GameGlobals._GlobalLoop1.stop()
-	GameGlobals._GlobalLoop2.stop()
-	_AnimationPlayer.play(&"ShutDown")
-
-func HandleShutDown_Finish():
-	PlayCredits()
-
+## Scenes
 func BeginPrologue():
 	
 	assert(not has_meta(&"Prologue"))
 	set_meta(&"Prologue", true)
 	
 	var PrologueCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Prologue/CutSceneData.tres"))
+	
+	## Debug
+	#var PrologueCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Watcher/CutSceneData.tres"))
+	#var PrologueCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Final/CutSceneData.tres"))
 	
 	GameGlobals._GlobalLoop2.play()
 	
@@ -74,6 +75,7 @@ func BeginScene1():
 	
 	_DesktopCanvas.SetBackground(load("res://UI/Desktop/Content/Background001a.jpg"))
 	
+	SpawnHelpDocument()
 	SpawnEasterFolder()
 	SpawnTabsMessageFile()
 	
@@ -136,7 +138,7 @@ func BeginScene6():
 	assert(not has_meta(&"Scene6"))
 	set_meta(&"Scene6", true)
 	
-	var PreFinalCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/PreFinal/CutSceneData.tres"))
+	var PreFinalCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Watcher/CutSceneData.tres"))
 	
 	#PreFinalCutScene.FinishCutScene()
 	await PreFinalCutScene.Finished
@@ -147,6 +149,7 @@ func BeginScene6():
 	await _DesktopCanvas.CloseAllWindows()
 	_DesktopCanvas._ItemsUI.RemoveAllItems()
 	
+	SpawnHelpDocument()
 	SpawnEasterFolder()
 	SpawnTabsMessageFile()
 	
@@ -171,13 +174,15 @@ var FinalPhotoCounter: int = 0:
 		
 		FinalPhotoCounter = InCounter
 		
-		if FinalPhotoCounter >= 5:
+		if FinalPhotoCounter >= 5 and not has_meta(&"Scene8"):
 			BeginScene8()
 
 func BeginScene8():
 	
 	assert(not has_meta(&"Scene8"))
 	set_meta(&"Scene8", true)
+	
+	await get_tree().create_timer(1.0).timeout
 	
 	var FinalCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Final/CutSceneData.tres"))
 	
@@ -195,7 +200,7 @@ func PlayCredits():
 	_CreditsText.text = ""
 	
 	_CreditsText.push_paragraph(HORIZONTAL_ALIGNMENT_LEFT)
-	_CreditsText.add_image(load("res://Scenes/Credits/IWantPizza.png"), 112, 112)
+	_CreditsText.add_image(load("res://Scenes/Credits/IWantPizza.png"), 128, 128)
 	_CreditsText.add_text(TranslationServer.translate("CREDITS_1") + "\n\n")
 	_CreditsText.pop()
 	
@@ -205,24 +210,41 @@ func PlayCredits():
 	_CreditsText.pop()
 	
 	_CreditsText.push_paragraph(HORIZONTAL_ALIGNMENT_RIGHT)
-	_CreditsText.add_image(load("res://Scenes/Credits/Pompila.png"), 112, 112)
+	_CreditsText.add_image(load("res://Scenes/Credits/Pompila.png"), 136, 136)
 	_CreditsText.add_text(TranslationServer.translate("CREDITS_3") + "\n\n")
 	_CreditsText.pop()
 	
 	_CreditsText.push_paragraph(HORIZONTAL_ALIGNMENT_CENTER)
-	_CreditsText.add_image(load("res://Scenes/Credits/Prussichger.png"), 112, 112)
+	_CreditsText.add_image(load("res://Scenes/Credits/Prussichger.png"), 104, 104)
 	_CreditsText.add_text(TranslationServer.translate("CREDITS_4") + "\n\n")
 	_CreditsText.pop()
 	
 	_CreditsText.push_paragraph(HORIZONTAL_ALIGNMENT_LEFT)
-	_CreditsText.add_image(load("res://Scenes/Credits/ElLozerroXD.png"), 112, 112)
+	_CreditsText.add_image(load("res://Scenes/Credits/ElLozerroXD.png"), 128, 128)
 	_CreditsText.add_text(TranslationServer.translate("CREDITS_5"))
 	_CreditsText.pop()
 
+## Misc
+func HandleShutDown():
+	GameGlobals._ShutDown.play()
+	GameGlobals._GlobalLoop1.stop()
+	GameGlobals._GlobalLoop2.stop()
+	_AnimationPlayer.play(&"ShutDown")
+
+func HandleShutDown_Finish():
+	PlayCredits()
+
+func HandleHelp():
+	_DesktopCanvas.TryOpenHelpWindow()
+
+func SpawnHelpDocument():
+	_DesktopCanvas.HelpDocument = _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Documents/HelpDocument1.tres"))
+	_DesktopCanvas.HelpDocument.GridPosition = Vector2i(0, 6)
+
 func SpawnEasterFolder():
 	_DesktopCanvas.EasterFolder = _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Folders/Easter/EasterFolder_Main.tres"))
-	_DesktopCanvas.EasterFolder.GridPosition = Vector2i(0, 6)
+	_DesktopCanvas.EasterFolder.GridPosition = Vector2i(1, 6)
 
 func SpawnTabsMessageFile():
 	_DesktopCanvas.TabsMessageFile = _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Messages/TabsMessage.tres"))
-	_DesktopCanvas.TabsMessageFile.GridPosition = Vector2i(1, 6)
+	_DesktopCanvas.TabsMessageFile.GridPosition = Vector2i(2, 6)

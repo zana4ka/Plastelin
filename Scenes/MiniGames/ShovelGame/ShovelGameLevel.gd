@@ -5,11 +5,15 @@ class_name ShovelGameLevel
 @onready var DigParticles: CPUParticles2D = $Control/DigParticles
 
 @onready var Coffin: AnimatedSprite2D = $Control/Coffin
-@onready var Hint: Sprite2D = $Control/Coffin/Hint
-@onready var Interact: Button = $Control/Coffin/Interact
+@onready var Password: Sprite2D = $Control/Coffin/Password
+#@onready var Interact: Button = $Control/Coffin/Interact
 
 @onready var Shovel: AnimatedSprite2D = $Control/Shovel
 @onready var ShovelResetTimer: Timer = $Control/Shovel/ResetTimer
+
+@onready var Key: TextureRect = $Key
+@onready var KeyAP: AnimationPlayer = $Key/AP
+@onready var KeyLabel: Label = $Key/Label
 
 @onready var _AnimationPlayer: AnimationPlayer = $AnimationPlayer
 
@@ -24,62 +28,112 @@ func _ready() -> void:
 	
 	ProgressTicks = 0
 	
-	Interact.pressed.connect(OnInteractPressed)
+	#Interact.pressed.connect(OnInteractPressed)
 	ShovelResetTimer.timeout.connect(ResetShovel)
 	
-	Hint.visible = false
+	Password.visible = false
 	
 	#OwnerMiniGameUI._Header._Close.disabled = true
 	
 	_Shake.ShakeTarget = OwnerMiniGameUI
-
-func OnInteractPressed():
-	TryProgress()
-
-var NextProgressMinTimeTicksMs: int = 0
-
-func TryProgress() -> bool:
 	
-	if NextProgressMinTimeTicksMs < Time.get_ticks_msec():
+	ProgressCooldownTimeLeft = 0.6
+	
+	ResetCurrentKey()
+
+var ProgressCooldownTimeLeft: float = 0.0
+
+func _process(InDelta: float) -> void:
+	
+	if not IsFinished:
+		if ProgressCooldownTimeLeft > 0.0:
+			
+			ProgressCooldownTimeLeft -= InDelta
+			
+			if ProgressCooldownTimeLeft <= 0.0:
+				SetNewKey()
+
+var NextKeyId: int = 0:
+	set(InId):
 		
-		ProgressTicks += 1
-		#Interact.text = String.num_int64(ProgressTicks)
+		NextKeyId = InId
+		KeyLabel.text = OS.get_keycode_string(NextKeyId)
 		
-		if ProgressTicks % 3 == 2:
-			
-			_Shake.Start(Vector2(5.0, 5.0), 0.02, 1.0)
-			DigParticles.restart()
-			
-			GameGlobals._DirtDigging.play()
-			_AnimationPlayer.play(&"NextLayer")
-			
-			NextProgressMinTimeTicksMs = Time.get_ticks_msec() + 500
-			
-		elif ProgressTicks % 3 == 0:
-			
-			GameGlobals._WindowClose.play()
-			
+		if NextKeyId == KEY_NONE:
+			Key.visible = false
+			KeyAP.stop()
 		else:
-			GameGlobals._WindowCollapse.play()
-			_Shake.Start(Vector2(2.0, 2.0), 0.002, 2.0)
-			
-			NextProgressMinTimeTicksMs = Time.get_ticks_msec() + 200
-		
-		if ProgressTicks == 11:
-			FinishGame()
-		
-		return true
-	return false
+			Key.visible = true
+			KeyAP.play(&"Flicker", -1.0, 2.0)
 
-func FinishGame():
+func SetNewKey():
+	assert(ProgressCooldownTimeLeft <= 0.0)
+	NextKeyId = randi_range(KEY_A, KEY_Z)
+
+func ResetCurrentKey():
+	assert(ProgressCooldownTimeLeft > 0.0)
+	NextKeyId = KEY_NONE
+
+#func OnInteractPressed():
+#	TryProgress()
+
+func _unhandled_input(InEvent: InputEvent):
 	
-	Coffin.frame = 4
-	ShovelResetTimer.start()
+	assert(not IsFinished)
+	if not InEvent is InputEventKey:
+		return
 	
-	Hint.visible = true
-	Interact.visible = false
+	if InEvent.physical_keycode != NextKeyId:
+		return
 	
-	GameGlobals._MainScene.BeginScene2()
+	if ProgressCooldownTimeLeft > 0.0:
+		return
+	
+	ProgressTicks += 1
+	#Interact.text = String.num_int64(ProgressTicks)
+	
+	if ProgressTicks % 3 == 2:
+		
+		_Shake.Start(Vector2(5.0, 5.0), 0.02, 1.0)
+		DigParticles.restart()
+		
+		GameGlobals._DirtDigging.play()
+		_AnimationPlayer.play(&"NextLayer")
+		
+		ProgressCooldownTimeLeft = 0.5
+		
+	elif ProgressTicks % 3 == 0:
+		
+		GameGlobals._WindowClose.play()
+		ProgressCooldownTimeLeft = 0.1
+		
+	else:
+		GameGlobals._WindowCollapse.play()
+		_Shake.Start(Vector2(2.0, 2.0), 0.002, 2.0)
+		
+		ProgressCooldownTimeLeft = 0.2
+	
+	assert(ProgressTicks <= 11)
+	if ProgressTicks == 11:
+		IsFinished = true
+	
+	ResetCurrentKey()
+
+var IsFinished: bool = false:
+	set(InIsFinished):
+		
+		IsFinished = InIsFinished
+		
+		if IsFinished:
+			
+			Coffin.frame = 4
+			ShovelResetTimer.start()
+			
+			Password.visible = true
+			#Interact.visible = false
+			set_process_unhandled_input(false)
+			
+			GameGlobals._MainScene.BeginScene2()
 
 func ResetShovel():
 	Shovel.frame = 0

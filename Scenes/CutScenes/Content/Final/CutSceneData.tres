@@ -1,16 +1,53 @@
-[gd_resource type="Resource" script_class="CutSceneData" load_steps=5 format=3 uid="uid://gu12ou5nxf0s"]
+[gd_resource type="Resource" script_class="CutSceneData" load_steps=8 format=3 uid="uid://gu12ou5nxf0s"]
 
-[ext_resource type="Texture2D" uid="uid://n1g1648vj4g6" path="res://UI/Items/Content/Photos/Final/Crime001a.png" id="1_8pcy1"]
-[ext_resource type="Texture2D" uid="uid://5hspv4yxtl2b" path="res://UI/Items/Content/Photos/Final/Pistol001a.png" id="2_hpidt"]
-[ext_resource type="Texture2D" uid="uid://c2u3qm0lvdp4d" path="res://UI/Items/Content/Photos/Corpse002a.png" id="3_nodwk"]
+[ext_resource type="Script" uid="uid://d0aclq6sakghk" path="res://Scenes/CutScenes/CutSceneData_FrameData.gd" id="1_8pcy1"]
+[ext_resource type="Texture2D" uid="uid://cendqcldwf2lk" path="res://Scenes/CutScenes/Content/Common/Background001.tres" id="2_hpidt"]
+[ext_resource type="Texture2D" uid="uid://c1tcd05b1a8ef" path="res://Scenes/CutScenes/Content/Common/Foreground001.tres" id="3_nodwk"]
 [ext_resource type="Script" uid="uid://dk1edm4qmw31p" path="res://Scenes/CutScenes/CutSceneData.gd" id="4_rgl8n"]
+
+[sub_resource type="Resource" id="Resource_rgl8n"]
+script = ExtResource("1_8pcy1")
+Background = ExtResource("2_hpidt")
+BackgroundColor = Color(1, 1, 1, 1)
+Foreground = ExtResource("3_nodwk")
+ForegroundColor = Color(1, 1, 1, 1)
+TextColor = Color(0.75, 0.25, 0, 1)
+TextArray = Array[String](["CUTSCENE_FINAL_1"])
+TextDirectionArray = Array[int]([3])
+FadeToColor = Color(0.4, 0, 0, 1)
+FadeToDuration = 0.5
+metadata/_custom_type_script = "uid://d0aclq6sakghk"
+
+[sub_resource type="Resource" id="Resource_7d1v1"]
+script = ExtResource("1_8pcy1")
+Background = ExtResource("2_hpidt")
+BackgroundColor = Color(1, 1, 1, 1)
+Foreground = ExtResource("3_nodwk")
+ForegroundColor = Color(1, 1, 1, 1)
+TextColor = Color(0.75, 0.25, 0, 1)
+TextArray = Array[String](["CUTSCENE_FINAL_2"])
+TextDirectionArray = Array[int]([3])
+FadeToColor = Color(0.4, 0, 0, 1)
+FadeToDuration = 0.0
+metadata/_custom_type_script = "uid://d0aclq6sakghk"
+
+[sub_resource type="Resource" id="Resource_f0xap"]
+script = ExtResource("1_8pcy1")
+Background = ExtResource("2_hpidt")
+BackgroundColor = Color(1, 1, 1, 1)
+Foreground = ExtResource("3_nodwk")
+ForegroundColor = Color(1, 1, 1, 1)
+TextColor = Color(0.75, 0.25, 0, 1)
+TextArray = Array[String](["CUTSCENE_FINAL_3"])
+TextDirectionArray = Array[int]([3])
+FadeToColor = Color(0.4, 0, 0, 1)
+FadeToDuration = 0.0
+metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [resource]
 script = ExtResource("4_rgl8n")
-FadeColor = Color(0.4, 0, 0, 1)
-FadeDuration = 0.5
-SkipFadeOnFrames = Array[int]([])
-FrameTextureArray = Array[Texture2D]([ExtResource("1_8pcy1"), ExtResource("2_hpidt"), ExtResource("3_nodwk")])
-FrameTextArray = Array[String](["CUTSCENE_FINAL_1", "CUTSCENE_FINAL_2", "CUTSCENE_FINAL_3"])
+FrameArray = Array[ExtResource("1_8pcy1")]([SubResource("Resource_rgl8n"), SubResource("Resource_7d1v1"), SubResource("Resource_f0xap")])
 FrameTextColor = Color(0.8, 0, 0, 1)
+FadeFromColor = Color(0, 0, 0, 1)
+FadeFromDuration = 0.5
 metadata/_custom_type_script = "uid://dk1edm4qmw31p"

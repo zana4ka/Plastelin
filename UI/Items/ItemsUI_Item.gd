@@ -13,7 +13,6 @@ class_name ItemsUI_Item
 @onready var _Lock: TextureRect = $Button/Lock
 @onready var _Label: Label = $Control/Label
 
-var WasOpened: bool = false
 var IsLocked: bool = false:
 	set(InIsLocked):
 		IsLocked = InIsLocked
@@ -70,6 +69,12 @@ func UpdateFromItemData():
 	if _Data.IsInitiallyLocked:
 		IsLocked = true
 
+func WasOpened() -> bool:
+	return _Data.WasOpened()
+
+func SetWasOpened(InWasOpened: bool):
+	return _Data.SetWasOpened(InWasOpened)
+
 var SkipReplace: bool = false
 
 func HandleGridPositionChanged(InPrevPosition: Vector2i):
@@ -97,7 +102,7 @@ func OnButtonPressed():
 		return
 	
 	if await GameGlobals._MainScene.TryOpenItem(self, _Data.ForceOpenOnScreenCenter):
-		WasOpened = true
+		SetWasOpened(true)
 
 func OnButtonFocusEntered():
 	

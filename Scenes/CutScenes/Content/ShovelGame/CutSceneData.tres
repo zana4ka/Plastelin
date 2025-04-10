@@ -1,15 +1,57 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b3o7i3dfw3k6b"]
+[gd_resource type="Resource" load_steps=9 format=3 uid="uid://b3o7i3dfw3k6b"]
 
 [ext_resource type="Texture2D" uid="uid://ct71f2jvv1gba" path="res://Scenes/CutScenes/Content/ShovelGame/Frame001.tres" id="1_2v1km"]
+[ext_resource type="Script" uid="uid://d0aclq6sakghk" path="res://Scenes/CutScenes/CutSceneData_FrameData.gd" id="1_lg5be"]
 [ext_resource type="Script" uid="uid://dsu3vj63883bx" path="res://Scenes/CutScenes/Content/ShovelGame/CutSceneData.gd" id="2_jd551"]
 [ext_resource type="Texture2D" uid="uid://cbxx42ovgasp5" path="res://Scenes/CutScenes/Content/ShovelGame/Frame001n.png" id="2_y7ncd"]
+[ext_resource type="Texture2D" uid="uid://c1tcd05b1a8ef" path="res://Scenes/CutScenes/Content/Common/Foreground001.tres" id="3_kwop0"]
+
+[sub_resource type="Resource" id="Resource_5yak0"]
+script = ExtResource("1_lg5be")
+Background = ExtResource("1_2v1km")
+BackgroundColor = Color(1, 1, 1, 1)
+Foreground = ExtResource("3_kwop0")
+ForegroundColor = Color(1, 1, 1, 1)
+TextColor = Color(0.75, 0.25, 0, 1)
+TextArray = Array[String](["CUTSCENE_SHOVELGAME_1"])
+TextDirectionArray = Array[int]([2])
+FadeToColor = Color(0.4, 0, 0, 1)
+FadeToDuration = 0.0
+FrameHoldExtraDelay = 0.6
+metadata/_custom_type_script = "uid://d0aclq6sakghk"
+
+[sub_resource type="Resource" id="Resource_eujy7"]
+script = ExtResource("1_lg5be")
+Background = ExtResource("2_y7ncd")
+BackgroundColor = Color(1, 1, 1, 1)
+Foreground = ExtResource("3_kwop0")
+ForegroundColor = Color(1, 1, 1, 1)
+TextColor = Color(0.75, 0.25, 0, 1)
+TextArray = Array[String](["CUTSCENE_SHOVELGAME_2"])
+TextDirectionArray = Array[int]([2])
+FadeToColor = Color(0.4, 0, 0, 1)
+FadeToDuration = 0.0
+FrameHoldExtraDelay = 0.0
+metadata/_custom_type_script = "uid://d0aclq6sakghk"
+
+[sub_resource type="Resource" id="Resource_lacu1"]
+script = ExtResource("1_lg5be")
+Background = ExtResource("2_y7ncd")
+BackgroundColor = Color(1, 1, 1, 1)
+Foreground = ExtResource("3_kwop0")
+ForegroundColor = Color(1, 1, 1, 1)
+TextColor = Color(0.75, 0.25, 0, 1)
+TextArray = Array[String](["CUTSCENE_SHOVELGAME_3"])
+TextDirectionArray = Array[int]([2])
+FadeToColor = Color(0.4, 0, 0, 1)
+FadeToDuration = 0.0
+FrameHoldExtraDelay = 0.0
+metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [resource]
 script = ExtResource("2_jd551")
-FadeColor = Color(1, 0, 0, 1)
-FadeDuration = 0.25
-SkipFadeOnFrames = Array[int]([0, 1, 2])
-FrameTextureArray = Array[Texture2D]([ExtResource("1_2v1km"), ExtResource("2_y7ncd"), ExtResource("2_y7ncd")])
-FrameTextArray = Array[String](["CUTSCENE_SHOVELGAME_1", "CUTSCENE_SHOVELGAME_2", "CUTSCENE_SHOVELGAME_3"])
+FrameArray = Array[ExtResource("1_lg5be")]([SubResource("Resource_5yak0"), SubResource("Resource_eujy7"), SubResource("Resource_lacu1")])
 FrameTextColor = Color(0.8, 0, 0, 1)
+FadeFromColor = Color(0.8, 0, 0, 1)
+FadeFromDuration = 0.25
 metadata/_custom_type_script = "uid://dk1edm4qmw31p"

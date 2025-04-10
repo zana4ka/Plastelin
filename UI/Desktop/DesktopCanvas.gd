@@ -12,7 +12,7 @@ class_name DesktopCanvas
 
 ## Keys are ItemsUI_Item instance ids
 var WindowsDictionary: Dictionary[int, WindowUI] = {}
-var WindowsLimit: int = 5
+@export var WindowsLimit: int = 6
 
 func _ready() -> void:
 	pass
@@ -97,8 +97,13 @@ func CloseAllWindows():
 		WindowsDictionary[SampleInstanceId].TryClose()
 	WindowsDictionary.clear()
 
+var HelpDocument: ItemsUI_Item
 var EasterFolder: ItemsUI_Item
 var TabsMessageFile: ItemsUI_Item
+
+func TryOpenHelpWindow():
+	if is_instance_valid(HelpDocument):
+		TryOpenWindowForItem(HelpDocument, true)
 
 func TryOpenEasterWindow():
 	if is_instance_valid(EasterFolder):

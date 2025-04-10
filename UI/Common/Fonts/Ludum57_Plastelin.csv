@@ -1,15 +1,19 @@
 keys,en,ru
 MY_COMPUTER,My Computer,Мой компьютер
 RECYCLE,Recycle Bin,Корзина
-NEW_DOCUMENT_1,Text document.txt,Текстовый документ.txt
 START,Start,Пуск
 SHUT_DOWN,Shut down...,Завершить работу...
 SETTINGS,Settings,Настройки
 HELP,Help,Помощь
+HELP_DOCUMENT_CONTENT,"Each geometric element in the photo is associated with a number.
+In the newspaper, these geometric objects are arranged in order.","Каждый геометрический элемент на фото связан с цифрой.
+В газете эти геометрические предметы расставлены по порядку."
+HELP_CONFIRM,Are you sure you want help?,Вы точно хотите помощь?
 ENTER_PASSWORD,Enter the password...,Введите пароль...
 ARE_YOU_SURE,Are you sure?,Вы уверены?
 TABS_MESSAGE,Too many tabs!,Слишком много вкладок!
 DESKTOP_PATH,C:\User\Desktop,C:\User\Рабочий стол
+NEW_DOCUMENT_1,Text document.txt,Текстовый документ.txt
 SECRET_FOLDER_1,New folder,Новая папка
 SECRET_FOLDER_2,New folder (1),Новая папка (1)
 SECRET_FOLDER_2_1,New folder,Новая папка
@@ -120,16 +124,16 @@ SECRET_DOCUMENT_8,IT'S ALL YOUR FAULT,ТЫ ВО ВСЁМ ВИНОВАТ
 SECRET_DOCUMENT_8_CONTENT,IT'S ALL YOUR FAULTIT'S ALL YOUR FAULTIT'S ALL YOUR FAULTIT'S ALL YOUR FAULTIT'S ALL YOUR FAULTIT'S ALL YOUR FAULTIT'S ALL YOUR FAULTIT'S ALL YOUR FAULTIT'S ALL YOUR FAULTIT'S ALL YOUR FAULTIT'S ALL YOUR FAULTIT'S ALL YOUR FAULT,ТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТТЫ ВО ВСЕМ ВИНОВАТ
 SECRET_DOCUMENT_9,STOP LYING,ХВАТИТЬ ВРАТЬ
 SECRET_DOCUMENT_9_CONTENT,WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?,ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?
-SECRET_PHOTO_1,Transfers.pdf,Переводы.pdf
-SECRET_PHOTO_2,Corpse1.jpg,Труп1.jpg
-SECRET_PHOTO_3,Corpse2.jpg,Труп2.jpg
-SECRET_PHOTO_4,Newspaper.jpg,Газета.jpg
-SECRET_PHOTO_5,,
-FINAL_PHOTO_1,Victim_0584.pdf,Потерпевшая_0584.pdf
-FINAL_PHOTO_2,Photo_From_Case_0584.pdf,Фото_С_Дела_0584.pdf
-FINAL_PHOTO_3,Photo_From_Case_0584.pdf,Фото_С_Дела_0584.pdf
-FINAL_PHOTO_4,Body_0584.pdf,Тело_0584.pdf
-FINAL_PHOTO_5,Place_0584.pdf,Место_0584.pdf
+TRANSFERS_PHOTO,Transfers.pdf,Переводы.pdf
+PISTOL_PHOTO,Photo_From_Case_0584.pdf,Фото_С_Дела_0584.pdf
+BODY_PHOTO_1,Body1.jpg,Тело1.jpg
+BODY_PHOTO_2,Body2.jpg,Тело2.jpg
+NEWSPAPER_PHOTO,Newspaper.jpg,Газета.jpg
+BED_PHOTO,Victim_0584.pdf,Потерпевшая_0584.pdf
+SHELLS_PHOTO,Photo_From_Case_0584.pdf,Фото_С_Дела_0584.pdf
+???,Body_0584.pdf,Тело_0584.pdf
+??????,Place_0584.pdf,Место_0584.pdf
+TOMBSTONE_PHOTO,???.png,???.png
 SECRET_GAME_1,revelations.exe,откровения.exe
 SECRET_GAME_2,N.GAME 2.exe,N.GAME 2.exe
 MODELLING_PHOTO_1,Lil boot.jpg,Сапожок.jpg
@@ -140,6 +144,10 @@ MODELLING_PHOTO_5,White thing.jpg,Белая штука.jpg
 MODELLING_PHOTO_6,Sus.jpg,Sus.jpg
 LOCKED_FILE_1,YOU SAW.pdf,ТЫ УВИДЕЛ.pdf
 LOCKED_FILE_2,THEM BURN.txt,ОНИ ГОРЯТ.txt
+CUTSCENE_PROLOGUE_1A,For 10 years I followed his trail.,10 лет я шёл по его следу.
+CUTSCENE_PROLOGUE_1B,For 10 years he escaped.,10 лет он ускользал.
+CUTSCENE_PROLOGUE_2,The killer of those who administer justice...,"Убийца тех, кто вершит правосудие..."
+CUTSCENE_PROLOGUE_3,...and perhaps the one who changed my life.,"...и, возможно, того, кто изменил мою жизнь."
 CUTSCENE_SHOVELGAME_1,If you see it...,Раз ты это видишь...
 CUTSCENE_SHOVELGAME_2,"If you see it...
 You want the truth.","Раз ты это видишь...
@@ -149,22 +157,20 @@ You want the truth.
 Then play!","Раз ты это видишь...
 Ты хочешь правды.
 Тогда играй!"
-CUTSCENE_PREFINAL_1,Coincidence?,Совпадение?
-CUTSCENE_PREFINAL_2,"Coincidence?
-Or was someone watching me from the very beginning?..","Совпадение?
-Или кто-то наблюдал за мной с самого начала?.."
+CUTSCENE_WATCHER_1,Coincidence?,Совпадение?
+CUTSCENE_WATCHER_2,Or was someone watching me from the very beginning?..,Или кто-то наблюдал за мной с самого начала?..
 CUTSCENE_FINAL_1,"Mini comic:
-The hero is overcome by a fit of deja vu.","Мини комикс:
+The hero is overcome by an attack of déjà vu.","Мини комикс:
 Героя охватывает приступ дежавю."
 CUTSCENE_FINAL_2,"He enters the room, sounds:
-dull blows
+blunt blows
 someone's voice screaming his name.","Он входит в комнату, звуки:
 тупые удары
 чей-то голос, кричащий его имя."
-CUTSCENE_FINAL_3,The last image is his hand reaching for the bloody bed.,"Последний образ — его рука, тянущаяся к окровавленной постели."
-EASTER_FOLDER_A,Closer,Близко
-EASTER_FOLDER_B,Farther,Далеко
-EASTER_FOLDER_MAIN,PoshalKO,PoshalKO
+CUTSCENE_FINAL_3,The last image is his hand reaching towards the bloody bed.,"Последний образ — его рука, тянущаяся к окровавленной постели."
+EASTER_FOLDER_A,Closer,Ближе
+EASTER_FOLDER_B,Further,Дальше
+EASTER_FOLDER_MAIN,Eester,PoshalKO
 EASTER_DOCUMENT_1,Password.txt,Пароль.txt
 EASTER_DOCUMENT_1_CONTENT,At least you tried...,Ну ты старался...
 EASTER_DOCUMENT_2,Sett.txt,Наст.txt

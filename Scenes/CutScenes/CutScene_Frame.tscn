@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnj4dife3fb0q"]
+[gd_scene load_steps=4 format=3 uid="uid://bnj4dife3fb0q"]
 
-[ext_resource type="Texture2D" uid="uid://cr0nyngxvd5v3" path="res://UI/Items/Content/Photos/Modelling/Modelling001a.jpg" id="1_y268h"]
+[ext_resource type="Texture2D" uid="uid://cendqcldwf2lk" path="res://Scenes/CutScenes/Content/Common/Background001.tres" id="1_usox1"]
 [ext_resource type="Script" uid="uid://cctj3tccb61wa" path="res://Scenes/CutScenes/CutScene_Frame.gd" id="2_tons2"]
+[ext_resource type="Texture2D" uid="uid://dyolrdq8rygd3" path="res://Scenes/CutScenes/Content/Watcher/Foreground002a.png" id="3_usox1"]
 
 [node name="CutScene_Frame" type="TextureButton"]
 anchors_preset = 15
@@ -9,7 +10,88 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_y268h")
+texture_normal = ExtResource("1_usox1")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("2_tons2")
+
+[node name="Foreground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_usox1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextLeft" type="Label" parent="."]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.5
+anchor_right = 0.05
+anchor_bottom = 0.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "CUTSCENE_PROLOGUE_1A"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TextTop" type="Label" parent="."]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 50.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "CUTSCENE_PROLOGUE_1A"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TextRight" type="Label" parent="."]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.5
+anchor_right = 0.95
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "CUTSCENE_PROLOGUE_1A"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TextBottom" type="Label" parent="."]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "CUTSCENE_PROLOGUE_1A"
+horizontal_alignment = 1
+autowrap_mode = 3
