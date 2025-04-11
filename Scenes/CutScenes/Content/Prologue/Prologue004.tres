@@ -9,6 +9,6 @@ frames = 3
 one_shot = true
 frame_0/texture = ExtResource("1_of4un")
 frame_1/texture = ExtResource("2_ylmob")
-frame_1/duration = 1.0
+frame_1/duration = 0.5
 frame_2/texture = ExtResource("3_341qr")
 frame_2/duration = 1.0

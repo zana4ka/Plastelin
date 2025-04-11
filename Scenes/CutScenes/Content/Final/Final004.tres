@@ -1,0 +1,30 @@
+[gd_resource type="AnimatedTexture" load_steps=9 format=3 uid="uid://dgefr4qlnkh2i"]
+
+[ext_resource type="Texture2D" uid="uid://c7hwafktocv2p" path="res://Scenes/CutScenes/Content/Final/Final004a.png" id="1_qlrm4"]
+[ext_resource type="Texture2D" uid="uid://dgfij70h5ppn4" path="res://Scenes/CutScenes/Content/Final/Final004b.png" id="2_26nla"]
+[ext_resource type="Texture2D" uid="uid://c4kse4v73w3o2" path="res://Scenes/CutScenes/Content/Final/Final004c.png" id="3_lkyld"]
+[ext_resource type="Texture2D" uid="uid://djwocggesf6by" path="res://Scenes/CutScenes/Content/Final/Final004d.png" id="4_fabpy"]
+[ext_resource type="Texture2D" uid="uid://c6br7uvyjlq8e" path="res://Scenes/CutScenes/Content/Final/Final004e.png" id="5_1rd7x"]
+[ext_resource type="Texture2D" uid="uid://ccv3paxramx60" path="res://Scenes/CutScenes/Content/Final/Final004f.png" id="6_u8npr"]
+[ext_resource type="Texture2D" uid="uid://d00ln3673ehj2" path="res://Scenes/CutScenes/Content/Final/Final004g.png" id="7_tuipn"]
+[ext_resource type="Texture2D" uid="uid://2w60e3f4ohwa" path="res://Scenes/CutScenes/Content/Common/Black001.tres" id="8_26nla"]
+
+[resource]
+frames = 8
+one_shot = true
+speed_scale = 5.0
+frame_0/texture = ExtResource("1_qlrm4")
+frame_1/texture = ExtResource("2_26nla")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_lkyld")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_fabpy")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_1rd7x")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_u8npr")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("7_tuipn")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("8_26nla")
+frame_7/duration = 1.0

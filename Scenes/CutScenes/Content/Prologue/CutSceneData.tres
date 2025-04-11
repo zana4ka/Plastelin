@@ -12,7 +12,7 @@
 [sub_resource type="Resource" id="Resource_nfx73"]
 script = ExtResource("1_qbeh7")
 Background = ExtResource("2_l8k0j")
-BackgroundColor = Color(1, 1, 1, 1)
+BackgroundColor = Color(0.4, 0, 0, 1)
 Foreground = ExtResource("1_87ev2")
 ForegroundColor = Color(1, 1, 1, 1)
 TextColor = Color(0.75, 0.25, 0, 1)
@@ -21,12 +21,13 @@ TextDirectionArray = Array[int]([0, 2])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
 FrameHoldExtraDelay = 0.0
+AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [sub_resource type="Resource" id="Resource_grv6g"]
 script = ExtResource("1_qbeh7")
 Background = ExtResource("2_l8k0j")
-BackgroundColor = Color(1, 1, 1, 1)
+BackgroundColor = Color(0.4, 0, 0, 1)
 Foreground = ExtResource("2_npi47")
 ForegroundColor = Color(1, 1, 1, 1)
 TextColor = Color(0.75, 0.25, 0, 1)
@@ -35,6 +36,7 @@ TextDirectionArray = Array[int]([3])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
 FrameHoldExtraDelay = 0.0
+AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [sub_resource type="Resource" id="Resource_a8axl"]
@@ -49,6 +51,7 @@ TextDirectionArray = Array[int]([3])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
 FrameHoldExtraDelay = 0.0
+AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [sub_resource type="Resource" id="Resource_8hwkj"]
@@ -62,13 +65,13 @@ TextArray = Array[String]([])
 TextDirectionArray = Array[int]([])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
-FrameHoldExtraDelay = 2.0
+FrameHoldExtraDelay = 1.5
+AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [resource]
 script = ExtResource("1_my4n2")
 FrameArray = Array[ExtResource("1_qbeh7")]([SubResource("Resource_nfx73"), SubResource("Resource_grv6g"), SubResource("Resource_a8axl"), SubResource("Resource_8hwkj")])
-FrameTextColor = Color(0.8, 0, 0, 1)
 FadeFromColor = Color(0, 0.7, 0.7, 1)
 FadeFromDuration = 0.4
 metadata/_custom_type_script = "uid://dk1edm4qmw31p"

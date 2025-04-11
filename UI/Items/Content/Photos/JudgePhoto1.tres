@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PhotoData" load_steps=6 format=3 uid="uid://briluqmxgr4eq"]
+
+[ext_resource type="Texture2D" uid="uid://ftoxhqvf7vxa" path="res://UI/Items/Content/Photos/Photo001a.png" id="1_qd6yy"]
+[ext_resource type="Texture2D" uid="uid://kh7ievk5hd26" path="res://UI/Items/Content/Photos/Judge001a.png" id="2_qd6yy"]
+[ext_resource type="LabelSettings" uid="uid://cet37rksbs5wj" path="res://UI/Common/DefaultLS_Focused.tres" id="3_37mca"]
+[ext_resource type="LabelSettings" uid="uid://bqjah153tcqnj" path="res://UI/Common/DefaultLS.tres" id="4_w8jrb"]
+[ext_resource type="Script" uid="uid://cnk0n55cboaep" path="res://UI/Items/PhotoData.gd" id="5_qslu3"]
+
+[resource]
+script = ExtResource("5_qslu3")
+PhotoTexture = ExtResource("2_qd6yy")
+IconTexture = ExtResource("1_qd6yy")
+Name = "JUDGE_PHOTO_1"
+ForceOpenOnScreenCenter = false
+ForceExpand = false
+CanBeMoved = true
+_LS = ExtResource("4_w8jrb")
+_FocusedLS = ExtResource("3_37mca")
+IsInitiallyLocked = false
+OpenItemAfterUnlock = true
+UnlockPassword = ""
+metadata/_custom_type_script = "uid://cnk0n55cboaep"

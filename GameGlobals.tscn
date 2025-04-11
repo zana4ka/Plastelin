@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://byad4n43xn8cn"]
+[gd_scene load_steps=14 format=3 uid="uid://byad4n43xn8cn"]
 
 [ext_resource type="Script" uid="uid://cxg47geop7n1d" path="res://GameGlobals.gd" id="1_ebyop"]
-[ext_resource type="AudioStream" uid="uid://ia2uoeen5jvm" path="res://Audio/PC001a.mp3" id="2_dnnx4"]
-[ext_resource type="AudioStream" uid="uid://c0dabtxdj53px" path="res://Audio/Glitch001a.mp3" id="3_x44md"]
+[ext_resource type="AudioStream" uid="uid://ia2uoeen5jvm" path="res://Audio/PCLoop001a.mp3" id="2_dnnx4"]
+[ext_resource type="AudioStream" uid="uid://c0dabtxdj53px" path="res://Audio/GlitchLoop001a.mp3" id="3_x44md"]
+[ext_resource type="AudioStream" uid="uid://cidsqeaccipby" path="res://Audio/EmptyRoomLoop001b.mp3" id="4_fqpxp"]
 [ext_resource type="AudioStream" uid="uid://bd4gh5cefodyv" path="res://Audio/MouseClick001a.mp3" id="4_pkm8e"]
 [ext_resource type="AudioStream" uid="uid://d0yoe1ai6neb4" path="res://Audio/StartUp001a.mp3" id="5_uu7h5"]
 [ext_resource type="AudioStream" uid="uid://cpifvcaw3as7a" path="res://Audio/WindowClose001a.mp3" id="6_b4t1x"]
@@ -16,11 +17,14 @@
 [node name="GameGlobals" type="Node"]
 script = ExtResource("1_ebyop")
 
-[node name="GlobalLoop1" type="AudioStreamPlayer" parent="."]
+[node name="PCLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_dnnx4")
 
-[node name="GlobalLoop2" type="AudioStreamPlayer" parent="."]
+[node name="GlitchLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_x44md")
+
+[node name="EmptyRoomLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fqpxp")
 
 [node name="MouseClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_pkm8e")

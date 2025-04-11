@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dyjjdeiojaovf"]
+
+[ext_resource type="Script" uid="uid://dm7mhlby8upaf" path="res://Scenes/CutScenes/Content/Final/Final007_FrameData.gd" id="1_vw8o0"]
+[ext_resource type="Texture2D" uid="uid://2w60e3f4ohwa" path="res://Scenes/CutScenes/Content/Common/Black001.tres" id="1_w4o1a"]
+[ext_resource type="Texture2D" uid="uid://cv08huj0arwxh" path="res://Scenes/CutScenes/Content/Final/Final007.tres" id="2_mx2x1"]
+
+[resource]
+script = ExtResource("1_vw8o0")
+Background = ExtResource("1_w4o1a")
+BackgroundColor = Color(1, 1, 1, 1)
+Foreground = ExtResource("2_mx2x1")
+ForegroundColor = Color(1, 1, 1, 1)
+TextColor = Color(0.8, 0.4, 0, 1)
+TextArray = Array[String]([])
+TextDirectionArray = Array[int]([])
+FadeToColor = Color(0, 0, 0, 1)
+FadeToDuration = 0.0
+FrameHoldExtraDelay = 1.0
+AutoSwitchDelay = 1.5
+metadata/_custom_type_script = "uid://d0aclq6sakghk"

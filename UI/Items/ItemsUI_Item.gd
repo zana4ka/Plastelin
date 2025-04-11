@@ -31,8 +31,6 @@ func _ready():
 		
 		## Update state
 		IsLocked = IsLocked
-		
-		tree_exiting.connect(GameGlobals._MainScene._DesktopCanvas.OnItemTreeExiting.bind(self))
 
 func _get_drag_data(AtPosition: Vector2) -> Variant:
 	

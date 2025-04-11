@@ -125,15 +125,19 @@ SECRET_DOCUMENT_8_CONTENT,IT'S ALL YOUR FAULTIT'S ALL YOUR FAULTIT'S ALL YOUR FA
 SECRET_DOCUMENT_9,STOP LYING,ХВАТИТЬ ВРАТЬ
 SECRET_DOCUMENT_9_CONTENT,WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?WHY DID YOU DO THIS TO THEM?,ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?ЗАЧЕМ ТЫ С НИМИ ТАК ПОСТУПИЛ?
 TRANSFERS_PHOTO,Transfers.pdf,Переводы.pdf
+JUDGE_PHOTO_1,Hare1.jpg,Заяц1.jpg
+JUDGE_PHOTO_2,Hare2.jpg,Заяц2.jpg
 PISTOL_PHOTO,Photo_From_Case_0584.pdf,Фото_С_Дела_0584.pdf
+OFFICER_PHOTO,Congradulate.png,Награда.png
 BODY_PHOTO_1,Body1.jpg,Тело1.jpg
 BODY_PHOTO_2,Body2.jpg,Тело2.jpg
-NEWSPAPER_PHOTO,Newspaper.jpg,Газета.jpg
-BED_PHOTO,Victim_0584.pdf,Потерпевшая_0584.pdf
-SHELLS_PHOTO,Photo_From_Case_0584.pdf,Фото_С_Дела_0584.pdf
-???,Body_0584.pdf,Тело_0584.pdf
-??????,Place_0584.pdf,Место_0584.pdf
-TOMBSTONE_PHOTO,???.png,???.png
+NEWSPAPER_PHOTO_1,The Newspaper.pdf,Та самая Газета.pdf
+NEWSPAPER_PHOTO_2,May 1999.pdf,Май 1999.pdf
+BED_PHOTO,Victim_0584.jpg,Потерпевшая_0584.jpg
+SHELLS_PHOTO,Photo_From_Case_0584.jpg,Фото_С_Дела_0584.jpg
+???,Body_0584.jpg,Тело_0584.jpg
+??????,Place_0584.jpg,Место_0584.jpg
+TOMBSTONE_PHOTO,???.jpg,???.jpg
 SECRET_GAME_1,revelations.exe,откровения.exe
 SECRET_GAME_2,N.GAME 2.exe,N.GAME 2.exe
 MODELLING_PHOTO_1,Lil boot.jpg,Сапожок.jpg
@@ -159,15 +163,8 @@ Then play!","Раз ты это видишь...
 Тогда играй!"
 CUTSCENE_WATCHER_1,Coincidence?,Совпадение?
 CUTSCENE_WATCHER_2,Or was someone watching me from the very beginning?..,Или кто-то наблюдал за мной с самого начала?..
-CUTSCENE_FINAL_1,"Mini comic:
-The hero is overcome by an attack of déjà vu.","Мини комикс:
-Героя охватывает приступ дежавю."
-CUTSCENE_FINAL_2,"He enters the room, sounds:
-blunt blows
-someone's voice screaming his name.","Он входит в комнату, звуки:
-тупые удары
-чей-то голос, кричащий его имя."
-CUTSCENE_FINAL_3,The last image is his hand reaching towards the bloody bed.,"Последний образ — его рука, тянущаяся к окровавленной постели."
+CUTSCENE_FINAL_1,These files... I'm having deja vu...,Эти файлы... У меня дежавю...
+CUTSCENE_FINAL_2,Crap...,Чёрт...
 EASTER_FOLDER_A,Closer,Ближе
 EASTER_FOLDER_B,Further,Дальше
 EASTER_FOLDER_MAIN,Eester,PoshalKO

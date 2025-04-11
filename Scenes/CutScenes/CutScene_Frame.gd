@@ -23,6 +23,10 @@ func UpdateFromFrameData(InData: CutSceneData_FrameData):
 		_Foreground.texture = null
 		_Foreground.visible = false
 	else:
+		
+		if InData.Foreground is AnimatedTexture:
+			InData.Foreground.current_frame = 0
+		
 		_Foreground.texture = InData.Foreground
 		_Foreground.self_modulate = InData.ForegroundColor
 		_Foreground.visible = true
@@ -40,3 +44,4 @@ func UpdateFromFrameData(InData: CutSceneData_FrameData):
 		TargetLabel.text = SampleText
 		TargetLabel.add_theme_color_override(&"font_color", InData.TextColor)
 		TargetLabel.visible = true
+	InData.PostUpdateFromFrameData(self)

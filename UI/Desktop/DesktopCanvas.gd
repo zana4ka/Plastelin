@@ -11,7 +11,7 @@ class_name DesktopCanvas
 @onready var _TaskbarUI: TaskbarUI = $MainControl/TaskbarUI
 
 ## Keys are ItemsUI_Item instance ids
-var WindowsDictionary: Dictionary[int, WindowUI] = {}
+var WindowsDictionary: Dictionary[ItemData, WindowUI] = {}
 @export var WindowsLimit: int = 6
 
 func _ready() -> void:
@@ -19,12 +19,12 @@ func _ready() -> void:
 
 func TryOpenWindowForItem(InItem: ItemsUI_Item, OnScreenCenter: bool, InIgnoreLimits: bool = false) -> WindowUI:
 	
-	var ItemInstanceId := InItem.get_instance_id()
+	var _ItemData := InItem._Data
 	CloseInvalidWindows()
 	
-	if WindowsDictionary.has(ItemInstanceId):
-		if WindowsDictionary[ItemInstanceId].TryUnfold():
-			return WindowsDictionary[ItemInstanceId]
+	if WindowsDictionary.has(_ItemData):
+		if WindowsDictionary[_ItemData].TryUnfold():
+			return WindowsDictionary[_ItemData]
 		else:
 			return null
 	
@@ -57,8 +57,8 @@ func OnWindowTreeEntered(InWindow: WindowUI) -> void:
 		push_error("InWindow.OwnerItem is invalid!")
 		return
 	
-	var OwnerItemInstanceId := InWindow.OwnerItem.get_instance_id()
-	WindowsDictionary[OwnerItemInstanceId] = InWindow
+	var OwnerItemData := InWindow.OwnerItem._Data
+	WindowsDictionary[OwnerItemData] = InWindow
 	
 	assert(InWindow.TaskbarTab == null)
 	_TaskbarUI.AddTabFor(InWindow)
@@ -67,34 +67,27 @@ func OnWindowTreeEntered(InWindow: WindowUI) -> void:
 func OnWindowTreeExiting(InWindow: WindowUI) -> void:
 	
 	if is_instance_valid(InWindow.OwnerItem):
-		var OwnerItemInstanceId := InWindow.OwnerItem.get_instance_id()
-		WindowsDictionary.erase(OwnerItemInstanceId)
+		var OwnerItemData := InWindow.OwnerItem._Data
+		WindowsDictionary.erase(OwnerItemData)
 	#else:
 	#	push_error("InWindow.OwnerItem is invalid!")
 	
 	assert(InWindow.TaskbarTab != null)
 	InWindow.TaskbarTab.queue_free()
 
-## Remove the window if exists
-func OnItemTreeExiting(InItem: ItemsUI_Item) -> void:
-	
-	var ItemInstanceId := InItem.get_instance_id()
-	if InItem.is_queued_for_deletion() and WindowsDictionary.has(ItemInstanceId):
-		WindowsDictionary[ItemInstanceId].queue_free()
-
 func SetBackground(InTexture: Texture2D):
 	_Background.texture = InTexture
 
 func CloseInvalidWindows():
 	
-	for SampleInstanceId: int in WindowsDictionary.keys():
-		if not is_instance_valid(WindowsDictionary[SampleInstanceId]):
-			WindowsDictionary.erase(SampleInstanceId)
+	for SampleItemData: ItemData in WindowsDictionary.keys():
+		if not is_instance_valid(WindowsDictionary[SampleItemData]):
+			WindowsDictionary.erase(SampleItemData)
 
 func CloseAllWindows():
 	
-	for SampleInstanceId: int in WindowsDictionary.keys():
-		WindowsDictionary[SampleInstanceId].TryClose()
+	for SampleItemData: ItemData in WindowsDictionary.keys():
+		WindowsDictionary[SampleItemData].TryClose()
 	WindowsDictionary.clear()
 
 var HelpDocument: ItemsUI_Item
@@ -113,8 +106,8 @@ func TryOpenTabsMessageWindow():
 	
 	if is_instance_valid(TabsMessageFile):
 		
-		if WindowsDictionary.has(TabsMessageFile.get_instance_id()):
-			var MessageWindow := WindowsDictionary[TabsMessageFile.get_instance_id()] as MessageUI
+		if WindowsDictionary.has(TabsMessageFile._Data):
+			var MessageWindow := WindowsDictionary[TabsMessageFile._Data] as MessageUI
 			MessageWindow.PlayPopUp()
 		else:
 			TryOpenWindowForItem(TabsMessageFile, true, true)

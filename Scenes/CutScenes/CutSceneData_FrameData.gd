@@ -8,7 +8,7 @@ class_name CutSceneData_FrameData
 @export var ForegroundColor: Color = Color.WHITE
 
 @export_category("Text")
-@export var TextColor: Color = Color(0.75, 0.25, 0.0, 1.0)
+@export var TextColor: Color = Color(0.8, 0.4, 0.0, 1.0)
 @export_multiline var TextArray: Array[String] = [ "CUTSCENE_WATCHER_1" ]
 @export_enum("Left", "Top", "Right", "Bottom") var TextDirectionArray: Array[int] = [ 3 ]
 
@@ -18,3 +18,7 @@ class_name CutSceneData_FrameData
 
 @export_category("Delay")
 @export var FrameHoldExtraDelay: float = 0.0
+@export var AutoSwitchDelay: float = -1.0
+
+func PostUpdateFromFrameData(InFrame: CutScene_Frame):
+	pass

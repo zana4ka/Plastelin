@@ -55,13 +55,9 @@ func BeginPrologue():
 	assert(not has_meta(&"Prologue"))
 	set_meta(&"Prologue", true)
 	
-	var PrologueCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Prologue/CutSceneData.tres"))
+	var PrologueCutScene := CutScene.BeginCutScene(GameGlobals.PrologueCutSceneData)
 	
-	## Debug
-	#var PrologueCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Watcher/CutSceneData.tres"))
-	#var PrologueCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Final/CutSceneData.tres"))
-	
-	GameGlobals._GlobalLoop2.play()
+	GameGlobals.PlayGlitchLoop()
 	
 	#PrologueCutScene.FinishCutScene()
 	await PrologueCutScene.Finished
@@ -97,8 +93,8 @@ func BeginScene1():
 	#ModellingPhoto3.GridPosition = Vector2i(6, 2)
 	
 	GameGlobals._StartUp.play()
-	GameGlobals._GlobalLoop2.stop()
-	GameGlobals._GlobalLoop1.play()
+	GameGlobals._GlitchLoop.stop()
+	GameGlobals.PlayPCLoop()
 	
 	## Debug
 	#var SecretDocument7 := _DesktopCanvas._ItemsUI.AddNewItem(load("res://UI/Items/Content/Documents/SecretDocument7.tres"))
@@ -138,7 +134,7 @@ func BeginScene6():
 	assert(not has_meta(&"Scene6"))
 	set_meta(&"Scene6", true)
 	
-	var PreFinalCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Watcher/CutSceneData.tres"))
+	var PreFinalCutScene := CutScene.BeginCutScene(GameGlobals.WatcherCutSceneData)
 	
 	#PreFinalCutScene.FinishCutScene()
 	await PreFinalCutScene.Finished
@@ -159,8 +155,7 @@ func BeginScene6():
 	SecretFolder3.ready.connect(_DesktopCanvas._ItemsUI.MoveToScreenCenter, Object.CONNECT_DEFERRED)
 	_DesktopCanvas._TaskbarUI.visible = false
 	
-	GameGlobals._GlobalLoop1.stop()
-	GameGlobals._GlobalLoop2.play()
+	GameGlobals.PlayGlitchLoop()
 
 func BeginScene7():
 	
@@ -184,7 +179,10 @@ func BeginScene8():
 	
 	await get_tree().create_timer(1.0).timeout
 	
-	var FinalCutScene := CutScene.BeginCutScene(load("res://Scenes/CutScenes/Content/Final/CutSceneData.tres"))
+	var FinalCutScene := CutScene.BeginCutScene(GameGlobals.FinalCutSceneData)
+	
+	GameGlobals.PlayGlitchLoop()
+	GameGlobals.PlayEmptyRoomLoop(false)
 	
 	#FinalCutScene.FinishCutScene()
 	await FinalCutScene.Finished
@@ -192,8 +190,8 @@ func BeginScene8():
 
 func PlayCredits():
 	
-	GameGlobals._GlobalLoop1.stop()
-	GameGlobals._GlobalLoop2.stop()
+	GameGlobals._PCLoop.stop()
+	GameGlobals._GlitchLoop.stop()
 	
 	_AnimationPlayer.play(&"Credits")
 	
@@ -227,8 +225,8 @@ func PlayCredits():
 ## Misc
 func HandleShutDown():
 	GameGlobals._ShutDown.play()
-	GameGlobals._GlobalLoop1.stop()
-	GameGlobals._GlobalLoop2.stop()
+	GameGlobals._PCLoop.stop()
+	GameGlobals._GlitchLoop.stop()
 	_AnimationPlayer.play(&"ShutDown")
 
 func HandleShutDown_Finish():

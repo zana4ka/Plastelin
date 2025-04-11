@@ -10,6 +10,7 @@ static func BeginCutScene(InData: CutSceneData) -> CutScene:
 
 @onready var _CurrentFrame: CutScene_Frame = $CurrentFrame
 @onready var _Fade: ColorRect = $Fade
+@onready var _AutoSwitchTimer: Timer = $AutoSwitchTimer
 @onready var _AnimationPlayer: AnimationPlayer = $AnimationPlayer
 
 var _Data: CutSceneData
@@ -17,6 +18,7 @@ var _Data: CutSceneData
 func _ready() -> void:
 	
 	_CurrentFrame.pressed.connect(OnCurrentFramePressed)
+	_AutoSwitchTimer.timeout.connect(AutoSwitchTimerTimeout)
 	
 	InitFromData()
 
@@ -49,6 +51,7 @@ func TryShowFrame(InFrame: int) -> bool:
 	
 	PendingFrame = InFrame
 	NextFrameMinTimeTicksMs = Time.get_ticks_msec()
+	_AutoSwitchTimer.stop()
 	
 	_Data.HandleShowFrame(self)
 	return true
@@ -56,7 +59,14 @@ func TryShowFrame(InFrame: int) -> bool:
 func TryShowFrame_UpdateFrame():
 	_Data.HandleShowFrame_UpdateFrame(self)
 
+func SetAutoSwitch(InDelay: float):
+	_AutoSwitchTimer.start(InDelay)
+
+func AutoSwitchTimerTimeout():
+	TryShowFrame(PendingFrame + 1)
+
 signal Finished()
+signal FullyFinished()
 
 func FinishCutScene(InWaitForAnimation: bool = true):
 	
@@ -66,4 +76,5 @@ func FinishCutScene(InWaitForAnimation: bool = true):
 	if InWaitForAnimation and _AnimationPlayer.is_playing():
 		await _AnimationPlayer.animation_finished
 	
+	FullyFinished.emit()
 	queue_free()

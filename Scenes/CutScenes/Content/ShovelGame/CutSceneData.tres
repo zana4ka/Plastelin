@@ -18,6 +18,7 @@ TextDirectionArray = Array[int]([2])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
 FrameHoldExtraDelay = 0.6
+AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [sub_resource type="Resource" id="Resource_eujy7"]
@@ -32,6 +33,7 @@ TextDirectionArray = Array[int]([2])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
 FrameHoldExtraDelay = 0.0
+AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [sub_resource type="Resource" id="Resource_lacu1"]
@@ -46,12 +48,12 @@ TextDirectionArray = Array[int]([2])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
 FrameHoldExtraDelay = 0.0
+AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [resource]
 script = ExtResource("2_jd551")
 FrameArray = Array[ExtResource("1_lg5be")]([SubResource("Resource_5yak0"), SubResource("Resource_eujy7"), SubResource("Resource_lacu1")])
-FrameTextColor = Color(0.8, 0, 0, 1)
 FadeFromColor = Color(0.8, 0, 0, 1)
 FadeFromDuration = 0.25
 metadata/_custom_type_script = "uid://dk1edm4qmw31p"

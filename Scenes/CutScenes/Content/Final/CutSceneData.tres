@@ -1,53 +1,127 @@
-[gd_resource type="Resource" script_class="CutSceneData" load_steps=8 format=3 uid="uid://gu12ou5nxf0s"]
+[gd_resource type="Resource" script_class="CutSceneData" load_steps=21 format=3 uid="uid://gu12ou5nxf0s"]
 
 [ext_resource type="Script" uid="uid://d0aclq6sakghk" path="res://Scenes/CutScenes/CutSceneData_FrameData.gd" id="1_8pcy1"]
 [ext_resource type="Texture2D" uid="uid://cendqcldwf2lk" path="res://Scenes/CutScenes/Content/Common/Background001.tres" id="2_hpidt"]
-[ext_resource type="Texture2D" uid="uid://c1tcd05b1a8ef" path="res://Scenes/CutScenes/Content/Common/Foreground001.tres" id="3_nodwk"]
+[ext_resource type="Texture2D" uid="uid://drte0cfmnevbg" path="res://Scenes/CutScenes/Content/Final/Final001a.png" id="3_hpidt"]
+[ext_resource type="Texture2D" uid="uid://d7eakv683w41" path="res://Scenes/CutScenes/Content/Final/Final002a.png" id="4_nodwk"]
 [ext_resource type="Script" uid="uid://dk1edm4qmw31p" path="res://Scenes/CutScenes/CutSceneData.gd" id="4_rgl8n"]
+[ext_resource type="Texture2D" uid="uid://dyc6lt403wx48" path="res://Scenes/CutScenes/Content/Final/Final003.tres" id="5_rgl8n"]
+[ext_resource type="Texture2D" uid="uid://dgefr4qlnkh2i" path="res://Scenes/CutScenes/Content/Final/Final004.tres" id="6_7qd12"]
+[ext_resource type="Texture2D" uid="uid://cbs8mnhuu4tvb" path="res://Scenes/CutScenes/Content/Final/Final005.tres" id="7_4dkvx"]
+[ext_resource type="Texture2D" uid="uid://c1tcd05b1a8ef" path="res://Scenes/CutScenes/Content/Common/Foreground001.tres" id="8_gfbou"]
+[ext_resource type="Texture2D" uid="uid://vc7mmpraj7j5" path="res://Scenes/CutScenes/Content/Final/Final005_2.tres" id="9_wyoep"]
+[ext_resource type="Texture2D" uid="uid://2w60e3f4ohwa" path="res://Scenes/CutScenes/Content/Common/Black001.tres" id="10_wyoep"]
+[ext_resource type="Texture2D" uid="uid://bja58qfg8266x" path="res://Scenes/CutScenes/Content/Final/Final006.tres" id="11_rjal3"]
+[ext_resource type="Resource" uid="uid://dyjjdeiojaovf" path="res://Scenes/CutScenes/Content/Final/Final007_FrameData.tres" id="12_wyoep"]
 
 [sub_resource type="Resource" id="Resource_rgl8n"]
 script = ExtResource("1_8pcy1")
 Background = ExtResource("2_hpidt")
 BackgroundColor = Color(1, 1, 1, 1)
-Foreground = ExtResource("3_nodwk")
+Foreground = ExtResource("3_hpidt")
 ForegroundColor = Color(1, 1, 1, 1)
-TextColor = Color(0.75, 0.25, 0, 1)
+TextColor = Color(0.8, 0.4, 0, 1)
 TextArray = Array[String](["CUTSCENE_FINAL_1"])
-TextDirectionArray = Array[int]([3])
+TextDirectionArray = Array[int]([2])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.5
+FrameHoldExtraDelay = 0.0
+AutoSwitchDelay = 0.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [sub_resource type="Resource" id="Resource_7d1v1"]
 script = ExtResource("1_8pcy1")
 Background = ExtResource("2_hpidt")
 BackgroundColor = Color(1, 1, 1, 1)
-Foreground = ExtResource("3_nodwk")
+Foreground = ExtResource("4_nodwk")
 ForegroundColor = Color(1, 1, 1, 1)
-TextColor = Color(0.75, 0.25, 0, 1)
+TextColor = Color(0.8, 0.4, 0, 1)
 TextArray = Array[String](["CUTSCENE_FINAL_2"])
-TextDirectionArray = Array[int]([3])
+TextDirectionArray = Array[int]([2])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
+FrameHoldExtraDelay = 0.0
+AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [sub_resource type="Resource" id="Resource_f0xap"]
 script = ExtResource("1_8pcy1")
 Background = ExtResource("2_hpidt")
 BackgroundColor = Color(1, 1, 1, 1)
-Foreground = ExtResource("3_nodwk")
+Foreground = ExtResource("5_rgl8n")
 ForegroundColor = Color(1, 1, 1, 1)
-TextColor = Color(0.75, 0.25, 0, 1)
-TextArray = Array[String](["CUTSCENE_FINAL_3"])
-TextDirectionArray = Array[int]([3])
+TextColor = Color(0.8, 0.4, 0, 1)
+TextArray = Array[String]([])
+TextDirectionArray = Array[int]([])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
+FrameHoldExtraDelay = 1.0
+AutoSwitchDelay = -1.0
+metadata/_custom_type_script = "uid://d0aclq6sakghk"
+
+[sub_resource type="Resource" id="Resource_rjal3"]
+script = ExtResource("1_8pcy1")
+Background = ExtResource("2_hpidt")
+BackgroundColor = Color(1, 1, 1, 1)
+Foreground = ExtResource("6_7qd12")
+ForegroundColor = Color(1, 1, 1, 1)
+TextColor = Color(0.8, 0.4, 0, 1)
+TextArray = Array[String]([])
+TextDirectionArray = Array[int]([])
+FadeToColor = Color(0.4, 0, 0, 1)
+FadeToDuration = 0.0
+FrameHoldExtraDelay = 0.0
+AutoSwitchDelay = 2.0
+metadata/_custom_type_script = "uid://d0aclq6sakghk"
+
+[sub_resource type="Resource" id="Resource_wyoep"]
+script = ExtResource("1_8pcy1")
+Background = ExtResource("7_4dkvx")
+BackgroundColor = Color(1, 1, 1, 1)
+Foreground = ExtResource("8_gfbou")
+ForegroundColor = Color(1, 1, 1, 1)
+TextColor = Color(0.8, 0.4, 0, 1)
+TextArray = Array[String]([])
+TextDirectionArray = Array[int]([])
+FadeToColor = Color(0, 0, 0, 1)
+FadeToDuration = 0.5
+FrameHoldExtraDelay = 1.4
+AutoSwitchDelay = 1.5
+metadata/_custom_type_script = "uid://d0aclq6sakghk"
+
+[sub_resource type="Resource" id="Resource_3k5tq"]
+script = ExtResource("1_8pcy1")
+Background = ExtResource("9_wyoep")
+BackgroundColor = Color(1, 1, 1, 1)
+Foreground = ExtResource("8_gfbou")
+ForegroundColor = Color(1, 1, 1, 1)
+TextColor = Color(0.8, 0.4, 0, 1)
+TextArray = Array[String]([])
+TextDirectionArray = Array[int]([])
+FadeToColor = Color(0.4, 0, 0, 1)
+FadeToDuration = 0.0
+FrameHoldExtraDelay = 0.0
+AutoSwitchDelay = -1.0
+metadata/_custom_type_script = "uid://d0aclq6sakghk"
+
+[sub_resource type="Resource" id="Resource_38a0l"]
+script = ExtResource("1_8pcy1")
+Background = ExtResource("10_wyoep")
+BackgroundColor = Color(1, 1, 1, 1)
+Foreground = ExtResource("11_rjal3")
+ForegroundColor = Color(1, 1, 1, 1)
+TextColor = Color(0.8, 0.4, 0, 1)
+TextArray = Array[String]([])
+TextDirectionArray = Array[int]([])
+FadeToColor = Color(0, 0, 0, 1)
+FadeToDuration = 1.0
+FrameHoldExtraDelay = 0.5
+AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [resource]
 script = ExtResource("4_rgl8n")
-FrameArray = Array[ExtResource("1_8pcy1")]([SubResource("Resource_rgl8n"), SubResource("Resource_7d1v1"), SubResource("Resource_f0xap")])
-FrameTextColor = Color(0.8, 0, 0, 1)
+FrameArray = Array[ExtResource("1_8pcy1")]([SubResource("Resource_rgl8n"), SubResource("Resource_7d1v1"), SubResource("Resource_f0xap"), SubResource("Resource_rjal3"), SubResource("Resource_wyoep"), SubResource("Resource_3k5tq"), SubResource("Resource_38a0l"), ExtResource("12_wyoep")])
 FadeFromColor = Color(0, 0, 0, 1)
 FadeFromDuration = 0.5
 metadata/_custom_type_script = "uid://dk1edm4qmw31p"

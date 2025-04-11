@@ -62,9 +62,11 @@ var NextKeyId: int = 0:
 		if NextKeyId == KEY_NONE:
 			Key.visible = false
 			KeyAP.stop()
+			set_process_input(false)
 		else:
 			Key.visible = true
 			KeyAP.play(&"Flicker", -1.0, 2.0)
+			set_process_input(true)
 
 func SetNewKey():
 	assert(ProgressCooldownTimeLeft <= 0.0)
@@ -77,7 +79,7 @@ func ResetCurrentKey():
 #func OnInteractPressed():
 #	TryProgress()
 
-func _unhandled_input(InEvent: InputEvent):
+func _input(InEvent: InputEvent):
 	
 	assert(not IsFinished)
 	if not InEvent is InputEventKey:
@@ -114,9 +116,10 @@ func _unhandled_input(InEvent: InputEvent):
 		ProgressCooldownTimeLeft = 0.2
 	
 	assert(ProgressTicks <= 11)
-	if ProgressTicks == 11:
+	if ProgressTicks >= 11:
 		IsFinished = true
 	
+	get_viewport().set_input_as_handled()
 	ResetCurrentKey()
 
 var IsFinished: bool = false:
@@ -131,7 +134,6 @@ var IsFinished: bool = false:
 			
 			Password.visible = true
 			#Interact.visible = false
-			set_process_unhandled_input(false)
 			
 			GameGlobals._MainScene.BeginScene2()
 

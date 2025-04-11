@@ -4,8 +4,6 @@ class_name CutSceneData
 @export_category("Frames")
 @export var FrameArray: Array[CutSceneData_FrameData] = []
 
-@export var FrameTextColor: Color = Color(0.8, 0.0, 0.0, 1.0)
-
 @export_category("FadeFrom")
 @export_color_no_alpha var FadeFromColor: Color = Color(0.8, 0.0, 0.0)
 @export var FadeFromDuration: float = 0.25
@@ -30,8 +28,11 @@ func HandleShowFrame(InCutScene: CutScene):
 	else:
 		InCutScene.TryShowFrame_UpdateFrame()
 	
-	if SampleFrameData and SampleFrameData.FadeToDuration > 0.0:
-		InCutScene.NextFrameMinTimeTicksMs = maxi(InCutScene.NextFrameMinTimeTicksMs, int(SampleFrameData.FadeToDuration * 1000.0))
+	if SampleFrameData:
+		if SampleFrameData.FadeToDuration > 0.0:
+			InCutScene.NextFrameMinTimeTicksMs = maxi(InCutScene.NextFrameMinTimeTicksMs, int(SampleFrameData.FadeToDuration * 1000.0))
+		if SampleFrameData.AutoSwitchDelay > 0.0:
+			InCutScene.SetAutoSwitch(SampleFrameData.AutoSwitchDelay)
 
 func HandleShowFrame_UpdateFrame(InCutScene: CutScene):
 	

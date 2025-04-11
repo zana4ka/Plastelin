@@ -17,9 +17,16 @@ extends Node
 
 @export var CutSceneScene: PackedScene = preload("res://Scenes/CutScenes/CutScene.tscn")
 
+## CutScenes
+@export var PrologueCutSceneData: CutSceneData = preload("res://Scenes/CutScenes/Content/Prologue/CutSceneData.tres")
+@export var ShovelGameCutSceneData: CutSceneData = preload("res://Scenes/CutScenes/Content/ShovelGame/CutSceneData.tres")
+@export var WatcherCutSceneData: CutSceneData = preload("res://Scenes/CutScenes/Content/Watcher/CutSceneData.tres")
+@export var FinalCutSceneData: CutSceneData = preload("res://Scenes/CutScenes/Content/Final/CutSceneData.tres")
+
 ## Audio
-@onready var _GlobalLoop1: AudioStreamPlayer = $GlobalLoop1
-@onready var _GlobalLoop2: AudioStreamPlayer = $GlobalLoop2
+@onready var _PCLoop: AudioStreamPlayer = $PCLoop
+@onready var _GlitchLoop: AudioStreamPlayer = $GlitchLoop
+@onready var _EmptyRoomLoop: AudioStreamPlayer = $EmptyRoomLoop
 @onready var _MouseClick: AudioStreamPlayer = $MouseClick
 @onready var _StartUp: AudioStreamPlayer = $StartUp
 @onready var _ShutDown: AudioStreamPlayer = $ShutDown
@@ -29,6 +36,30 @@ extends Node
 @onready var _Accept: AudioStreamPlayer = $Accept
 @onready var _DirtDigging: AudioStreamPlayer = $DirtDigging
 @onready var _PhotoPickUp: AudioStreamPlayer = $PhotoPickUp
+
+func PlayPCLoop(InStopOthers: bool = true):
+	
+	_PCLoop.play()
+	
+	if InStopOthers:
+		_GlitchLoop.stop()
+		_EmptyRoomLoop.stop()
+
+func PlayGlitchLoop(InStopOthers: bool = true):
+	
+	_GlitchLoop.play()
+	
+	if InStopOthers:
+		_PCLoop.stop()
+		_EmptyRoomLoop.stop()
+
+func PlayEmptyRoomLoop(InStopOthers: bool = true):
+	
+	_EmptyRoomLoop.play()
+	
+	if InStopOthers:
+		_PCLoop.stop()
+		_GlitchLoop.stop()
 
 ## Panels
 @onready var _Panel001a: StyleBox = preload("res://UI/Common/Panels/Panel001a.tres")

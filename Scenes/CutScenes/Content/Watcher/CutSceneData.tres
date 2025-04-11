@@ -17,6 +17,8 @@ TextArray = Array[String](["CUTSCENE_WATCHER_1"])
 TextDirectionArray = Array[int]([3])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
+FrameHoldExtraDelay = 0.0
+AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [sub_resource type="Resource" id="Resource_3sos0"]
@@ -30,12 +32,13 @@ TextArray = Array[String](["CUTSCENE_WATCHER_2"])
 TextDirectionArray = Array[int]([3])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
+FrameHoldExtraDelay = 0.0
+AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
 [resource]
 script = ExtResource("4_481si")
 FrameArray = Array[ExtResource("1_0nrky")]([SubResource("Resource_8vfxd"), SubResource("Resource_3sos0")])
-FrameTextColor = Color(0.8, 0, 0, 1)
 FadeFromColor = Color(0.8, 0, 0, 1)
 FadeFromDuration = 0.25
 metadata/_custom_type_script = "uid://dk1edm4qmw31p"

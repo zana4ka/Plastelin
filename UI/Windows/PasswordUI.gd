@@ -20,6 +20,8 @@ func UpdateFromOwnerItem():
 	
 	assert(not OwnerItem._Data.GetUnlockPassword().is_empty())
 	_LineEdit.grab_focus.call_deferred()
+	
+	OwnerItem.tree_exiting.connect(TryClose)
 
 func OnConfirmPressed():
 	TryConfirmPassword()
