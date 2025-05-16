@@ -7,8 +7,6 @@ class_name ItemsUI_Item
 		_Data = InData
 		UpdateFromItemData()
 
-@onready var ParentContainer: ItemsUIBase = get_parent() as ItemsUIBase
-
 @onready var _Button: TextureButton = $Button
 @onready var _Lock: TextureRect = $Button/Lock
 @onready var _Label: Label = $Control/Label
@@ -47,12 +45,7 @@ func _get_drag_data(AtPosition: Vector2) -> Variant:
 		return null
 
 func _can_drop_data(AtPosition: Vector2, InData: Variant) -> bool:
-	
-	if not super(AtPosition, InData) or InData == self:
-		return false
-	
-	var DropItem := InData as ItemsUI_GridCell
-	return ParentContainer == DropItem.ParentContainer and _Data.CanBeMoved
+	return super(AtPosition, InData) and _Data.CanBeMoved
 
 func UpdateFromItemData():
 	

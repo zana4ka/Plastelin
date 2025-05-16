@@ -7,13 +7,16 @@
 
 [resource]
 script = ExtResource("4_gme8i")
-DocumentText = "AAAAAAAAAAAAAAAAAAAHHHHH"
+DocumentText = "LOCKED_FILE_1_CONTENT"
+IsEditable = false
 IconTexture = ExtResource("1_sgx35")
 Name = "LOCKED_FILE_1"
 ForceOpenOnScreenCenter = false
+ForceExpand = false
+CanBeMoved = true
 _LS = ExtResource("3_mhagw")
 _FocusedLS = ExtResource("2_noft1")
 IsInitiallyLocked = true
 OpenItemAfterUnlock = true
-UnlockPassword = "246463y3635tdvs"
+UnlockPassword = "8712"
 metadata/_custom_type_script = "uid://dm7a2qbe1p8sy"

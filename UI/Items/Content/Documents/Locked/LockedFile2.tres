@@ -7,13 +7,16 @@
 
 [resource]
 script = ExtResource("4_nc8ae")
-DocumentText = "I NEED A MEDIC BAG"
+DocumentText = "LOCKED_FILE_2_CONTENT"
+IsEditable = false
 IconTexture = ExtResource("1_lggfl")
 Name = "LOCKED_FILE_2"
 ForceOpenOnScreenCenter = false
+ForceExpand = false
+CanBeMoved = true
 _LS = ExtResource("3_arkij")
 _FocusedLS = ExtResource("2_es8q4")
 IsInitiallyLocked = true
 OpenItemAfterUnlock = true
-UnlockPassword = "sd252254v252s"
+UnlockPassword = "8649"
 metadata/_custom_type_script = "uid://dm7a2qbe1p8sy"

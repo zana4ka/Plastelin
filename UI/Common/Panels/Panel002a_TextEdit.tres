@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ct5h7nioekob8"]
+
+[ext_resource type="Texture2D" uid="uid://clygc6c7kwrf3" path="res://UI/Common/Panels/Panel002a.png" id="1_ctauv"]
+
+[resource]
+texture = ExtResource("1_ctauv")
+expand_margin_left = 16.0
+expand_margin_top = 8.0
+region_rect = Rect2(0, 9, 873, 738)

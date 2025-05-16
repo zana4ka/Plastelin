@@ -9,6 +9,7 @@ class_name PasswordUI
 func _ready() -> void:
 	
 	_Confirm.pressed.connect(OnConfirmPressed)
+	_LineEdit.text_changed.connect(OnPasswordChanged)
 	_LineEdit.text_submitted.connect(OnPasswordSubmitted)
 	_LineEdit.focus_entered.connect(OnFocusEntered)
 	
@@ -22,6 +23,9 @@ func UpdateFromOwnerItem():
 	_LineEdit.grab_focus.call_deferred()
 	
 	OwnerItem.tree_exiting.connect(TryClose)
+
+func OnPasswordChanged(InNewText: String):
+	pass
 
 func OnConfirmPressed():
 	TryConfirmPassword()

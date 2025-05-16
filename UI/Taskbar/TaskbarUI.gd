@@ -74,6 +74,7 @@ func OnLanguageToggled(InToggledOn: bool):
 	else:
 		LanguageButton.text = "En"
 		TranslationServer.set_locale("en")
+	GameGlobals.LanguageChanged.emit()
 
 func OnAudioButtonToggled(InToggledOn: bool):
 	AudioMixer.visible = InToggledOn

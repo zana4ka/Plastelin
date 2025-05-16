@@ -61,6 +61,11 @@ func PlayEmptyRoomLoop(InStopOthers: bool = true):
 		_PCLoop.stop()
 		_GlitchLoop.stop()
 
+func StolAllLoops():
+	_PCLoop.stop()
+	_GlitchLoop.stop()
+	_EmptyRoomLoop.stop()
+
 ## Panels
 @onready var _Panel001a: StyleBox = preload("res://UI/Common/Panels/Panel001a.tres")
 @onready var _Panel001a_Blue: StyleBox = preload("res://UI/Common/Panels/Panel001a_Blue.tres")
@@ -125,3 +130,6 @@ func UpdatePanelsModulate(InColor: Color):
 	_Panel003b_Blue.modulate_color = InColor
 	
 	_Panel004a.modulate_color = InColor
+
+## Language
+signal LanguageChanged()

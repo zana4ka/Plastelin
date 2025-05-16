@@ -9,7 +9,8 @@ HELP_DOCUMENT_CONTENT,"Each geometric element in the photo is associated with a 
 In the newspaper, these geometric objects are arranged in order.","Каждый геометрический элемент на фото связан с цифрой.
 В газете эти геометрические предметы расставлены по порядку."
 HELP_CONFIRM,Are you sure you want help?,Вы точно хотите помощь?
-ENTER_PASSWORD,Enter the password...,Введите пароль...
+ENTER_PASSWORD,Enter your password...,Введите пароль...
+ENTER_TEXT,Enter your text... But don't look back.,Введите текст... Но не смотрите назад.
 ARE_YOU_SURE,Are you sure?,Вы уверены?
 TABS_MESSAGE,Too many tabs!,Слишком много вкладок!
 DESKTOP_PATH,C:\User\Desktop,C:\User\Рабочий стол
@@ -147,7 +148,11 @@ MODELLING_PHOTO_4,Merdr wepon.jpg,Оруде убиства.jpg
 MODELLING_PHOTO_5,White thing.jpg,Белая штука.jpg
 MODELLING_PHOTO_6,Sus.jpg,Sus.jpg
 LOCKED_FILE_1,YOU SAW.pdf,ТЫ УВИДЕЛ.pdf
+LOCKED_FILE_1_CONTENT,"Passwords are easier to remember if they have a lot in common
+Is it worth doing passwords the other way around?","Пароли легче запомнить, если они имеют много общего
+Стоит ли делать пароли-наоборот?"
 LOCKED_FILE_2,THEM BURN.txt,ОНИ ГОРЯТ.txt
+LOCKED_FILE_2_CONTENT,You'll need to go for a walk...,Нужно будет выйти на прогулку...
 CUTSCENE_PROLOGUE_1A,For 10 years I followed his trail.,10 лет я шёл по его следу.
 CUTSCENE_PROLOGUE_1B,For 10 years he escaped.,10 лет он ускользал.
 CUTSCENE_PROLOGUE_2,The killer of those who administer justice...,"Убийца тех, кто вершит правосудие..."
@@ -176,5 +181,5 @@ SHUT_DOWN_MESSAGE,Even the sighted live blindly,Даже зрячий живёт
 CREDITS_1,"IwantPizza - Lead, Game Designer","IwantPizza - Лид, Геймдизайнер"
 CREDITS_2,zanayn - Developer,zanayn - Разработчик
 CREDITS_3,"Pompila - Art Lead, Artist","Pompila - Артлид, Художник"
-CREDITS_4,Prussichger - Artist,Prussichger - Художник
-CREDITS_5,ElLozerroXD - Artist,ElLozerroXD - Художник
+CREDITS_4,ElLozerroXD - Artist,ElLozerroXD - Художник
+CREDITS_5,Prussichger - Artist,Prussichger - Художник

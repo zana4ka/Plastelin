@@ -134,6 +134,8 @@ func BeginScene6():
 	assert(not has_meta(&"Scene6"))
 	set_meta(&"Scene6", true)
 	
+	GameGlobals.PlayEmptyRoomLoop()
+	
 	var PreFinalCutScene := CutScene.BeginCutScene(GameGlobals.WatcherCutSceneData)
 	
 	#PreFinalCutScene.FinishCutScene()
@@ -179,10 +181,10 @@ func BeginScene8():
 	
 	await get_tree().create_timer(1.0).timeout
 	
-	var FinalCutScene := CutScene.BeginCutScene(GameGlobals.FinalCutSceneData)
-	
 	GameGlobals.PlayGlitchLoop()
 	GameGlobals.PlayEmptyRoomLoop(false)
+	
+	var FinalCutScene := CutScene.BeginCutScene(GameGlobals.FinalCutSceneData)
 	
 	#FinalCutScene.FinishCutScene()
 	await FinalCutScene.Finished
@@ -190,8 +192,7 @@ func BeginScene8():
 
 func PlayCredits():
 	
-	GameGlobals._PCLoop.stop()
-	GameGlobals._GlitchLoop.stop()
+	GameGlobals.StolAllLoops()
 	
 	_AnimationPlayer.play(&"Credits")
 	
@@ -213,12 +214,12 @@ func PlayCredits():
 	_CreditsText.pop()
 	
 	_CreditsText.push_paragraph(HORIZONTAL_ALIGNMENT_CENTER)
-	_CreditsText.add_image(load("res://Scenes/Credits/Prussichger.png"), 104, 104)
+	_CreditsText.add_image(load("res://Scenes/Credits/ElLozerroXD.png"), 128, 128)
 	_CreditsText.add_text(TranslationServer.translate("CREDITS_4") + "\n\n")
 	_CreditsText.pop()
 	
 	_CreditsText.push_paragraph(HORIZONTAL_ALIGNMENT_LEFT)
-	_CreditsText.add_image(load("res://Scenes/Credits/ElLozerroXD.png"), 128, 128)
+	_CreditsText.add_image(load("res://Scenes/Credits/Prussichger.png"), 104, 104)
 	_CreditsText.add_text(TranslationServer.translate("CREDITS_5"))
 	_CreditsText.pop()
 

@@ -8,15 +8,22 @@ class_name ItemsUI_GridCell
 		GridPosition = InPosition
 		HandleGridPositionChanged(PrevPosition)
 
+@onready var ParentContainer: ItemsUIBase = get_parent() as ItemsUIBase
+
 func _can_drop_data(AtPosition: Vector2, InData: Variant) -> bool:
-	return InData is ItemsUI_GridCell
+	
+	if not InData is ItemsUI_GridCell or InData == self:
+		return false
+	
+	var DropCell := InData as ItemsUI_GridCell
+	return ParentContainer == DropCell.ParentContainer
 
 func _drop_data(AtPosition: Vector2, InData: Variant):
 	
 	GameGlobals._PhotoPickUp.play()
 	
-	var DropItem := InData as ItemsUI_GridCell
-	SwapGridPositionWith(DropItem)
+	var DropCell := InData as ItemsUI_GridCell
+	SwapGridPositionWith(DropCell)
 
 func HandleGridPositionChanged(InPrevPosition: Vector2i):
 	pass

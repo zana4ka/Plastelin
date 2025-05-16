@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://7x4f1svhbrhi" path="res://UI/Common/Panels/Panel003a.tres" id="1_7a26g"]
 [ext_resource type="StyleBox" uid="uid://dnb6vnjdu1xt6" path="res://UI/Common/Panels/Panel003b.tres" id="2_5bg0x"]
-[ext_resource type="StyleBox" uid="uid://clorb7lwx2bxv" path="res://UI/Common/Panels/Panel002a.tres" id="4_5bg0x"]
+[ext_resource type="StyleBox" uid="uid://ct5h7nioekob8" path="res://UI/Common/Panels/Panel002a_TextEdit.tres" id="4_icsr8"]
 [ext_resource type="Texture2D" uid="uid://co7dpw0woo802" path="res://UI/Taskbar/Content/AudioMixer001a_Slider.png" id="5_icsr8"]
 [ext_resource type="FontFile" uid="uid://cfkvy3j02uq6v" path="res://UI/Common/Fonts/BIPs.ttf" id="7_hbaok"]
 [ext_resource type="StyleBox" uid="uid://87gjpro6tu7w" path="res://UI/Common/Panels/Panel001a.tres" id="24_h07ms"]
@@ -48,9 +48,9 @@ PanelContainer/styles/panel = ExtResource("24_h07ms")
 TextEdit/colors/font_color = Color(0, 0, 0, 1)
 TextEdit/colors/font_outline_color = Color(1, 1, 1, 1)
 TextEdit/colors/font_readonly_color = Color(0, 0, 0, 1)
-TextEdit/styles/focus = ExtResource("4_5bg0x")
-TextEdit/styles/normal = ExtResource("4_5bg0x")
-TextEdit/styles/read_only = ExtResource("4_5bg0x")
+TextEdit/styles/focus = ExtResource("4_icsr8")
+TextEdit/styles/normal = ExtResource("4_icsr8")
+TextEdit/styles/read_only = ExtResource("4_icsr8")
 VSlider/icons/grabber = ExtResource("5_icsr8")
 VSlider/icons/grabber_disabled = ExtResource("5_icsr8")
 VSlider/icons/grabber_highlight = ExtResource("5_icsr8")

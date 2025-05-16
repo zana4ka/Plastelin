@@ -20,7 +20,7 @@ TextArray = Array[String](["CUTSCENE_PROLOGUE_1A", "CUTSCENE_PROLOGUE_1B"])
 TextDirectionArray = Array[int]([0, 2])
 FadeToColor = Color(0.4, 0, 0, 1)
 FadeToDuration = 0.0
-FrameHoldExtraDelay = 0.0
+FrameHoldExtraDelay = 0.5
 AutoSwitchDelay = -1.0
 metadata/_custom_type_script = "uid://d0aclq6sakghk"
 
